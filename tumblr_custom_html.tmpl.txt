@@ -617,7 +617,7 @@
 				<li class="tumblr_archive"><a href="/archive">{lang:Archive}</a></li>
 				{block:AskEnabled}<li class="tumblr_ask"><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
 				{block:SubmissionsEnabled}<li class="tumblr_submit"><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled} 
-                <li class="tumblr_theme"><a href="http://inspirewell.tumblr.com">inspire well theme</a></li>
+				<li class="tumblr_theme">A project of the <a href="http://BradleyManning.org/">Bradley Manning Support Network</a></li>
 			</ul>
 			<ul class="page_nav">
 				<li class="page_top"><a href="/">top</a></li>
@@ -633,6 +633,7 @@
 				{block:PreviousDayPage}<li class="page_previous"><a href="{PreviousDayPage}">{lang:Previous day}</a></li>{/block:PreviousDayPage}
 				{block:NextDayPage}<li class="page_next"><a href="{NextDayPage}">{lang:Next day}</a></li>{/block:NextDayPage}
 				{/block:DayPagination}
+				<li class=""><a href="http://BradleyManning.org/">Visit<br />BradleyManning.org</a></li>
 			</ul>
 		</div>
 		
