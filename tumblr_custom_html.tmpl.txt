@@ -55,6 +55,7 @@
 	<meta name="if:Enable infinite scrolling" content="0"/>
 	<meta name="if:Show group blog details" content="1"/>
 	<!-- Custom Text -->
+	<meta name="text:Featured column tag name" content="Notables"/>
 	<meta name="text:Additional pages title" content="Additional pages"/>
 	<meta name="text:Twitter feed title" content="Twitter feed"/>
 	<meta name="text:Find me on title" content="Find me on..."/>
@@ -177,10 +178,9 @@
 	}
 	InspireWell.infiniteScrolling = {block:IfEnableInfiniteScrolling}true{/block:IfEnableInfiniteScrolling}{block:IfNotEnableInfiniteScrolling}false{/block:IfNotEnableInfiniteScrolling};
 	</script>
-	
-		
+
 	</head>
-	<body{block:PermalinkPage} class="permalink_page"{/block:PermalinkPage}{block:IndexPage} class="index_page"{/block:IndexPage}> 	 	 	   
+    <body{block:PermalinkPage} class="permalink_page"{/block:PermalinkPage}{block:IndexPage} class="index_page{block:TagPage} tag_page{/block:TagPage}"{/block:IndexPage}>
 	<!-- Tumblr Theme #11797 -->
 		
 		<div id="overall">
@@ -193,6 +193,12 @@
 					<img src="{PortraitURL-64}" height="64" width="64" class="icon" />
 					{/block:IfShowPortraitInDescription}
 					<p>{Description}</p>
+					{block:HasPages}
+					{block:IfAdditionalPagesTitle}<h2>{text:Additional pages title}</h2>{/block:IfAdditionalPagesTitle}
+					<ul class="pages">
+						{block:Pages}<li><a href="{URL}" title="{Label}">{Label}</a></li>{/block:Pages}
+					</ul>
+					{/block:HasPages}
 					<div class="search_wrap">
 						<h2>{lang:Search}</h2>
 						<div class="search_box">
@@ -202,12 +208,6 @@
 							</form>
 						</div>
 					</div>
-					{block:HasPages}
-					{block:IfAdditionalPagesTitle}<h2>{text:Additional pages title}</h2>{/block:IfAdditionalPagesTitle}
-					<ul class="pages">
-						{block:Pages}<li><a href="{URL}" title="{Label}">{Label}</a></li>{/block:Pages}
-					</ul>
-					{/block:HasPages}
 					
 					{block:GroupMembers}
 					{block:IfShowGroupBlogDetails}
@@ -318,7 +318,7 @@
 			{block:Posts}
 			
 			{block:Photo}
-			<div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize}">
+            <div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
 				<div class="thumbnail">
 					{block:IfUseLightboxForFullSizeImages} 	 	   
 					<div class="overlay">
@@ -598,7 +598,7 @@
 
 			</div>
 			{/block:Posts}
-			{block:IndexPage}{block:IfKeepPostsOutOfTheFirstColumn}</div><!-- end overall_inner -->{/block:IfKeepPostsOutOfTheFirstColumn}{/block:IndexPage}
+            {block:IndexPage}{block:IfKeepPostsOutOfTheFirstColumn}</div><!-- end overall_inner -->{/block:IfKeepPostsOutOfTheFirstColumn}{/block:IndexPage}
 
 		</div>
 		
@@ -701,6 +701,33 @@
 		
 		<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script>
 		
+        {block:IfKeepPostsOutOfTheFirstColumn}
+        {block:IfFeaturedColumnTagName}
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                if (! $('body').hasClass('tag_page') && $('.{text:Featured column tag name}').length >= 1) {
+                    $('.overall_col').css( { 'margin-right': '275px' } );
+                    // Create the new column container.
+                    var x = document.createElement('div');
+                    x.setAttribute('id', 'iambrad_sticky_col');
+                    x.setAttribute('class', 'details');
+                    x.innerHTML = '<div class="box post t_xs"><strong>Featured people</strong></div>';
+                    document.getElementById('overall').appendChild(x);
+                    $('#iambrad_sticky_col').css({left: 'auto', right: '0'});
+
+                    // Fill it with the appropriate "bricks".
+                    $('.{text:Featured column tag name}').clone().appendTo('#iambrad_sticky_col');
+                    $('#iambrad_sticky_col .post').each(function () {
+                        $(this).removeClass('isotope-item');
+                        $(this).removeClass('brick');
+                        $(this).removeAttr('style');
+                        $(this).css({visibility: 'visible'})
+                    });
+                }
+            });
+        </script>
+        {/block:IfFeaturedColumnTagName}
+        {/block:IfKeepPostsOutOfTheFirstColumn}
 	</body> 	 	 	   
 	
 	<!--
