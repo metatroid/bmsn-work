@@ -199,6 +199,8 @@
 						{block:Pages}<li><a href="{URL}" title="{Label}">{Label}</a></li>{/block:Pages}
 					</ul>
 					{/block:HasPages}
+                    <h2>Watch the video</h2>
+                    <p><a href="http://iam.bradleymanning.org/post/5281470280"><img src="http://www.bradleymanning.org/wp-content/uploads/2011/05/bm-still-2-300x169.jpg" alt="Watch the BradleyManning.org video." width="275" /></a></p>
 					<div class="search_wrap">
 						<h2>{lang:Search}</h2>
 						<div class="search_box">
@@ -711,7 +713,7 @@
                     var x = document.createElement('div');
                     x.setAttribute('id', 'iambrad_sticky_col');
                     x.setAttribute('class', 'details');
-                    x.innerHTML = '<div class="box post t_xs"><strong>Featured people</strong></div>';
+                    x.innerHTML = '<div class="box post t_xs"><h2><a href="/tagged/{text:Featured column tag name}">Featured people</a></h2></div>';
                     document.getElementById('overall').appendChild(x);
                     $('#iambrad_sticky_col').css({left: 'auto', right: '0'});
 
