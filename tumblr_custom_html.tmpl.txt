@@ -726,6 +726,15 @@
                         $(this).css({visibility: 'visible'})
                     });
                 }
+                if (! $('body').hasClass('tag_page') && $('body').hasClass('index_page') ) {
+                    $('.post_caption').each(function () {
+                        if ($(this).text().split(' ').length > 50) {
+                            var y = $(this).text().split(' ').splice(0, 50).join(' ');
+                            y += ' (<a href="' + $(this).closest('.post').find('.timeago a')[0].href + '" title="Read the rest of this post">...</a>)';
+                            $(this).replaceWith('<p>' + y + '</p>');
+                        }
+                    });
+                }
             });
         </script>
         {/block:IfFeaturedColumnTagName}
