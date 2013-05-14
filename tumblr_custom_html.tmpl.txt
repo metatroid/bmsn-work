@@ -713,7 +713,7 @@
                     var x = document.createElement('div');
                     x.setAttribute('id', 'iambrad_sticky_col');
                     x.setAttribute('class', 'details');
-                    x.innerHTML = '<div class="box post t_xs"><h2><a href="/tagged/{text:Featured column tag name}">Featured people</a></h2></div>';
+                    x.innerHTML = '<div class="box post t_xs"><h2><a href="/tagged/{text:Featured column tag name}">More featured people</a></h2></div>';
                     document.getElementById('overall').appendChild(x);
                     $('#iambrad_sticky_col').css({left: 'auto', right: '0'});
 
