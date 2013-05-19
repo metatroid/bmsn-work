@@ -336,7 +336,7 @@ p.intro {
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 320px) and (max-width: 420px) {
 	.main{
 		margin-top:10px
 	}
@@ -375,10 +375,10 @@ p.intro {
 
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1139px) {
 
 	.wrapper {
-        width: 760px;
+        width: 840px;
         margin: 0 auto;
     }
 
