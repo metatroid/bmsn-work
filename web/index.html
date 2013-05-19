@@ -8,7 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -25,14 +25,23 @@
                 
                 // masonry for item layouts
                 var picSelector = $('.photos');
-                picSelector.imagesLoaded(function(){
-	               picSelector.masonry({
-						itemSelector: '.box',
-						columnWidth: 260,
-						gutterWidth: 20
-					}); 
-                })
-                
+                if (Modernizr.mq('only all and (max-width: 480px)')){
+		            picSelector.imagesLoaded(function(){
+		               picSelector.masonry({
+							itemSelector: '.box',
+							columnWidth: 300,
+							gutterWidth: 10
+						}); 
+	                })
+                } else {
+	                picSelector.imagesLoaded(function(){
+		               picSelector.masonry({
+							itemSelector: '.box',
+							columnWidth: 260,
+							gutterWidth: 20
+						}); 
+	                })
+                }
             })
         </script>
     </head>
