@@ -251,17 +251,19 @@ section h3 {
     text-align: right;
     line-height: 67px;
 }
-#campaign-collaborators li a {
+#campaign-collaborators li {
     float: left;
     width: 50%;
     padding-bottom: 3px;
     border-bottom: 2px solid rgba(227, 227, 227, 1);
-    text-decoration: none;
-    color: inherit;
 }
-#campaign-collaborators li:nth-child(odd) a {
+#campaign-collaborators li:nth-child(odd) {
     width: 47%;
     margin-right: 3%;
+}
+#campaign-collaborators li a {
+    text-decoration: none;
+    color: inherit;
 }
 #campaign-collaborators li a:hover {
     text-decoration: underline;
