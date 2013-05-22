@@ -8,24 +8,24 @@ textarea {
 
 @font-face {
   font-family: 'DINmed';
-  src: url('DINCond-Medium.eot');
-  src: url('DINCond-Medium.eot?#iefix') format('embedded-opentype'),
-       url('DINCond-Medium.woff') format('woff'),
-       url('DINCond-Medium.ttf')  format('truetype'),
-       url('DINCond-Medium.svg#rnaisupbug') format('svg');
-       
+  src: url('http://bradleymanning.org/fonts/DINCond-Medium.eot');
+  src: url('http://bradleymanning.org/fonts/DINCond-Medium.eot?#iefix') format('embedded-opentype'),
+       url('http://bradleymanning.org/fonts/DINCond-Medium.woff') format('woff'),
+       url('http://bradleymanning.org/fonts/DINCond-Medium.ttf')  format('truetype'),
+       url('http://bradleymanning.org/fonts/DINCond-Medium.svg#rnaisupbug') format('svg');
+
   font-style:   normal;
   font-weight:  400;
 }
 
 @font-face {
   font-family: 'DINreg';
-  src: url('DINCond-Regular.eot');
-  src: url('DINCond-Regular.eot?#iefix') format('embedded-opentype'),
-       url('DINCond-Regular.woff') format('woff'),
-       url('DINCond-Regular.ttf')  format('truetype'), 
-       url('DINCond-Regular.svg#nazkuocnyq') format('svg'); 
-       
+  src: url('http://bradleymanning.org/fonts/DINCond-Regular.eot');
+  src: url('http://bradleymanning.org/fonts/DINCond-Regular.eot?#iefix') format('embedded-opentype'),
+       url('http://bradleymanning.org/fonts/DINCond-Regular.woff') format('woff'),
+       url('http://bradleymanning.org/fonts/DINCond-Regular.ttf')  format('truetype'),
+       url('http://bradleymanning.org/fonts/DINCond-Regular.svg#nazkuocnyq') format('svg');
+
   font-style:   normal;
   font-weight:  400;
 }
