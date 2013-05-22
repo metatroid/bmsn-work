@@ -226,6 +226,22 @@ h3 {
 
 .campaign-section ul {
     clear: both;
+    list-style-type: none;
+    margin: 0; padding: 0;
+}
+.campaign-section li a {
+    display: block;
+    padding: 5px;
+    margin: 5px 0;
+    border: 2px solid rgba(109, 109, 109, 1);
+    border-radius: 5px;
+    background: rgba(227, 227, 227, 1);
+    text-decoration: none;
+    color: inherit;
+}
+.campaign-section li a:hover {
+    border-style: ridge;
+    background: rgba(247, 247, 247, 1);
 }
 
 h4 {
