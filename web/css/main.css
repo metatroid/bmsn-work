@@ -194,26 +194,24 @@ h3 {
     color: rgba(109,109,109,1);
 }
 
-.campaign-section {
+section {
     border-top: 10px solid #222;
     margin: 20px 0;
     padding: 10px 0;
     text-align: left;
     clear: both;
 }
-.campaign-section h3,
+section h3,
 .section-description {
     font-family: DINmed;
     letter-spacing: -1px;
     color: #222;
 }
 
-.campaign-section h3 {
+section h3 {
     float: left;
 }
 .section-description {
-    float: right;
-    width: 65%;
     font-size: 40px;
     line-height: .75em;
     text-transform: uppercase;
@@ -224,12 +222,17 @@ h3 {
     color: red;
 }
 
-.campaign-section ul {
+#campaign-tweet-this .section-description {
+    float: right;
+    width: 65%;
+}
+#campaign-tweet-this ul,
+#campaign-collaborators ul {
     clear: both;
     list-style-type: none;
     margin: 0; padding: 0;
 }
-.campaign-section li a {
+#campaign-tweet-this li a {
     display: block;
     padding: 5px;
     margin: 5px 0;
@@ -239,9 +242,29 @@ h3 {
     text-decoration: none;
     color: inherit;
 }
-.campaign-section li a:hover {
+#campaign-tweet-this li a:hover {
     border-style: ridge;
     background: rgba(247, 247, 247, 1);
+}
+
+#campaign-collaborators .section-description {
+    text-align: right;
+    line-height: 67px;
+}
+#campaign-collaborators li a {
+    float: left;
+    width: 50%;
+    padding-bottom: 3px;
+    border-bottom: 2px solid rgba(227, 227, 227, 1);
+    text-decoration: none;
+    color: inherit;
+}
+#campaign-collaborators li:nth-child(odd) a {
+    width: 47%;
+    margin-right: 3%;
+}
+#campaign-collaborators li a:hover {
+    text-decoration: underline;
 }
 
 h4 {
@@ -253,9 +276,6 @@ h4 {
     line-height: 40px;
     text-align: center;
     text-transform: uppercase;
-}
-
-.section-description {
 }
 
 h5 {

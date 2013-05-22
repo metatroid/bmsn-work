@@ -73,24 +73,24 @@ textarea {
 
 @font-face {
   font-family: 'DINmed';
-  src: url('http://www.bradleymanning.org/fonts/DINCond-Medium.eot');
-  src: url('http://www.bradleymanning.org/fonts/DINCond-Medium.eot?#iefix') format('embedded-opentype'),
-       url('http://www.bradleymanning.org/fonts/DINCond-Medium.woff') format('woff'),
-       url('http://www.bradleymanning.org/fonts/DINCond-Medium.ttf')  format('truetype'),
-       url('http://www.bradleymanning.org/fonts/DINCond-Medium.svg#rnaisupbug') format('svg');
-
+  src: url('http://bradleymanning.org/fonts/DINCond-Medium.eot');
+  src: url('http://bradleymanning.org/fonts/DINCond-Medium.eot?#iefix') format('embedded-opentype'),
+       url('http://bradleymanning.org/fonts/DINCond-Medium.woff') format('woff'),
+       url('http://bradleymanning.org/fonts/DINCond-Medium.ttf')  format('truetype'),
+       url('http://bradleymanning.org/fonts/DINCond-Medium.svg#rnaisupbug') format('svg');
+       
   font-style:   normal;
   font-weight:  400;
 }
 
 @font-face {
   font-family: 'DINreg';
-  src: url('http://www.bradleymanning.org/fonts/DINCond-Regular.eot');
-  src: url('http://www.bradleymanning.org/fonts/DINCond-Regular.eot?#iefix') format('embedded-opentype'),
-       url('http://www.bradleymanning.org/fonts/DINCond-Regular.woff') format('woff'),
-       url('http://www.bradleymanning.org/fonts/DINCond-Regular.ttf')  format('truetype'),
-       url('http://www.bradleymanning.org/fonts/DINCond-Regular.svg#nazkuocnyq') format('svg');
-
+  src: url('http://bradleymanning.org/fonts/DINCond-Regular.eot');
+  src: url('http://bradleymanning.org/fonts/DINCond-Regular.eot?#iefix') format('embedded-opentype'),
+       url('http://bradleymanning.org/fonts/DINCond-Regular.woff') format('woff'),
+       url('http://bradleymanning.org/fonts/DINCond-Regular.ttf')  format('truetype'), 
+       url('http://bradleymanning.org/fonts/DINCond-Regular.svg#nazkuocnyq') format('svg'); 
+       
   font-style:   normal;
   font-weight:  400;
 }
@@ -259,26 +259,24 @@ h3 {
     color: rgba(109,109,109,1);
 }
 
-.campaign-section {
+section {
     border-top: 10px solid #222;
     margin: 20px 0;
     padding: 10px 0;
     text-align: left;
     clear: both;
 }
-.campaign-section h3,
+section h3,
 .section-description {
     font-family: DINmed;
     letter-spacing: -1px;
     color: #222;
 }
 
-.campaign-section h3 {
+section h3 {
     float: left;
 }
 .section-description {
-    float: right;
-    width: 65%;
     font-size: 40px;
     line-height: .75em;
     text-transform: uppercase;
@@ -289,12 +287,17 @@ h3 {
     color: red;
 }
 
-.campaign-section ul {
+#campaign-tweet-this .section-description {
+    float: right;
+    width: 65%;
+}
+#campaign-tweet-this ul,
+#campaign-collaborators ul {
     clear: both;
     list-style-type: none;
     margin: 0; padding: 0;
 }
-.campaign-section li a {
+#campaign-tweet-this li a {
     display: block;
     padding: 5px;
     margin: 5px 0;
@@ -304,9 +307,29 @@ h3 {
     text-decoration: none;
     color: inherit;
 }
-.campaign-section li a:hover {
+#campaign-tweet-this li a:hover {
     border-style: ridge;
     background: rgba(247, 247, 247, 1);
+}
+
+#campaign-collaborators .section-description {
+    text-align: right;
+    line-height: 67px;
+}
+#campaign-collaborators li a {
+    float: left;
+    width: 50%;
+    padding-bottom: 3px;
+    border-bottom: 2px solid rgba(227, 227, 227, 1);
+    text-decoration: none;
+    color: inherit;
+}
+#campaign-collaborators li:nth-child(odd) a {
+    width: 47%;
+    margin-right: 3%;
+}
+#campaign-collaborators li a:hover {
+    text-decoration: underline;
 }
 
 h4 {
@@ -318,9 +341,6 @@ h4 {
     line-height: 40px;
     text-align: center;
     text-transform: uppercase;
-}
-
-.section-description {
 }
 
 h5 {
@@ -582,8 +602,9 @@ p.intro {
                         {/block:IfImprisonedOnDate}
                         {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
                     </header>
+
                     {block:IfTweet1}
-                    <section id="campaign-tweet-this" class="campaign-section">
+                    <section id="campaign-tweet-this">
                         <h3>Tweet this:</h3>
                         <p class="section-description">Choose a tweet from the options below, or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
                         <ul>
@@ -651,7 +672,30 @@ p.intro {
                     </section>
                     {/block:Photo}
                     {/block:Posts}
-                    
+
+                    <section id="campaign-collaborators">
+                        <h3>Collaborators:</h3>
+                        <p class="section-description">Allies in the fight to free Bradley.</p>
+                        <ul>
+                            <li><a href="TK-LINK">Collaborator 1 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 2 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 3 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 4 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 5 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 6 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 7 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 8 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 9 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 10 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 11 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 12 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 13 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 14 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 15 name or website address</a></li>
+                            <li><a href="TK-LINK">Collaborator 16 name or website address</a></li>
+                        </ul>
+                    </section>
+
                 </article>
 
             </div> <!-- #main -->
