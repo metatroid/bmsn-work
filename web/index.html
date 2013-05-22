@@ -757,7 +757,7 @@ p.intro {
                     <section id="campaign-updates-opt-in">
                         <h3>Sign up for campaign updates</h3>
                         <ul>
-                            <li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/SaveBradley" title="Follow @SaveBradley on Twitter">@SaveBradley</a></li>
+                            {block:Twitter}<li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/{TwitterUsername}" title="Follow @{TwitterUsername} on Twitter">@{TwitterUsername}</a></li>{/block:Twitter}
                             <li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/SaveBradley" title="Like SaveBradley on Facebook">Facebook page for SaveBradley</a></li>
                             <li id="campaign-newsletter">
                                 <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
