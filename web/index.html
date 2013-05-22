@@ -18,6 +18,7 @@
         <meta name="text:Hero name" content="Bradley Manning">
         <meta name="text:Featured media" content="">
         <meta name="text:Imprisoned on date" content="May 19, 2010">
+        <meta name="text:Facebook Username" content="">
         <meta name="text:Tweet1" content="Content for Tweet 1 #IAmBradleyManning #DropTheCharge">
         <meta name="text:Tweet2" content="Content for Tweet 2 #IAmBradleyManning #DropTheCharge">
         <meta name="text:Tweet3" content="Content for Tweet 3 #IAmBradleyManning #DropTheCharge">
@@ -758,7 +759,7 @@ p.intro {
                         <h3>Sign up for campaign updates</h3>
                         <ul>
                             {block:Twitter}<li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/{TwitterUsername}" title="Follow @{TwitterUsername} on Twitter">@{TwitterUsername}</a></li>{/block:Twitter}
-                            <li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/SaveBradley" title="Like SaveBradley on Facebook">Facebook page for SaveBradley</a></li>
+                            {block:IfFacebookUsername}<li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/{text:Facebook Username}" title="Like {text:Facebook Username} on Facebook">Facebook page for {text:Facebook Username}</a></li>{/block:IfFacebookUsername}
                             <li id="campaign-newsletter">
                                 <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
                                     <fieldset><legend>Subscribe by email</legend>
