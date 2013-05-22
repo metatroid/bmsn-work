@@ -15,6 +15,8 @@
         <!-- Show/hide template sections. (Default is to show all.) -->
         <meta name="if:Sign up for updates" content="1">
         <!-- Initialize custom variables. -->
+        <meta name="text:Campaigner name" content="Bradley Manning Support Network">
+        <meta name="text:Campaigner URL" content="http://bradleymanning.org/">
         <meta name="text:Hero name" content="Bradley Manning">
         <meta name="text:Featured media" content="">
         <meta name="text:Imprisoned on date" content="May 19, 2010">
@@ -778,9 +780,11 @@ footer a {
         </div> <!-- #main-container -->
 
         <div class="footer-container">
+            {block:IfCampaignerName}
             <footer class="wrapper">
-                <h3>A <a href="http://bradleymanning.org/">Bradley Manning Support Network</a> project.</h3>
+                <h3>A {block:IfCampaignerURL}<a href="{text:Campaigner URL}">{/block:IfCampaignerURL}{text:Campaigner name}{block:IfCampaignerURL}</a>{/block:IfCampaignerURL} project.</h3>
             </footer>
+            {/block:IfCampaignerName}
         </div>
 
     </body>
