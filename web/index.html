@@ -675,11 +675,10 @@ footer a {
                     </section>
                     {/block:IfTweet1}
                     
-                    {block:Posts}
                     <!-- TODO: Include non-Photo posts in this template? -->
-                    {block:Photo}
-
                     <section class="photos">
+                        {block:Posts}
+                        {block:Photo}
                         <div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
                             <div class="thumbnail">
                                 <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
@@ -726,9 +725,9 @@ footer a {
                             <!-- TODO: Insert PermalinkPage blocks? -->
 
                         </div>
+                        {/block:Photo}
+                        {/block:Posts}
                     </section>
-                    {/block:Photo}
-                    {/block:Posts}
 
                     {block:IfCollaborator1Name}
                     <section id="campaign-collaborators">
