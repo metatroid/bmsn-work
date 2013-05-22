@@ -12,17 +12,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="Copyright" content="I Am Hero theme - Copyright {CopyrightYears} by Bradley Manning Support Network">
 
+        <!-- Show/hide template sections. (Default is to show all.) -->
+        <meta name="if:Collaborators" content="1">
+        <meta name="if:Sign up for updates" content="1">
         <!-- Initialize custom variables. -->
         <meta name="text:Hero name" content="Bradley Manning">
-        <meta name="text:Featured campaign media" content="">
-        <meta name="if:Hero imprisoned" content="1">
-        <meta name="text:Imprisonment start date" content="May 19, 2010">
+        <meta name="text:Featured media" content="">
+        <meta name="text:Imprisoned on date" content="May 19, 2010">
+        <meta name="text:Tweet1" content="Content for Tweet 1 #IAmBradleyManning #DropTheCharge">
+        <meta name="text:Tweet2" content="Content for Tweet 2 #IAmBradleyManning #DropTheCharge">
+        <meta name="text:Tweet3" content="Content for Tweet 3 #IAmBradleyManning #DropTheCharge">
+        <meta name="text:Tweet4" content="Content for Tweet 4 #IAmBradleyManning #DropTheCharge">
+        <meta name="text:Tweet5" content="Content for Tweet 5 #IAmBradleyManning #DropTheCharge">
 
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="apple-touch-icon" href="{PortraitURL-128}">
 
-        <link rel="stylesheet" href="//static.tumblr.com/ggljfev/x9Wmn48ma/normalize-1.1.0.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="//static.tumblr.com/ybjxbev/b2Smn6hxh/normalize-1.1.0.css">
         <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
         <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
@@ -31,7 +37,7 @@
             $(document).ready(function(){
             	// date change thingy
                 var today = moment();
-                var todate = today.diff(moment('{text:Imprisonment start date}'),'days');
+                var todate = today.diff(moment('{text:Imprisoned on date}'),'days');
                 $('.dayscount').text(todate) 
                 
                 // masonry for item layouts
@@ -148,18 +154,13 @@ body {
     ALL: Orange Theme
    =================== */
 
-.header-container {
-    border-bottom: 10px solid #222;
+.main-container {
+    border-top: 10px solid #222;
 }
 
 .footer-container,
 .main aside {
     border-top: 10px solid #222;
-}
-
-.header-container,
-.footer-container,
-.main aside {
     background: #fff;
 }
 
@@ -242,7 +243,6 @@ h1 {
     text-transform: uppercase;
 }
 
-
 h2 {
     font-size: 39px;
     line-height: 50px;
@@ -254,7 +254,6 @@ h2 {
     color: rgba(127,127,127,1);
     text-transform: uppercase;
 }
-
 
 h3 {
     font-size: 67px;
@@ -268,6 +267,17 @@ h3 {
     color: rgba(109,109,109,1);
 }
 
+.campaign-section {
+    border-top: 10px solid #222;
+    margin: 20px 0;
+    padding: 10px 0;
+}
+.campaign-section h3 {
+    float: left;
+    width: 45%;
+    color: #222;
+}
+
 h4{
     margin-bottom: 40px;
     font-weight: 400;
@@ -276,6 +286,7 @@ h4{
     font-size: 54px;
     line-height: 40px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 h5 {
@@ -326,10 +337,9 @@ p.intro {
 .videoplaceholder{
     display: block;
     width: 100%;
-    height: 415px;
     margin: 0 auto;
-    background-color: #ccc;
     margin-bottom:30px;
+    text-align: center;
 }
 .box{
 	display: block;
@@ -526,48 +536,32 @@ p.intro {
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-            </header>
-        </div>
-
         <div class="main-container">
             <div class="main wrapper clearfix">
 
                 <article>
                     <header>
-                        {block:English}
-                        <h1>I am {text:Hero name}<br /></h1>
-
-                        <!-- TODO: Variablize these lines? -->
-                        <h2>nobody was harmed by these leaks, only the public benefited<br /></h2>
-                        <h3>Drop the "Aiding the Enemy" Charge. </h3>
-                        {block:IfHeroImprisoned}
-                        <h4>
-                            <span class="dayscount">1</span> days of unfair confinement is enough.
-                        </h4>
-                        {/block:IfHeroImprisoned}
-                        {/block:English}
-                        <!-- TODO: We need to get translations for non-English speakers! -->
-                        {block:NotEnglish}
-                        <h1>I am {text:Hero name}<br /></h1>
-
-                        <h2>nobody was harmed by these leaks, only the public benefited<br /></h2>
-                        <h3>Drop the "Aiding the Enemy" Charge. </h3>
-                        {block:IfHeroImprisoned}
-                        <h4>
-                            <span class="dayscount">1</span> days of unfair confinement is enough.
-                        </h4>
-                        {/block:IfHeroImprisoned}
-                        {/block:NotEnglish}
-
-                        <div class="videoplaceholder">{text:Featured campaign media}</div>
-
+                        <h1>I am {text:Hero name}</h1>
+                        <div id="description">{Description}</div>
+                        {block:IfImprisonedOnDate}
+                        <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
+                        {/block:IfImprisonedOnDate}
+                        {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
                     </header>
-                    <section>
-                        <h3>article h3</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor.</p>
+                    {block:IfTweet1}
+                    <section id="campaign-tweet-this" class="campaign-section">
+                        <h3>Tweet this:</h3>
+                        <p class="section-description">Choose a tweet from the options below, or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
+                        <ul>
+                            <!-- TODO: Get the URLEncoded versions of these custom variables? -->
+                            <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
+                            {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}">{text:Tweet2}</a></li>{/block:IfTweet2}
+                            {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}">{text:Tweet3}</a></li>{/block:IfTweet3}
+                            {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}">{text:Tweet4}</a></li>{/block:IfTweet4}
+                            {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}">{text:Tweet5}</a></li>{/block:IfTweet5}
+                        </ul>
                     </section>
+                    {/block:IfTweet1}
                     
                     {block:Posts}
                     <!-- TODO: Include non-Photo posts in this template? -->
@@ -630,8 +624,8 @@ p.intro {
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
                 </aside> -->
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+            </div> <!-- .main -->
+        </div> <!-- .main-container -->
 
         <div class="footer-container">
             <footer class="wrapper">
