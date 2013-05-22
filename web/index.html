@@ -154,12 +154,8 @@ body {
     ALL: Orange Theme
    =================== */
 
-.main-container {
-    border-top: 10px solid #222;
-}
-
-.footer-container,
-.main aside {
+.main-container,
+.footer-container {
     border-top: 10px solid #222;
     background: #fff;
 }
@@ -209,10 +205,6 @@ nav a:hover {
 
 .main article h1 {
 
-}
-
-.main aside {
-    padding: 0px 5% 10px;
 }
 
 .footer-container footer {
@@ -271,14 +263,53 @@ h3 {
     border-top: 10px solid #222;
     margin: 20px 0;
     padding: 10px 0;
+    text-align: left;
+    clear: both;
 }
-.campaign-section h3 {
-    float: left;
-    width: 45%;
+.campaign-section h3,
+.section-description {
+    font-family: DINmed;
+    letter-spacing: -1px;
     color: #222;
 }
 
-h4{
+.campaign-section h3 {
+    float: left;
+}
+.section-description {
+    float: right;
+    width: 65%;
+    font-size: 40px;
+    line-height: .75em;
+    text-transform: uppercase;
+    text-align: justify;
+    margin: 0;
+}
+.section-description a:link {
+    color: red;
+}
+
+.campaign-section ul {
+    clear: both;
+    list-style-type: none;
+    margin: 0; padding: 0;
+}
+.campaign-section li a {
+    display: block;
+    padding: 5px;
+    margin: 5px 0;
+    border: 2px solid rgba(109, 109, 109, 1);
+    border-radius: 5px;
+    background: rgba(227, 227, 227, 1);
+    text-decoration: none;
+    color: inherit;
+}
+.campaign-section li a:hover {
+    border-style: ridge;
+    background: rgba(247, 247, 247, 1);
+}
+
+h4 {
     margin-bottom: 40px;
     font-weight: 400;
     font-style: normal;
@@ -287,6 +318,9 @@ h4{
     line-height: 40px;
     text-align: center;
     text-transform: uppercase;
+}
+
+.section-description {
 }
 
 h5 {
@@ -566,6 +600,7 @@ p.intro {
                     {block:Posts}
                     <!-- TODO: Include non-Photo posts in this template? -->
                     {block:Photo}
+
                     <section class="photos">
                         <div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
                             <div class="thumbnail">
@@ -619,13 +654,8 @@ p.intro {
                     
                 </article>
 
-               <!--  <aside>
-                    <h3>aside</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices.</p>
-                </aside> -->
-
-            </div> <!-- .main -->
-        </div> <!-- .main-container -->
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
 
         <div class="footer-container">
             <footer class="wrapper">
