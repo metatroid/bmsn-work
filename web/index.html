@@ -6,11 +6,17 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{Title}</title>
-        {block:Description}
-        <meta name="description" content="{PlaintextDescription}">
-        {/block:Description}
+        <title>{block:Searchpage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:TagPage}{Tag} - {/block:TagPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+        <meta name="description" content="{MetaDescription}">
+        <meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="Copyright" content="I Am Hero theme - Copyright {CopyrightYears} by Bradley Manning Support Network">
+
+        <!-- Initialize custom variables. -->
+        <meta name="text:Hero name" content="Bradley Manning">
+        <meta name="text:Featured campaign media" content="">
+        <meta name="if:Hero imprisoned" content="1">
+        <meta name="text:Imprisonment start date" content="May 19, 2010">
 
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="apple-touch-icon" href="{PortraitURL-128}">
@@ -25,7 +31,7 @@
             $(document).ready(function(){
             	// date change thingy
                 var today = moment();
-                var todate = today.diff(moment(1334880000),'days');
+                var todate = today.diff(moment('{text:Imprisonment start date}'),'days');
                 $('.dayscount').text(todate) 
                 
                 // masonry for item layouts
@@ -530,26 +536,31 @@ p.intro {
                 <article>
                     <header>
                         {block:English}
-                        <h1>I AM BRADLEY MANNING<br /></h1>
+                        <h1>I am {text:Hero name}<br /></h1>
 
+                        <!-- TODO: Variablize these lines? -->
                         <h2>nobody was harmed by these leaks, only the public benefited<br /></h2>
                         <h3>Drop the "Aiding the Enemy" Charge. </h3>
+                        {block:IfHeroImprisoned}
                         <h4>
-                            <span class="dayscount"></span> DAYS OF UNFAIR CONFINEMENT IS ENOUGH.
+                            <span class="dayscount">1</span> days of unfair confinement is enough.
                         </h4>
+                        {/block:IfHeroImprisoned}
                         {/block:English}
                         <!-- TODO: We need to get translations for non-English speakers! -->
                         {block:NotEnglish}
-                        <h1>I AM BRADLEY MANNING<br /></h1>
+                        <h1>I am {text:Hero name}<br /></h1>
 
                         <h2>nobody was harmed by these leaks, only the public benefited<br /></h2>
                         <h3>Drop the "Aiding the Enemy" Charge. </h3>
+                        {block:IfHeroImprisoned}
                         <h4>
-                            <span class="dayscount"></span> DAYS OF UNFAIR CONFINEMENT IS ENOUGH.
+                            <span class="dayscount">1</span> days of unfair confinement is enough.
                         </h4>
+                        {/block:IfHeroImprisoned}
                         {/block:NotEnglish}
 
-                        <div class="videoplaceholder"></div>
+                        <div class="videoplaceholder">{text:Featured campaign media}</div>
 
                     </header>
                     <section>
