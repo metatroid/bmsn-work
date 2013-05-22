@@ -109,7 +109,7 @@ textarea {
        url('http://bradleymanning.org/fonts/DINCond-Medium.woff') format('woff'),
        url('http://bradleymanning.org/fonts/DINCond-Medium.ttf')  format('truetype'),
        url('http://bradleymanning.org/fonts/DINCond-Medium.svg#rnaisupbug') format('svg');
-       
+
   font-style:   normal;
   font-weight:  400;
 }
@@ -119,9 +119,9 @@ textarea {
   src: url('http://bradleymanning.org/fonts/DINCond-Regular.eot');
   src: url('http://bradleymanning.org/fonts/DINCond-Regular.eot?#iefix') format('embedded-opentype'),
        url('http://bradleymanning.org/fonts/DINCond-Regular.woff') format('woff'),
-       url('http://bradleymanning.org/fonts/DINCond-Regular.ttf')  format('truetype'), 
-       url('http://bradleymanning.org/fonts/DINCond-Regular.svg#nazkuocnyq') format('svg'); 
-       
+       url('http://bradleymanning.org/fonts/DINCond-Regular.ttf')  format('truetype'),
+       url('http://bradleymanning.org/fonts/DINCond-Regular.svg#nazkuocnyq') format('svg');
+
   font-style:   normal;
   font-weight:  400;
 }
@@ -323,7 +323,8 @@ section h3 {
     width: 65%;
 }
 #campaign-tweet-this ul,
-#campaign-collaborators ul {
+#campaign-collaborators ul,
+#campaign-updates-opt-in ul {
     clear: both;
     list-style-type: none;
     margin: 0; padding: 0;
@@ -363,6 +364,28 @@ section h3 {
 }
 #campaign-collaborators li a:hover {
     text-decoration: underline;
+}
+
+#campaign-updates-opt-in h3 {
+    float: right;
+}
+#campaign-updates-opt-in ul {
+    clear: none;
+}
+#campaign-updates-opt-in .SocialMedia {
+    float: left;
+    margin-top: 5px;
+}
+#campaign-updates-opt-in .SocialMedia a {
+    display: block;
+    width: 47px;
+    height: 47px;
+    background: url(../img/sprite.icons.social-media.black.png) no-repeat;
+    text-indent: -9999px;
+}
+#campaign-facebook.SocialMedia a {
+    margin-left: 8px;
+    background-position: -56px 0;
 }
 
 h4 {
@@ -610,7 +633,6 @@ p.intro {
 .clearfix {
     *zoom: 1;
 }
-
 /* ==========================================================================
    User-supplied CSS. (This is from Tumblr's "customize" edit box.)
    ========================================================================== */
