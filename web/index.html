@@ -13,7 +13,6 @@
         <meta name="Copyright" content="I Am Hero theme - Copyright {CopyrightYears} by Bradley Manning Support Network">
 
         <!-- Show/hide template sections. (Default is to show all.) -->
-        <meta name="if:Collaborators" content="1">
         <meta name="if:Sign up for updates" content="1">
         <!-- Initialize custom variables. -->
         <meta name="text:Hero name" content="Bradley Manning">
@@ -24,6 +23,38 @@
         <meta name="text:Tweet3" content="Content for Tweet 3 #IAmBradleyManning #DropTheCharge">
         <meta name="text:Tweet4" content="Content for Tweet 4 #IAmBradleyManning #DropTheCharge">
         <meta name="text:Tweet5" content="Content for Tweet 5 #IAmBradleyManning #DropTheCharge">
+        <meta name="text:Collaborator 1 name" content="">
+        <meta name="text:Collaborator 1 website" content="">
+        <meta name="text:Collaborator 2 name" content="">
+        <meta name="text:Collaborator 2 website" content="">
+        <meta name="text:Collaborator 3 name" content="">
+        <meta name="text:Collaborator 3 website" content="">
+        <meta name="text:Collaborator 4 name" content="">
+        <meta name="text:Collaborator 4 website" content="">
+        <meta name="text:Collaborator 5 name" content="">
+        <meta name="text:Collaborator 5 website" content="">
+        <meta name="text:Collaborator 6 name" content="">
+        <meta name="text:Collaborator 6 website" content="">
+        <meta name="text:Collaborator 7 name" content="">
+        <meta name="text:Collaborator 7 website" content="">
+        <meta name="text:Collaborator 8 name" content="">
+        <meta name="text:Collaborator 8 website" content="">
+        <meta name="text:Collaborator 9 name" content="">
+        <meta name="text:Collaborator 9 website" content="">
+        <meta name="text:Collaborator 10 name" content="">
+        <meta name="text:Collaborator 10 website" content="">
+        <meta name="text:Collaborator 11 name" content="">
+        <meta name="text:Collaborator 11 website" content="">
+        <meta name="text:Collaborator 12 name" content="">
+        <meta name="text:Collaborator 12 website" content="">
+        <meta name="text:Collaborator 13 name" content="">
+        <meta name="text:Collaborator 13 website" content="">
+        <meta name="text:Collaborator 14 name" content="">
+        <meta name="text:Collaborator 14 website" content="">
+        <meta name="text:Collaborator 15 name" content="">
+        <meta name="text:Collaborator 15 website" content="">
+        <meta name="text:Collaborator 16 name" content="">
+        <meta name="text:Collaborator 16 website" content="">
 
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="apple-touch-icon" href="{PortraitURL-128}">
@@ -316,17 +347,19 @@ section h3 {
     text-align: right;
     line-height: 67px;
 }
-#campaign-collaborators li a {
+#campaign-collaborators li {
     float: left;
     width: 50%;
     padding-bottom: 3px;
     border-bottom: 2px solid rgba(227, 227, 227, 1);
-    text-decoration: none;
-    color: inherit;
 }
-#campaign-collaborators li:nth-child(odd) a {
+#campaign-collaborators li:nth-child(odd) {
     width: 47%;
     margin-right: 3%;
+}
+#campaign-collaborators li a {
+    text-decoration: none;
+    color: inherit;
 }
 #campaign-collaborators li a:hover {
     text-decoration: underline;
@@ -673,28 +706,30 @@ p.intro {
                     {/block:Photo}
                     {/block:Posts}
 
+                    {block:IfCollaborator1Name}
                     <section id="campaign-collaborators">
                         <h3>Collaborators:</h3>
                         <p class="section-description">Allies in the fight to free Bradley.</p>
                         <ul>
-                            <li><a href="TK-LINK">Collaborator 1 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 2 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 3 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 4 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 5 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 6 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 7 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 8 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 9 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 10 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 11 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 12 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 13 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 14 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 15 name or website address</a></li>
-                            <li><a href="TK-LINK">Collaborator 16 name or website address</a></li>
+                            <li>{block:IfCollaborator1Website}<a href="{text:Collaborator 1 website}">{/block:IfCollaborator1Website}{text:Collaborator 1 name}{block:IfCollaborator1Website}</a>{/block:IfCollaborator1Website}</li>
+                            {block:IfCollaborator2Name}<li>{block:IfCollaborator2Website}<a href="{text:Collaborator 2 website}">{/block:IfCollaborator2Website}{text:Collaborator 2 name}{block:IfCollaborator2Website}</a>{/block:IfCollaborator2Website}</li>{/block:IfCollaborator2Name}
+                            {block:IfCollaborator3Name}<li>{block:IfCollaborator3Website}<a href="{text:Collaborator 3 website}">{/block:IfCollaborator3Website}{text:Collaborator 3 name}{block:IfCollaborator3Website}</a>{/block:IfCollaborator3Website}</li>{/block:IfCollaborator3Name}
+                            {block:IfCollaborator4Name}<li>{block:IfCollaborator4Website}<a href="{text:Collaborator 4 website}">{/block:IfCollaborator4Website}{text:Collaborator 4 name}{block:IfCollaborator4Website}</a>{/block:IfCollaborator4Website}</li>{/block:IfCollaborator4Name}
+                            {block:IfCollaborator5Name}<li>{block:IfCollaborator5Website}<a href="{text:Collaborator 5 website}">{/block:IfCollaborator5Website}{text:Collaborator 5 name}{block:IfCollaborator5Website}</a>{/block:IfCollaborator5Website}</li>{/block:IfCollaborator5Name}
+                            {block:IfCollaborator6Name}<li>{block:IfCollaborator6Website}<a href="{text:Collaborator 6 website}">{/block:IfCollaborator6Website}{text:Collaborator 6 name}{block:IfCollaborator6Website}</a>{/block:IfCollaborator6Website}</li>{/block:IfCollaborator6Name}
+                            {block:IfCollaborator7Name}<li>{block:IfCollaborator7Website}<a href="{text:Collaborator 7 website}">{/block:IfCollaborator7Website}{text:Collaborator 7 name}{block:IfCollaborator7Website}</a>{/block:IfCollaborator7Website}</li>{/block:IfCollaborator7Name}
+                            {block:IfCollaborator8Name}<li>{block:IfCollaborator8Website}<a href="{text:Collaborator 8 website}">{/block:IfCollaborator8Website}{text:Collaborator 8 name}{block:IfCollaborator8Website}</a>{/block:IfCollaborator8Website}</li>{/block:IfCollaborator8Name}
+                            {block:IfCollaborator9Name}<li>{block:IfCollaborator9Website}<a href="{text:Collaborator 9 website}">{/block:IfCollaborator9Website}{text:Collaborator 9 name}{block:IfCollaborator9Website}</a>{/block:IfCollaborator9Website}</li>{/block:IfCollaborator9Name}
+                            {block:IfCollaborator10Name}<li>{block:IfCollaborator10Website}<a href="{text:Collaborator 10 website}">{/block:IfCollaborator10Website}{text:Collaborator 10 name}{block:IfCollaborator10Website}</a>{/block:IfCollaborator10Website}</li>{/block:IfCollaborator10Name}
+                            {block:IfCollaborator11Name}<li>{block:IfCollaborator11Website}<a href="{text:Collaborator 11 website}">{/block:IfCollaborator11Website}{text:Collaborator 11 name}{block:IfCollaborator11Website}</a>{/block:IfCollaborator11Website}</li>{/block:IfCollaborator11Name}
+                            {block:IfCollaborator12Name}<li>{block:IfCollaborator12Website}<a href="{text:Collaborator 12 website}">{/block:IfCollaborator12Website}{text:Collaborator 12 name}{block:IfCollaborator12Website}</a>{/block:IfCollaborator12Website}</li>{/block:IfCollaborator12Name}
+                            {block:IfCollaborator13Name}<li>{block:IfCollaborator13Website}<a href="{text:Collaborator 13 website}">{/block:IfCollaborator13Website}{text:Collaborator 13 name}{block:IfCollaborator13Website}</a>{/block:IfCollaborator13Website}</li>{/block:IfCollaborator13Name}
+                            {block:IfCollaborator14Name}<li>{block:IfCollaborator14Website}<a href="{text:Collaborator 14 website}">{/block:IfCollaborator14Website}{text:Collaborator 14 name}{block:IfCollaborator14Website}</a>{/block:IfCollaborator14Website}</li>{/block:IfCollaborator14Name}
+                            {block:IfCollaborator15Name}<li>{block:IfCollaborator15Website}<a href="{text:Collaborator 15 website}">{/block:IfCollaborator15Website}{text:Collaborator 15 name}{block:IfCollaborator15Website}</a>{/block:IfCollaborator15Website}</li>{/block:IfCollaborator15Name}
+                            {block:IfCollaborator16Name}<li>{block:IfCollaborator16Website}<a href="{text:Collaborator 16 website}">{/block:IfCollaborator16Website}{text:Collaborator 16 name}{block:IfCollaborator16Website}</a>{/block:IfCollaborator16Website}</li>{/block:IfCollaborator16Name}
                         </ul>
                     </section>
+                    {/block:IfCollaborator1Name}
 
                 </article>
 
