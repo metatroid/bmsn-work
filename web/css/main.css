@@ -220,6 +220,9 @@ section h3,
 section h3 {
     text-align: left;
 }
+#tumblr-content h3, #tumblr-content h4 {
+    display: inline-block;
+}
 .section-description {
     font-size: 29px;
     line-height: 31px;
