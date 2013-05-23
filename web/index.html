@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{block:Searchpage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:TagPage}{Tag} - {/block:TagPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+        <title>{block:SearchPage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:TagPage}{Tag} - {/block:TagPage}{block:DayPage}Posts on {Month} {DayOfMonth}, {Year} - {/block:DayPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
         <meta name="description" content="{MetaDescription}">
         <meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -447,6 +447,9 @@ h7 {
 .post-type-photos h3 {
     float: none;
 }
+.post-type-photos h4 {
+    margin: .1em 0 .25em;
+}
 .PaginationLabel {
     position: absolute;
     left: -9999px;
@@ -689,7 +692,7 @@ footer a {
                     <!-- TODO: Include non-Photo posts in this template? -->
                     <section id="tumblr-content" class="post-type-photos">
                         <h3>Your photos</h3>
-                        <h4>(May 22, 2013)</h4>
+                        {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                         <div class="brickbox">
                             {block:Posts}
                             {block:Photo}
@@ -745,13 +748,26 @@ footer a {
 
                         <nav class="Pagination clearfix">
                         <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
-                        <p>Page {CurrentPage} of {TotalPages}.</p>
+                        {block:Pagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:Pagination}
+                        {block:DayPagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:DayPagination}
                         {block:Pagination}
                         <ol role="navigation" aria-labelledby="theme-pagination-label">
-                            {block:PreviousPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPage}#tumblr-content">Previous</a></li>{/block:PreviousPage}
-                            {block:NextPage}<li id="PaginationNext" rel="next"><a href="{NextPage}#tumblr-content">Next</a></li>{/block:NextPage}
+                            {block:PreviousPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPage}#tumblr-content">{lang:Previous page}</a></li>{/block:PreviousPage}
+                            {block:NextPage}<li id="PaginationNext" rel="next"><a href="{NextPage}#tumblr-content">{lang:Next page}</a></li>{/block:NextPage}
                         </ol>
                         {/block:Pagination}
+                        {block:PermalinkPagination}
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            {block:PreviousPost}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPost}#tumblr-content">{lang:Previous post}</a></li>{/block:PreviousPost}
+                            {block:NextPost}<li id="PaginationNext" rel="next"><a href="{NextPost}#tumblr-content">{lang:Next post}</a></li>{/block:NextPost}
+                        </ol>
+                        {/block:PermalinkPagination}
+                        {block:DayPagination}
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            {block:PreviousDayPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousDayPage}#tumblr-content">{lang:Previous day}</a></li>{/block:PreviousDayPage}
+                            {block:NextDayPage}<li id="PaginationNext" rel="next"><a href="{NextDayPage}#tumblr-content">{lang:Next day}</a></li>{/block:NextDayPage}
+                        </ol>
+                        {/block:DayPagination}
                         </nav>
                     </section>
 
