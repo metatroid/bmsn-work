@@ -75,7 +75,7 @@
 
                     <section id="campaign-tweet-this">
                         <h3>Tweet this:</h3>
-                        <p class="section-description">Choose a tweet from the options below, or <a href="https://twitter.com/intent/tweet/?text=%40SaveBradley">write your own</a>!</p>
+                        <p class="section-description">Choose a tweet from the options below,<br /> or <a href="https://twitter.com/intent/tweet/?text=%40SaveBradley">write your own</a>!</p>
                         <ul>
                             <!-- TODO: Get the URLEncoded versions of these custom variables? -->
                             <li><a href="https://twitter.com/intent/tweet/?text=Content%20for%20Tweet%201%20%23IAmBradleyManning%20%23DropTheCharge">Content for Tweet 1 #IAmBradleyManning #DropTheCharge</a></li>
@@ -363,12 +363,16 @@
                             <li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/SaveBradley" title="Follow @SaveBradley on Twitter">@SaveBradley</a></li>
                             <li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/SaveBradley" title="Like SaveBradley on Facebook">Facebook page for SaveBradley</a></li>
                             <li id="campaign-newsletter">
-                                <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
+                                <!-- <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
                                     <fieldset><legend>Subscribe by email</legend>
                                         <label for="campaign-subscriber-email">Your email address:</label>
                                         <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0">
                                         <input type="submit" value="Subscribe" id="index-submit">
                                     </fieldset>
+                                </form> -->
+                                <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
+                                    <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
+                                    <input type="submit" value="SUBSCRIBE" id="index-submit">
                                 </form>
                             </li>
                         </ul>

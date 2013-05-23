@@ -111,6 +111,18 @@ nav p {
     left: 25%; /* Half width & 25% left offset centers us here. */
     text-align: center;
 }
+.Pagination p{
+    text-transform: uppercase;
+    font-size: 11px;
+    height: 100%;
+    line-height: 40px;
+}
+#PaginationPrevious,#PaginationNext{
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    text-decoration: none;
+    color: #222;
+}
 #PaginationPrevious {
     float: left;
 }
@@ -119,6 +131,12 @@ nav p {
 }
 #PaginationNext {
     float: right;
+}
+#PaginationPrevious a, #PaginationNext a{
+    text-decoration: none;
+    color: rgb(109, 106, 106);
+    text-transform: uppercase;
+    font-weight: bold;
 }
 #PaginationNext a::after {
     content: ' \2192'; /* Rightwards arrow. */
@@ -190,8 +208,8 @@ h3 {
 
 section {
     border-top: 10px solid #222;
-    margin: 20px 0;
-    padding: 10px 0;
+    margin: 20px 0 20px 0;
+    padding: 25px 0 10px 0px;
     text-align: left;
     clear: both;
 }
@@ -203,22 +221,26 @@ section h3,
 }
 
 section h3 {
-    float: left;
+    text-align: left;
 }
 .section-description {
-    font-size: 40px;
-    line-height: .75em;
+    font-size: 29px;
+    line-height: 31px;
     text-transform: uppercase;
-    text-align: justify;
-    margin: 0;
+    text-align: left;
+    margin: 3px 0 20px 0;
 }
 .section-description a:link {
     color: red;
 }
-
-#campaign-tweet-this .section-description {
-    float: right;
-    width: 65%;
+#campaign-collaborators h3, #campaign-tweet-this h3 {
+    display: inline-block;
+    vertical-align: top;
+}
+#campaign-collaborators .section-description, #campaign-tweet-this .section-description {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: top;
 }
 #campaign-tweet-this ul,
 #campaign-collaborators ul,
@@ -228,23 +250,42 @@ section h3 {
     margin: 0; padding: 0;
 }
 #campaign-tweet-this li a {
+    position: relative;
     display: block;
-    padding: 5px;
-    margin: 5px 0;
-    border: 2px solid rgba(109, 109, 109, 1);
-    border-radius: 5px;
-    background: rgba(227, 227, 227, 1);
+    padding: 12px 12px 12px 52px;
+    border: 1px solid rgba(214, 214, 214, 1);
+    background: rgba(247, 247, 247, 1);
     text-decoration: none;
-    color: inherit;
+    color: rgba(71, 71, 71, 1);
+    font-size: 14px;
+    line-height: 19px;
+    margin: 8px 50px;
+    height: 65px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+#campaign-tweet-this li a:before {
+    content: ">";
+    position: absolute;
+    font-size: 50px;
+    font-family: DINmed;
+    left: 17px;
+    height: 100%;
+    line-height: 30px;
+    color: rgb(167, 167, 167);
+}
+#campaign-tweet-this li a:hover:before {
+    color: #fff;
 }
 #campaign-tweet-this li a:hover {
-    border-style: ridge;
-    background: rgba(247, 247, 247, 1);
+    color: #fff;
+    background: rgba(182, 180, 180, 1);
 }
 
 #campaign-collaborators .section-description {
     text-align: right;
-    line-height: 67px;
+    line-height: 56px;
 }
 #campaign-collaborators li {
     float: left;
@@ -285,7 +326,27 @@ section h3 {
     margin-left: 8px;
     background-position: -56px 0;
 }
-
+#campaign-newsletter input[type="text"] {
+    color: rgb(66, 66, 66);
+    padding: 0px 10px;
+    border: 1px solid #ccc;
+    width: 300px;
+    margin: 0px 10px 0px 210px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: top;
+}
+#campaign-newsletter input[type="submit"] {
+    border: 0px;
+    height: 42px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 10px;
+    color: rgb(109, 106, 106);
+    text-transform: uppercase;
+    background-color: rgb(235, 235, 235);
+    font-weight: bold;
+}
 h4 {
     margin-bottom: 40px;
     font-weight: 400;
@@ -346,7 +407,7 @@ h7 {
 }
 
 .post-type-photos h3 {
-    float: none;
+    margin-bottom: 30px;
 }
 .post-type-photos h4 {
     margin: .1em 0 .25em;
