@@ -75,7 +75,7 @@
                 $('.dayscount').text(todate) 
                 
                 // masonry for item layouts
-                var picSelector = $('.photos');
+                var picSelector = $('.brickbox');
                 if (Modernizr.mq('only all and (max-width: 480px)')){
 		            picSelector.imagesLoaded(function(){
 		               picSelector.masonry({
@@ -674,36 +674,38 @@ footer a {
                         </ul>
                     </section>
                     {/block:IfTweet1}
-                    
+
                     <!-- TODO: Include non-Photo posts in this template? -->
-                    <section class="photos">
-                        {block:Posts}
-                        {block:Photo}
-                        <div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
-                            <div class="thumbnail">
-                                <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
-                                <img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />
-                            </div>
-                            <ul class="post_type">
-                                <li class="type"><a href="{Permalink}" title="Photo - Permalink">{lang:Photo} - {lang:Permalink}</a></li>
-                            </ul>
-                            <!-- TODO: Insert RebloggedFrom code? -->
-                            {block:Caption}<div class="post_caption">{Caption}</div>{/block:Caption}
-
-                            {block:IndexPage}
-                            <div class="meta">
-                                <!-- TODO: Insert additional meta variables? -->
-
-                                {block:HasTags}
-                                <ul class="tags">
-                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}">{Tag}</a></li>{/block:Tags}
+                    <section id="post-type-photos">
+                        <h3>Your photos</h3>
+                        <div class="brickbox">
+                            {block:Posts}
+                            {block:Photo}
+                            <div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                                <div class="thumbnail">
+                                    <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
+                                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />
+                                </div>
+                                <ul class="post_type">
+                                    <li class="type"><a href="{Permalink}" title="Photo - Permalink">{lang:Photo} - {lang:Permalink}</a></li>
                                 </ul>
-                                {/block:HasTags}
+                                <!-- TODO: Insert RebloggedFrom code? -->
+                                {block:Caption}<div class="post_caption">{Caption}</div>{/block:Caption}
 
-                                <ul class="utils">
-                                    {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCount}</a></li>{/block:NoteCount}
+                                {block:IndexPage}
+                                <div class="meta">
+                                    <!-- TODO: Insert additional meta variables? -->
 
-                                    <li class="share">
+                                    {block:HasTags}
+                                    <ul class="tags">
+                                        {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}">{Tag}</a></li>{/block:Tags}
+                                    </ul>
+                                    {/block:HasTags}
+
+                                    <ul class="utils">
+                                        {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCount}</a></li>{/block:NoteCount}
+
+                                        <li class="share">
                                         <a href="{ShortURL}" title="{lang:Share this}{block:PostSummary}: {PostSummary}{/block:PostSummary}" rel="share_this">{lang:Share this}</a>
                                         <div class="share_links_wrapper">
                                             <a href="{ShortURL}" title="{lang:Share this}" class="share_this_over">{lang:Share this}</a>
@@ -713,20 +715,30 @@ footer a {
                                                 <div class="share_links_facebook" data-permalink="{URLEncodedPermalink}"></div>
                                             </div>
                                         </div>
-                                    </li>
-                                </ul>
-                                {block:Date}
-                                <ul class="time">
-                                    <li class="timeago"><a href="{Permalink}">{TimeAgo}</a></li>
-                                </ul>
-                                {/block:Date}
-                            </div>
-                            {/block:IndexPage}
-                            <!-- TODO: Insert PermalinkPage blocks? -->
+                                        </li>
+                                    </ul>
+                                    {block:Date}
+                                    <ul class="time">
+                                        <li class="timeago"><a href="{Permalink}">{TimeAgo}</a></li>
+                                    </ul>
+                                    {/block:Date}
+                                </div>
+                                {/block:IndexPage}
+                                <!-- TODO: Insert PermalinkPage blocks? -->
 
-                        </div>
-                        {/block:Photo}
-                        {/block:Posts}
+                            </div>
+                            {/block:Photo}
+                            {/block:Posts}
+                        </div><!-- .brickbox -->
+
+                        <nav class="Pagination clearfix">
+                        <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
+                        <p>Page CURRENT_PAGE of <a href="TK-LINK">LAST_PAGE</a>.</p>
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            <li id="PaginationPrevious" rel="prev"><a href="TK-LINK">Previous</a></li>
+                            <li id="PaginationNext" rel="next"><a href="TK-LINK">Next</a></li>
+                        </ol>
+                        </nav>
                     </section>
 
                     {block:IfCollaborator1Name}
