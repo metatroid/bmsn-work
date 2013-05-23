@@ -348,6 +348,9 @@ h7 {
 .post-type-photos h3 {
     float: none;
 }
+.post-type-photos h4 {
+    margin: .1em 0 .25em;
+}
 .PaginationLabel {
     position: absolute;
     left: -9999px;
