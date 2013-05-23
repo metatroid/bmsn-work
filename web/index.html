@@ -193,34 +193,33 @@ body {
 }
 
 /* ==============
-    MOBILE: Menu
+    Navigation
    ============== */
 
-nav ul {
+nav {
+    position: relative;
+}
+nav p {
+    position: absolute;
+    bottom: 0;
+    width: 840px; /* Same width as its "wrapper". */
+    text-align: center;
+}
+nav ol, nav p {
     margin: 0;
     padding: 0;
 }
-
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #e44d26;
+#PaginationPrevious {
+    float: left;
 }
-
-nav a:hover,
-nav a:visited {
-    color: white;
+#PaginationPrevious a::before {
+    content: '\2190  '; /* Leftwards arrow. */
 }
-
-nav a:hover {
-    text-decoration: underline;
+#PaginationNext {
+    float: right;
+}
+#PaginationNext a::after {
+    content: ' \2192'; /* Rightwards arrow. */
 }
 
 /* ==============
@@ -424,15 +423,10 @@ h7 {
     margin-bottom: 25px;
 }
 
-
-p {
-    margin-bottom: 25px;
+.post_caption p {
+    margin-top: 0;
 }
 
-
-p.intro {
-    font-size: 18px;
-}
 .dayscount{
     display: inline-block;
     vertical-align: top;
@@ -448,6 +442,15 @@ p.intro {
     margin-bottom:30px;
     text-align: center;
 }
+
+#post-type-photos h3 {
+    float: none;
+}
+.PaginationLabel {
+    position: absolute;
+    left: -9999px;
+}
+
 .box{
 	display: block;
 	width: 260px;
@@ -468,6 +471,7 @@ p.intro {
 	width: 100%;
 	height: 100%;
 	background: #eee;
+	margin: 0 0 10px 0;
 }
 .box .thumbnail img{
 	max-width: 100%;
@@ -508,6 +512,12 @@ p.intro {
 }
 .box .utils,.box .time{
 	display: none;
+}
+ul.tags li::after {
+    content: ', ';
+}
+ul.tags li:last-child::after {
+    content: '';
 }
 
 footer a {
