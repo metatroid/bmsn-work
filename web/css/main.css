@@ -239,6 +239,9 @@ section h3 {
     margin-left: 20px;
     vertical-align: top;
 }
+#campaign-tweet-this .section-description span {
+    display: block;
+}
 #campaign-tweet-this ul,
 #campaign-collaborators ul,
 #campaign-updates-opt-in ul {
