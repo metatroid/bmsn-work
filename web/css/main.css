@@ -117,29 +117,26 @@ nav p {
     height: 100%;
     line-height: 40px;
 }
-#PaginationPrevious,#PaginationNext{
-    padding: 10px;
-    background-color: rgb(235, 235, 235);
-    text-decoration: none;
-    color: #222;
-}
 #PaginationPrevious {
     float: left;
-}
-#PaginationPrevious a::before {
-    content: '\2190  '; /* Leftwards arrow. */
 }
 #PaginationNext {
     float: right;
 }
+#PaginationPrevious a::before {
+    content: '\2190  '; /* Leftwards arrow. */
+}
+#PaginationNext a::after {
+    content: ' \2192'; /* Rightwards arrow. */
+}
 #PaginationPrevious a, #PaginationNext a{
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
     text-decoration: none;
     color: rgb(109, 106, 106);
     text-transform: uppercase;
     font-weight: bold;
-}
-#PaginationNext a::after {
-    content: ' \2192'; /* Rightwards arrow. */
 }
 
 /* ==============
