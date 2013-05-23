@@ -677,7 +677,7 @@ footer a {
                     {block:IfTweet1}
                     <section id="campaign-tweet-this">
                         <h3>Tweet this:</h3>
-                        <p class="section-description">Choose a tweet from the options below, or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
+                        <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
                         <ul>
                             <!-- TODO: Get the URLEncoded versions of these custom variables? -->
                             <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
@@ -747,27 +747,27 @@ footer a {
                         </div><!-- .brickbox -->
 
                         <nav class="Pagination clearfix">
-                        <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
-                        {block:Pagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:Pagination}
-                        {block:DayPagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:DayPagination}
-                        {block:Pagination}
-                        <ol role="navigation" aria-labelledby="theme-pagination-label">
-                            {block:PreviousPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPage}#tumblr-content">{lang:Previous page}</a></li>{/block:PreviousPage}
-                            {block:NextPage}<li id="PaginationNext" rel="next"><a href="{NextPage}#tumblr-content">{lang:Next page}</a></li>{/block:NextPage}
-                        </ol>
-                        {/block:Pagination}
-                        {block:PermalinkPagination}
-                        <ol role="navigation" aria-labelledby="theme-pagination-label">
-                            {block:PreviousPost}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPost}#tumblr-content">{lang:Previous post}</a></li>{/block:PreviousPost}
-                            {block:NextPost}<li id="PaginationNext" rel="next"><a href="{NextPost}#tumblr-content">{lang:Next post}</a></li>{/block:NextPost}
-                        </ol>
-                        {/block:PermalinkPagination}
-                        {block:DayPagination}
-                        <ol role="navigation" aria-labelledby="theme-pagination-label">
-                            {block:PreviousDayPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousDayPage}#tumblr-content">{lang:Previous day}</a></li>{/block:PreviousDayPage}
-                            {block:NextDayPage}<li id="PaginationNext" rel="next"><a href="{NextDayPage}#tumblr-content">{lang:Next day}</a></li>{/block:NextDayPage}
-                        </ol>
-                        {/block:DayPagination}
+                            <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
+                            {block:Pagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:Pagination}
+                            {block:DayPagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:DayPagination}
+                            {block:Pagination}
+                            <ol role="navigation" aria-labelledby="theme-pagination-label">
+                                {block:PreviousPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPage}#tumblr-content">{lang:Previous page}</a></li>{/block:PreviousPage}
+                                {block:NextPage}<li id="PaginationNext" rel="next"><a href="{NextPage}#tumblr-content">{lang:Next page}</a></li>{/block:NextPage}
+                            </ol>
+                            {/block:Pagination}
+                            {block:PermalinkPagination}
+                            <ol role="navigation" aria-labelledby="theme-pagination-label">
+                                {block:PreviousPost}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPost}#tumblr-content">{lang:Previous post}</a></li>{/block:PreviousPost}
+                                {block:NextPost}<li id="PaginationNext" rel="next"><a href="{NextPost}#tumblr-content">{lang:Next post}</a></li>{/block:NextPost}
+                            </ol>
+                            {/block:PermalinkPagination}
+                            {block:DayPagination}
+                            <ol role="navigation" aria-labelledby="theme-pagination-label">
+                                {block:PreviousDayPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousDayPage}#tumblr-content">{lang:Previous day}</a></li>{/block:PreviousDayPage}
+                                {block:NextDayPage}<li id="PaginationNext" rel="next"><a href="{NextDayPage}#tumblr-content">{lang:Next day}</a></li>{/block:NextDayPage}
+                            </ol>
+                            {/block:DayPagination}
                         </nav>
                     </section>
 
@@ -806,7 +806,7 @@ footer a {
                                 <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
                                     <fieldset><legend>Subscribe by email</legend>
                                         <label for="campaign-subscriber-email">Your email address:</label>
-                                        <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0">
+                                        <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
                                         <input type="submit" value="Subscribe" id="index-submit">
                                     </fieldset>
                                 </form>
