@@ -198,20 +198,25 @@ body {
 
 nav {
     position: relative;
+    text-align: center;
 }
 nav ol, nav ul, nav p {
     margin: 0;
     padding: 0;
 }
-#MainNav ul {
-    position: absolute;
-    right: 0;
+#MainNav {
+    border-bottom: 10px solid;
+    padding: 10px;
+}
+#MainNav li {
+    display: inline;
 }
 #MainNav a {
-    display: block;
+    display: inline-block;
     color: #FFF;
     background: #222;
     padding: 15px 20px;
+    margin: 0 10px;
     text-decoration: none;
 }
 #MainNav a:hover {
