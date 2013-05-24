@@ -555,7 +555,7 @@ h7 {
 	box-sizing: border-box;
 	position: relative;
 }
-.box .thumbnail {
+.box header {
 	display: block;
 	position: relative;
 	width: 100%;
@@ -563,21 +563,11 @@ h7 {
 	background: #eee;
 	margin: 0 0 10px 0;
 }
-.box .thumbnail img{
+.box header img {
 	max-width: 100%;
 }
-.box ul.post_type {
-	float: right;
-	margin: 0;
-	padding-left: 10px;
-	list-style-type: none;
-}
-.box ul.post_type li {
-	float: right;
-	margin-left: 4px;
-}
-.box div.photo ul.post_type li a, .photoset ul.post_type li a {
-	background: url(http://static.tumblr.com/fftf9xi/gfEl5z3kn/icon_photo.png) 0 0;
+.box header p {
+	margin: 5px 0 0 0;
 }
 .box .meta {
 	display: block;
@@ -588,8 +578,6 @@ h7 {
 	padding: 0 0 0 14px;
 	list-style-type: none;
 	background: url(http://static.tumblr.com/fftf9xi/adwl5z3sd/icon_tags.png) 0 0 no-repeat;
-	padding-bottom: 10px;
-	border-bottom: 1px dotted #d5d5d5;
 }
 .box ul.tags li {
 	display: inline;
@@ -600,9 +588,6 @@ h7 {
 .box ul.tags li a{
 	color: #26B262;
 }
-.box .utils,.box .time{
-	display: none;
-}
 ul.tags li::after {
     content: ', ';
 }
@@ -610,7 +595,7 @@ ul.tags li:last-child::after {
     content: '';
 }
 
-footer a {
+footer h3 a {
     display: block;
 }
 
