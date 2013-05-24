@@ -113,6 +113,7 @@ nav ol, nav ul, nav p {
     background: #222;
     color: #FFF;
     padding: 0 10px;
+    margin: 0 5px;
     text-decoration: none;
     -moz-border-radius: 0 0 8px 8px;
     -webkit-border-radius: 0 0 8px 8px;
