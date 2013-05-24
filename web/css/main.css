@@ -444,7 +444,6 @@ h7 {
 
 .box{
 	display: block;
-	width: 260px;
 	padding: 20px;
 	background: rgba(240, 240, 240,1);
 	margin: 0 0 20px 0;
@@ -455,6 +454,9 @@ h7 {
 	line-height:14px;
 	box-sizing: border-box;
 	position: relative;
+}
+.IndexPage .box {
+	width: 260px;
 }
 .box header {
 	display: block;
