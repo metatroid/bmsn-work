@@ -788,7 +788,7 @@ ul.tags li:last-child::after {
                             <header>
                                 <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
                                 <img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />
-                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
                             </header>
                             <!-- TODO: Insert RebloggedFrom code? -->
                             {block:Caption}{Caption}{/block:Caption}
@@ -798,7 +798,7 @@ ul.tags li:last-child::after {
                         <article id="{PostID}" class="box brick post text{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
                             <header>
                                 {block:Title}<h1>{Title}</h1>{/block:Title}
-                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
                             </header>
                             {Body}
                             {block:More}<p class="morelink"><a href="{Permalink}">{lang:Read more}</a></p>{/block:More}
