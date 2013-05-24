@@ -105,25 +105,23 @@ nav ol, nav ul, nav p {
     margin: 0;
     padding: 0;
 }
-#MainNav {
-    border-bottom: 10px solid;
-    padding: 10px;
-}
 #MainNav li {
     display: inline;
 }
 #MainNav a {
     display: inline-block;
-    color: #FFF;
     background: #222;
-    padding: 15px 20px;
-    margin: 0 10px;
+    color: #FFF;
+    padding: 0 10px;
     text-decoration: none;
+    -moz-border-radius: 0 0 8px 8px;
+    -webkit-border-radius: 0 0 8px 8px;
+    border-radius: 0 0 8px 8px;
 }
 #MainNav a:hover {
+    text-decoration: underline;
     background-color: rgb(235, 235, 235);
     color: #222;
-    text-decoration: underline;
 }
 .Pagination p {
     position: absolute;
