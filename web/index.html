@@ -199,18 +199,32 @@ body {
 nav {
     position: relative;
 }
-nav ol, nav p {
+nav ol, nav ul, nav p {
     margin: 0;
     padding: 0;
 }
-nav p {
+#MainNav ul {
+    position: absolute;
+    right: 0;
+}
+#MainNav a {
+    display: block;
+    color: #FFF;
+    background: #222;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+#MainNav a:hover {
+    background-color: rgb(235, 235, 235);
+    color: #222;
+    text-decoration: underline;
+}
+.Pagination p {
     position: absolute;
     bottom: 0;
     width: 420px; /* Half width as its "wrapper", so we don't cover nearby links. */
     left: 25%; /* Half width & 25% left offset centers us here. */
     text-align: center;
-}
-.Pagination p{
     text-transform: uppercase;
     font-size: 11px;
     height: 100%;
@@ -521,6 +535,7 @@ h7 {
 .post-type-photos h4 {
     margin: .1em 0 .25em;
 }
+.skiplink,
 .PaginationLabel {
     position: absolute;
     left: -9999px;
