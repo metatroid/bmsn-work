@@ -248,12 +248,10 @@ section h3 {
 }
 #campaign-collaborators h3, #campaign-tweet-this h3 {
     display: inline-block;
-    vertical-align: top;
 }
 #campaign-collaborators .section-description, #campaign-tweet-this .section-description {
     display: inline-block;
     margin-left: 20px;
-    vertical-align: top;
 }
 #campaign-tweet-this .section-description span {
     display: block;
