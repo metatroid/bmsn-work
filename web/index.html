@@ -776,8 +776,14 @@ ul.tags li:last-child::after {
                 {/block:IfTweet1}
 
                 <section id="tumblr-content" class="{block:IndexPage}IndexPage{/block:IndexPage}">
-                    {block:IndexPage}<h3>Your photos</h3>{/block:IndexPage}
-                    {block:Posts}{block:PermalinkPage}{block:Photo}<h3>Your photos</h3>{/block:Photo}{/block:PermalinkPage}{/block:Posts}
+                    {block:IndexPage}
+                    <h3>Your photos</h3>
+                    {block:SubmissionsEnabled}<h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4>{/block:SubmissionsEnabled}
+                    {/block:IndexPage}
+                    {block:Posts}{block:PermalinkPage}{block:Photo}
+                    <h3>Your photos</h3>
+                    {block:SubmissionsEnabled}<h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4>{/block:SubmissionsEnabled}
+                    {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
                     <div class="brickbox">
