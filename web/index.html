@@ -749,14 +749,12 @@ footer a {
 
         <div class="main-container">
             <nav id="MainNav">
+                {block:HasPages}
                 <a href="#MainContent" class="skiplink">Skip to main content.</a>
                 <ul role="navigation" aria-label="Site navigation">
-                    <li><a href="TK-LINK">Page 1</a></li>
-                    <li><a href="TK-LINK">Page 2</a></li>
-                    <li><a href="TK-LINK">Page 3</a></li>
-                    <li><a href="TK-LINK">Page 4</a></li>
-                    <li><a href="TK-LINK">Page 5</a></li>
+                    {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
                 </ul>
+                {/block:HasPages}
             </nav>
 
             <div id="MainContent" class="main wrapper clearfix">
