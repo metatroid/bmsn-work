@@ -770,7 +770,8 @@ footer h3 a {
                 {/block:IfTweet1}
 
                 <section id="tumblr-content" class="{block:IndexPage}IndexPage{/block:IndexPage}">
-                    <h3>Your photos</h3>
+                    {block:IndexPage}<h3>Your photos</h3>{/block:IndexPage}
+                    {block:Posts}{block:PermalinkPage}{block:Photo}<h3>Your photos</h3>{/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
                     <div class="brickbox">
