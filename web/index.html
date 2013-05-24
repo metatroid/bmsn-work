@@ -46,6 +46,10 @@
 						}); 
 	                })
                 }
+                // Encode Tweet contents correctly into links.
+                $('#campaign-tweet-this li a').each(function () {
+                    $(this).attr('href', 'https://twitter.com/intent/tweet/?text=' + encodeURIComponent($(this).text()));
+                });
             })
         </script>
     </head>
