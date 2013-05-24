@@ -758,161 +758,143 @@ footer a {
             </nav>
 
             <div id="MainContent" class="main wrapper clearfix">
+                <header>
+                    <h1>I am {text:Hero name}</h1>
+                    <div id="description">{Description}</div>
+                    {block:IfImprisonedOnDate}
+                    <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
+                    {/block:IfImprisonedOnDate}
+                    {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
+                </header>
 
-                <article>
-                    <header>
-                        <h1>I am {text:Hero name}</h1>
-                        <div id="description">{Description}</div>
-                        {block:IfImprisonedOnDate}
-                        <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
-                        {/block:IfImprisonedOnDate}
-                        {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
-                    </header>
+                {block:IfTweet1}
+                <section id="campaign-tweet-this">
+                    <h3>Tweet this:</h3>
+                    <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
+                    <ul>
+                        <!-- TODO: Get the URLEncoded versions of these custom variables? -->
+                        <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
+                        {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}">{text:Tweet2}</a></li>{/block:IfTweet2}
+                        {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}">{text:Tweet3}</a></li>{/block:IfTweet3}
+                        {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}">{text:Tweet4}</a></li>{/block:IfTweet4}
+                        {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}">{text:Tweet5}</a></li>{/block:IfTweet5}
+                    </ul>
+                </section>
+                {/block:IfTweet1}
 
-                    {block:IfTweet1}
-                    <section id="campaign-tweet-this">
-                        <h3>Tweet this:</h3>
-                        <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
-                        <ul>
-                            <!-- TODO: Get the URLEncoded versions of these custom variables? -->
-                            <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
-                            {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}">{text:Tweet2}</a></li>{/block:IfTweet2}
-                            {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}">{text:Tweet3}</a></li>{/block:IfTweet3}
-                            {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}">{text:Tweet4}</a></li>{/block:IfTweet4}
-                            {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}">{text:Tweet5}</a></li>{/block:IfTweet5}
-                        </ul>
-                    </section>
-                    {/block:IfTweet1}
+                <section id="tumblr-content" class="post-type-photos">
+                    <h3>Your photos</h3>
+                    {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
+                    {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
+                    <div class="brickbox">
+                        {block:Posts}
+                        {block:Photo}
+                        <article id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
+                                <img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            <!-- TODO: Insert RebloggedFrom code? -->
+                            {block:Caption}{Caption}{/block:Caption}
+                        {/block:Photo}
 
-                    <!-- TODO: Include non-Photo posts in this template? -->
-                    <section id="tumblr-content" class="post-type-photos">
-                        <h3>Your photos</h3>
-                        {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
-                        {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
-                        <div class="brickbox">
-                            {block:Posts}
-                            {block:Photo}
-                            <div id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
-                                <div class="thumbnail">
-                                    <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
-                                    <img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />
-                                </div>
-                                <ul class="post_type">
-                                    <li class="type"><a href="{Permalink}" title="Photo - Permalink">{lang:Photo} - {lang:Permalink}</a></li>
+                        {block:Text}
+                        <article id="{PostID}" class="box brick post text{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                {block:Title}<h1>{Title}</h1>{/block:Title}
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            {Body}
+                            {block:More}<p class="morelink"><a href="{Permalink}">{lang:Read more}</a></p>{/block:More}
+                        {/block:Text}
+
+                        {block:IndexPage}
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
                                 </ul>
-                                <!-- TODO: Insert RebloggedFrom code? -->
-                                {block:Caption}<div class="post_caption">{Caption}</div>{/block:Caption}
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCount} {lang:Notes}</a></li>{/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                </ul>
+                            </footer>
+                        {/block:IndexPage}
+                            <!-- TODO: Insert PermalinkPage blocks? -->
+                        </article><!-- .box.brick.post -->
+                        {/block:Posts}
+                    </div><!-- .brickbox -->
 
-                                {block:IndexPage}
-                                <div class="meta">
-                                    <!-- TODO: Insert additional meta variables? -->
+                    <nav class="Pagination clearfix">
+                        <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
+                        {block:Pagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:Pagination}
+                        {block:DayPagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:DayPagination}
+                        {block:Pagination}
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            {block:PreviousPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPage}#tumblr-content">{lang:Previous page}</a></li>{/block:PreviousPage}
+                            {block:NextPage}<li id="PaginationNext" rel="next"><a href="{NextPage}#tumblr-content">{lang:Next page}</a></li>{/block:NextPage}
+                        </ol>
+                        {/block:Pagination}
+                        {block:PermalinkPagination}
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            {block:PreviousPost}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPost}#tumblr-content">{lang:Previous post}</a></li>{/block:PreviousPost}
+                            {block:NextPost}<li id="PaginationNext" rel="next"><a href="{NextPost}#tumblr-content">{lang:Next post}</a></li>{/block:NextPost}
+                        </ol>
+                        {/block:PermalinkPagination}
+                        {block:DayPagination}
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            {block:PreviousDayPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousDayPage}#tumblr-content">{lang:Previous day}</a></li>{/block:PreviousDayPage}
+                            {block:NextDayPage}<li id="PaginationNext" rel="next"><a href="{NextDayPage}#tumblr-content">{lang:Next day}</a></li>{/block:NextDayPage}
+                        </ol>
+                        {/block:DayPagination}
+                    </nav>
+                </section>
 
-                                    {block:HasTags}
-                                    <ul class="tags">
-                                        {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}">{Tag}</a></li>{/block:Tags}
-                                    </ul>
-                                    {/block:HasTags}
+                {block:IfCollaborator1Name}
+                <section id="campaign-collaborators">
+                    <h3>Collaborators:</h3>
+                    <p class="section-description">Allies in the fight to free {text:Hero name}.</p>
+                    <ul>
+                        <li>{block:IfCollaborator1Website}<a href="{text:Collaborator 1 website}">{/block:IfCollaborator1Website}{text:Collaborator 1 name}{block:IfCollaborator1Website}</a>{/block:IfCollaborator1Website}</li>
+                        {block:IfCollaborator2Name}<li>{block:IfCollaborator2Website}<a href="{text:Collaborator 2 website}">{/block:IfCollaborator2Website}{text:Collaborator 2 name}{block:IfCollaborator2Website}</a>{/block:IfCollaborator2Website}</li>{/block:IfCollaborator2Name}
+                        {block:IfCollaborator3Name}<li>{block:IfCollaborator3Website}<a href="{text:Collaborator 3 website}">{/block:IfCollaborator3Website}{text:Collaborator 3 name}{block:IfCollaborator3Website}</a>{/block:IfCollaborator3Website}</li>{/block:IfCollaborator3Name}
+                        {block:IfCollaborator4Name}<li>{block:IfCollaborator4Website}<a href="{text:Collaborator 4 website}">{/block:IfCollaborator4Website}{text:Collaborator 4 name}{block:IfCollaborator4Website}</a>{/block:IfCollaborator4Website}</li>{/block:IfCollaborator4Name}
+                        {block:IfCollaborator5Name}<li>{block:IfCollaborator5Website}<a href="{text:Collaborator 5 website}">{/block:IfCollaborator5Website}{text:Collaborator 5 name}{block:IfCollaborator5Website}</a>{/block:IfCollaborator5Website}</li>{/block:IfCollaborator5Name}
+                        {block:IfCollaborator6Name}<li>{block:IfCollaborator6Website}<a href="{text:Collaborator 6 website}">{/block:IfCollaborator6Website}{text:Collaborator 6 name}{block:IfCollaborator6Website}</a>{/block:IfCollaborator6Website}</li>{/block:IfCollaborator6Name}
+                        {block:IfCollaborator7Name}<li>{block:IfCollaborator7Website}<a href="{text:Collaborator 7 website}">{/block:IfCollaborator7Website}{text:Collaborator 7 name}{block:IfCollaborator7Website}</a>{/block:IfCollaborator7Website}</li>{/block:IfCollaborator7Name}
+                        {block:IfCollaborator8Name}<li>{block:IfCollaborator8Website}<a href="{text:Collaborator 8 website}">{/block:IfCollaborator8Website}{text:Collaborator 8 name}{block:IfCollaborator8Website}</a>{/block:IfCollaborator8Website}</li>{/block:IfCollaborator8Name}
+                        {block:IfCollaborator9Name}<li>{block:IfCollaborator9Website}<a href="{text:Collaborator 9 website}">{/block:IfCollaborator9Website}{text:Collaborator 9 name}{block:IfCollaborator9Website}</a>{/block:IfCollaborator9Website}</li>{/block:IfCollaborator9Name}
+                        {block:IfCollaborator10Name}<li>{block:IfCollaborator10Website}<a href="{text:Collaborator 10 website}">{/block:IfCollaborator10Website}{text:Collaborator 10 name}{block:IfCollaborator10Website}</a>{/block:IfCollaborator10Website}</li>{/block:IfCollaborator10Name}
+                        {block:IfCollaborator11Name}<li>{block:IfCollaborator11Website}<a href="{text:Collaborator 11 website}">{/block:IfCollaborator11Website}{text:Collaborator 11 name}{block:IfCollaborator11Website}</a>{/block:IfCollaborator11Website}</li>{/block:IfCollaborator11Name}
+                        {block:IfCollaborator12Name}<li>{block:IfCollaborator12Website}<a href="{text:Collaborator 12 website}">{/block:IfCollaborator12Website}{text:Collaborator 12 name}{block:IfCollaborator12Website}</a>{/block:IfCollaborator12Website}</li>{/block:IfCollaborator12Name}
+                        {block:IfCollaborator13Name}<li>{block:IfCollaborator13Website}<a href="{text:Collaborator 13 website}">{/block:IfCollaborator13Website}{text:Collaborator 13 name}{block:IfCollaborator13Website}</a>{/block:IfCollaborator13Website}</li>{/block:IfCollaborator13Name}
+                        {block:IfCollaborator14Name}<li>{block:IfCollaborator14Website}<a href="{text:Collaborator 14 website}">{/block:IfCollaborator14Website}{text:Collaborator 14 name}{block:IfCollaborator14Website}</a>{/block:IfCollaborator14Website}</li>{/block:IfCollaborator14Name}
+                        {block:IfCollaborator15Name}<li>{block:IfCollaborator15Website}<a href="{text:Collaborator 15 website}">{/block:IfCollaborator15Website}{text:Collaborator 15 name}{block:IfCollaborator15Website}</a>{/block:IfCollaborator15Website}</li>{/block:IfCollaborator15Name}
+                        {block:IfCollaborator16Name}<li>{block:IfCollaborator16Website}<a href="{text:Collaborator 16 website}">{/block:IfCollaborator16Website}{text:Collaborator 16 name}{block:IfCollaborator16Website}</a>{/block:IfCollaborator16Website}</li>{/block:IfCollaborator16Name}
+                    </ul>
+                </section>
+                {/block:IfCollaborator1Name}
 
-                                    <ul class="utils">
-                                        {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCount}</a></li>{/block:NoteCount}
-
-                                        <li class="share">
-                                        <a href="{ShortURL}" title="{lang:Share this}{block:PostSummary}: {PostSummary}{/block:PostSummary}" rel="share_this">{lang:Share this}</a>
-                                        <div class="share_links_wrapper">
-                                            <a href="{ShortURL}" title="{lang:Share this}" class="share_this_over">{lang:Share this}</a>
-                                            <div class="share_links">
-                                                <input type="text" value="{ShortURL}" class="short_url_text" readonly="">
-                                                <div class="share_links_twitter" data-permalink="{Permalink}"{block:Twitter} data-twitterusername="{TwitterUsername}"{/block:Twitter}></div>
-                                                <div class="share_links_facebook" data-permalink="{URLEncodedPermalink}"></div>
-                                            </div>
-                                        </div>
-                                        </li>
-                                    </ul>
-                                    {block:Date}
-                                    <ul class="time">
-                                        <li class="timeago"><a href="{Permalink}">{TimeAgo}</a></li>
-                                    </ul>
-                                    {/block:Date}
-                                </div>
-                                {/block:IndexPage}
-                                <!-- TODO: Insert PermalinkPage blocks? -->
-
-                            </div>
-                            {/block:Photo}
-                            {/block:Posts}
-                        </div><!-- .brickbox -->
-
-                        <nav class="Pagination clearfix">
-                            <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
-                            {block:Pagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:Pagination}
-                            {block:DayPagination}<p>Page {CurrentPage} of {TotalPages}.</p>{/block:DayPagination}
-                            {block:Pagination}
-                            <ol role="navigation" aria-labelledby="theme-pagination-label">
-                                {block:PreviousPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPage}#tumblr-content">{lang:Previous page}</a></li>{/block:PreviousPage}
-                                {block:NextPage}<li id="PaginationNext" rel="next"><a href="{NextPage}#tumblr-content">{lang:Next page}</a></li>{/block:NextPage}
-                            </ol>
-                            {/block:Pagination}
-                            {block:PermalinkPagination}
-                            <ol role="navigation" aria-labelledby="theme-pagination-label">
-                                {block:PreviousPost}<li id="PaginationPrevious" rel="prev"><a href="{PreviousPost}#tumblr-content">{lang:Previous post}</a></li>{/block:PreviousPost}
-                                {block:NextPost}<li id="PaginationNext" rel="next"><a href="{NextPost}#tumblr-content">{lang:Next post}</a></li>{/block:NextPost}
-                            </ol>
-                            {/block:PermalinkPagination}
-                            {block:DayPagination}
-                            <ol role="navigation" aria-labelledby="theme-pagination-label">
-                                {block:PreviousDayPage}<li id="PaginationPrevious" rel="prev"><a href="{PreviousDayPage}#tumblr-content">{lang:Previous day}</a></li>{/block:PreviousDayPage}
-                                {block:NextDayPage}<li id="PaginationNext" rel="next"><a href="{NextDayPage}#tumblr-content">{lang:Next day}</a></li>{/block:NextDayPage}
-                            </ol>
-                            {/block:DayPagination}
-                        </nav>
-                    </section>
-
-                    {block:IfCollaborator1Name}
-                    <section id="campaign-collaborators">
-                        <h3>Collaborators:</h3>
-                        <p class="section-description">Allies in the fight to free {text:Hero name}.</p>
-                        <ul>
-                            <li>{block:IfCollaborator1Website}<a href="{text:Collaborator 1 website}">{/block:IfCollaborator1Website}{text:Collaborator 1 name}{block:IfCollaborator1Website}</a>{/block:IfCollaborator1Website}</li>
-                            {block:IfCollaborator2Name}<li>{block:IfCollaborator2Website}<a href="{text:Collaborator 2 website}">{/block:IfCollaborator2Website}{text:Collaborator 2 name}{block:IfCollaborator2Website}</a>{/block:IfCollaborator2Website}</li>{/block:IfCollaborator2Name}
-                            {block:IfCollaborator3Name}<li>{block:IfCollaborator3Website}<a href="{text:Collaborator 3 website}">{/block:IfCollaborator3Website}{text:Collaborator 3 name}{block:IfCollaborator3Website}</a>{/block:IfCollaborator3Website}</li>{/block:IfCollaborator3Name}
-                            {block:IfCollaborator4Name}<li>{block:IfCollaborator4Website}<a href="{text:Collaborator 4 website}">{/block:IfCollaborator4Website}{text:Collaborator 4 name}{block:IfCollaborator4Website}</a>{/block:IfCollaborator4Website}</li>{/block:IfCollaborator4Name}
-                            {block:IfCollaborator5Name}<li>{block:IfCollaborator5Website}<a href="{text:Collaborator 5 website}">{/block:IfCollaborator5Website}{text:Collaborator 5 name}{block:IfCollaborator5Website}</a>{/block:IfCollaborator5Website}</li>{/block:IfCollaborator5Name}
-                            {block:IfCollaborator6Name}<li>{block:IfCollaborator6Website}<a href="{text:Collaborator 6 website}">{/block:IfCollaborator6Website}{text:Collaborator 6 name}{block:IfCollaborator6Website}</a>{/block:IfCollaborator6Website}</li>{/block:IfCollaborator6Name}
-                            {block:IfCollaborator7Name}<li>{block:IfCollaborator7Website}<a href="{text:Collaborator 7 website}">{/block:IfCollaborator7Website}{text:Collaborator 7 name}{block:IfCollaborator7Website}</a>{/block:IfCollaborator7Website}</li>{/block:IfCollaborator7Name}
-                            {block:IfCollaborator8Name}<li>{block:IfCollaborator8Website}<a href="{text:Collaborator 8 website}">{/block:IfCollaborator8Website}{text:Collaborator 8 name}{block:IfCollaborator8Website}</a>{/block:IfCollaborator8Website}</li>{/block:IfCollaborator8Name}
-                            {block:IfCollaborator9Name}<li>{block:IfCollaborator9Website}<a href="{text:Collaborator 9 website}">{/block:IfCollaborator9Website}{text:Collaborator 9 name}{block:IfCollaborator9Website}</a>{/block:IfCollaborator9Website}</li>{/block:IfCollaborator9Name}
-                            {block:IfCollaborator10Name}<li>{block:IfCollaborator10Website}<a href="{text:Collaborator 10 website}">{/block:IfCollaborator10Website}{text:Collaborator 10 name}{block:IfCollaborator10Website}</a>{/block:IfCollaborator10Website}</li>{/block:IfCollaborator10Name}
-                            {block:IfCollaborator11Name}<li>{block:IfCollaborator11Website}<a href="{text:Collaborator 11 website}">{/block:IfCollaborator11Website}{text:Collaborator 11 name}{block:IfCollaborator11Website}</a>{/block:IfCollaborator11Website}</li>{/block:IfCollaborator11Name}
-                            {block:IfCollaborator12Name}<li>{block:IfCollaborator12Website}<a href="{text:Collaborator 12 website}">{/block:IfCollaborator12Website}{text:Collaborator 12 name}{block:IfCollaborator12Website}</a>{/block:IfCollaborator12Website}</li>{/block:IfCollaborator12Name}
-                            {block:IfCollaborator13Name}<li>{block:IfCollaborator13Website}<a href="{text:Collaborator 13 website}">{/block:IfCollaborator13Website}{text:Collaborator 13 name}{block:IfCollaborator13Website}</a>{/block:IfCollaborator13Website}</li>{/block:IfCollaborator13Name}
-                            {block:IfCollaborator14Name}<li>{block:IfCollaborator14Website}<a href="{text:Collaborator 14 website}">{/block:IfCollaborator14Website}{text:Collaborator 14 name}{block:IfCollaborator14Website}</a>{/block:IfCollaborator14Website}</li>{/block:IfCollaborator14Name}
-                            {block:IfCollaborator15Name}<li>{block:IfCollaborator15Website}<a href="{text:Collaborator 15 website}">{/block:IfCollaborator15Website}{text:Collaborator 15 name}{block:IfCollaborator15Website}</a>{/block:IfCollaborator15Website}</li>{/block:IfCollaborator15Name}
-                            {block:IfCollaborator16Name}<li>{block:IfCollaborator16Website}<a href="{text:Collaborator 16 website}">{/block:IfCollaborator16Website}{text:Collaborator 16 name}{block:IfCollaborator16Website}</a>{/block:IfCollaborator16Website}</li>{/block:IfCollaborator16Name}
-                        </ul>
-                    </section>
-                    {/block:IfCollaborator1Name}
-
-                    {block:IfSignUpForUpdates}
-                    <section id="campaign-updates-opt-in">
-                        <h3>Sign up for campaign updates</h3>
-                        <ul>
-                            {block:Twitter}<li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/{TwitterUsername}" title="Follow @{TwitterUsername} on Twitter">@{TwitterUsername}</a></li>{/block:Twitter}
-                            {block:IfFacebookUsername}<li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/{text:Facebook Username}" title="Like {text:Facebook Username} on Facebook">Facebook page for {text:Facebook Username}</a></li>{/block:IfFacebookUsername}
-                            <li id="campaign-newsletter">
-                                <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
-                                    <fieldset><legend>Subscribe by email</legend>
-                                        <label for="campaign-subscriber-email">Your email address:</label>
-                                        <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
-                                        <input type="submit" value="Subscribe" id="index-submit">
-                                    </fieldset>
-                                </form>
-                            </li>
-                        </ul>
-                    </section>
-                    {/block:IfSignUpForUpdates}
-
-                </article>
-
+                {block:IfSignUpForUpdates}
+                <section id="campaign-updates-opt-in">
+                    <h3>Sign up for campaign updates</h3>
+                    <ul>
+                        {block:Twitter}<li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/{TwitterUsername}" title="Follow @{TwitterUsername} on Twitter">@{TwitterUsername}</a></li>{/block:Twitter}
+                        {block:IfFacebookUsername}<li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/{text:Facebook Username}" title="Like {text:Facebook Username} on Facebook">Facebook page for {text:Facebook Username}</a></li>{/block:IfFacebookUsername}
+                        <li id="campaign-newsletter">
+                            <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
+                                <fieldset><legend>Subscribe by email</legend>
+                                    <label for="campaign-subscriber-email">Your email address:</label>
+                                    <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
+                                    <input type="submit" value="Subscribe" id="index-submit">
+                                </fieldset>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+                {/block:IfSignUpForUpdates}
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
