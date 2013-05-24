@@ -812,7 +812,7 @@ ul.tags li:last-child::after {
                                 </ul>
                                 {/block:HasTags}
                                 <ul class="utils">
-                                    {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCount} {lang:Notes}</a></li>{/block:NoteCount}
+                                    {block:NoteCount}<li class="notes"><a href="{Permalink}#notes">{NoteCountWithLabel}</a></li>{/block:NoteCount}
                                     <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
                                 </ul>
                             </footer>
