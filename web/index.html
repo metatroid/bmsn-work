@@ -26,26 +26,66 @@
                 var today = moment();
                 var todate = today.diff(moment('May 19, 2010'),'days');
                 $('.dayscount').text(todate) 
-                
-                // masonry for item layouts
-                var picSelector = $('.IndexPage .brickbox');
-                if (Modernizr.mq('only all and (max-width: 480px)')){
-		            picSelector.imagesLoaded(function(){
-		               picSelector.masonry({
-							itemSelector: '.box',
-							columnWidth: 300,
-							gutterWidth: 10
-						}); 
-	                })
-                } else {
-	                picSelector.imagesLoaded(function(){
-		               picSelector.masonry({
-							itemSelector: '.box',
-							columnWidth: 260,
-							gutterWidth: 20
-						}); 
-	                })
-                }
+
+                // Helper function for calling masonry.
+                function doMasonry () {
+                    // masonry for item layouts
+                    var picSelector = $('.IndexPage .brickbox');
+                    if (Modernizr.mq('only all and (max-width: 480px)')){
+                        picSelector.imagesLoaded(function(){
+                           picSelector.masonry({
+                                itemSelector: '.box',
+                                columnWidth: 300,
+                                gutterWidth: 10
+                            });
+                        })
+                    } else {
+                        picSelector.imagesLoaded(function(){
+                           picSelector.masonry({
+                                itemSelector: '.box',
+                                columnWidth: 260,
+                                gutterWidth: 20
+                            });
+                        })
+                    }
+                };
+
+                // Show/hide captions in images.
+                function hideTumblrPostContents () {
+                    $('#tumblr-content .post > *').each(function () {
+                        $(this).hide();
+                    });
+                    // Then show just the headers.
+                    $('#tumblr-content .post header').each(function () {
+                        $(this).show();
+                    });
+                };
+                hideTumblrPostContents();
+
+                $('#tumblr-content.IndexPage').append('<button id="btn-toggle-tumblr" data-state="show">Show descriptions</button>');
+                $('#btn-toggle-tumblr').click(function () {
+                        var state = $(this).data('state');
+                        // If the button is in the "show" state,
+                        if ('show' === state) {
+                            // clicking it should show all the post details.
+                            $('#tumblr-content .post > *').each(function () {
+                                $(this).show();
+                            });
+                            doMasonry(); // Reflow elements due to size change.
+                            // and switch its state.
+                            $(this).data('state', 'hide');
+                            $(this).text('Hide descriptions');
+                        } else {
+                            // otherwise, it should hide everything when clicked.
+                            hideTumblrPostContents();
+                            doMasonry();
+                            $(this).data('state', 'show');
+                            $(this).text('Show descriptions');
+                        }
+                });
+
+                doMasonry();
+
                 // Encode Tweet contents correctly into links.
                 $('#campaign-tweet-this li a').each(function () {
                     $(this).attr('href', 'https://twitter.com/intent/tweet/?text=' + encodeURIComponent($(this).text()));
