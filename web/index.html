@@ -73,26 +73,66 @@
                 var today = moment();
                 var todate = today.diff(moment('{text:Imprisoned on date}'),'days');
                 $('.dayscount').text(todate) 
-                
-                // masonry for item layouts
-                var picSelector = $('.IndexPage .brickbox');
-                if (Modernizr.mq('only all and (max-width: 480px)')){
-		            picSelector.imagesLoaded(function(){
-		               picSelector.masonry({
-							itemSelector: '.box',
-							columnWidth: 300,
-							gutterWidth: 10
-						}); 
-	                })
-                } else {
-	                picSelector.imagesLoaded(function(){
-		               picSelector.masonry({
-							itemSelector: '.box',
-							columnWidth: 260,
-							gutterWidth: 20
-						}); 
-	                })
-                }
+
+                // Helper function for calling masonry.
+                function doMasonry () {
+                    // masonry for item layouts
+                    var picSelector = $('.IndexPage .brickbox');
+                    if (Modernizr.mq('only all and (max-width: 480px)')){
+                        picSelector.imagesLoaded(function(){
+                           picSelector.masonry({
+                                itemSelector: '.box',
+                                columnWidth: 300,
+                                gutterWidth: 10
+                            });
+                        })
+                    } else {
+                        picSelector.imagesLoaded(function(){
+                           picSelector.masonry({
+                                itemSelector: '.box',
+                                columnWidth: 260,
+                                gutterWidth: 20
+                            });
+                        })
+                    }
+                };
+
+                // Show/hide captions in images.
+                function hideTumblrPostContents () {
+                    $('#tumblr-content .post > *').each(function () {
+                        $(this).hide();
+                    });
+                    // Then show just the headers.
+                    $('#tumblr-content .post header').each(function () {
+                        $(this).show();
+                    });
+                };
+                hideTumblrPostContents();
+
+                $('#tumblr-content.IndexPage').append('<button id="btn-toggle-tumblr" data-state="show">Show descriptions</button>');
+                $('#btn-toggle-tumblr').click(function () {
+                        var state = $(this).data('state');
+                        // If the button is in the "show" state,
+                        if ('show' === state) {
+                            // clicking it should show all the post details.
+                            $('#tumblr-content .post > *').each(function () {
+                                $(this).show();
+                            });
+                            doMasonry(); // Reflow elements due to size change.
+                            // and switch its state.
+                            $(this).data('state', 'hide');
+                            $(this).text('Hide descriptions');
+                        } else {
+                            // otherwise, it should hide everything when clicked.
+                            hideTumblrPostContents();
+                            doMasonry();
+                            $(this).data('state', 'show');
+                            $(this).text('Show descriptions');
+                        }
+                });
+
+                doMasonry();
+
                 // Encode Tweet contents correctly into links.
                 $('#campaign-tweet-this li a').each(function () {
                     $(this).attr('href', 'https://twitter.com/intent/tweet/?text=' + encodeURIComponent($(this).text()));
@@ -786,13 +826,13 @@ ul.tags li:last-child::after {
                     {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
+                    <h4><a href="/archive">View them all</a></h4>
                     <div class="brickbox">
                         {block:Posts}
                         {block:Photo}
                         <article id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
                             <header>
-                                <!-- TODO: Insert LightboxForFullSizeImages overlay? -->
-                                <img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />
+                                {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />{LinkCloseTag}
                                 <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
                             </header>
                             <!-- TODO: Insert RebloggedFrom code? -->
