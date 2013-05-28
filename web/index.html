@@ -804,10 +804,10 @@ ul.tags li:last-child::after {
                 <header>
                     <h1>I am {text:Hero name}</h1>
                     <div id="description">{Description}</div>
-                    {block:IfImprisonedOnDate}
-                    <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
-                    {/block:IfImprisonedOnDate}
+                    {block:IndexPage}
+                    {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
                     {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
+                    {/block:IndexPage}
                 </header>
 
                 {block:IfTweet1}
@@ -836,7 +836,7 @@ ul.tags li:last-child::after {
                     {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
-                    <h4><a href="/archive">View them all</a></h4>
+                    {block:IndexPage}<h4><a href="/archive">View them all</a></h4>{/block:IndexPage}
                     <div class="brickbox">
                         {block:Posts}
                         {block:Photo}
