@@ -147,7 +147,8 @@ nav ol, nav ul, nav p {
 #PaginationNext a::after {
     content: ' \2192'; /* Rightwards arrow. */
 }
-.Pagination li a {
+.Pagination li a,
+#campaign-newsletter input[type="submit"] {
     display: inline-block;
     padding: 10px;
     background-color: rgb(235, 235, 235);
@@ -306,7 +307,8 @@ section h3 {
     color: #fff;
 }
 #campaign-tweet-this li a:hover,
-.Pagination li a:hover {
+.Pagination li a:hover,
+#campaign-newsletter input[type="submit"]:hover {
     color: #fff;
     background: rgba(182, 180, 180, 1);
 }
@@ -354,6 +356,9 @@ section h3 {
     margin-left: 8px;
     background-position: -56px 0;
 }
+#campaign-newsletter {
+    clear: both;
+}
 #campaign-newsletter fieldset {
     border: none;
 }
@@ -372,15 +377,9 @@ section h3 {
     vertical-align: top;
 }
 #campaign-newsletter input[type="submit"] {
-    border: 0px;
+    border: 0;
     height: 42px;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0px 10px;
-    color: rgb(109, 106, 106);
-    text-transform: uppercase;
-    background-color: rgb(235, 235, 235);
-    font-weight: bold;
+    padding: 0 10px;
 }
 h4 {
     font-weight: 400;
