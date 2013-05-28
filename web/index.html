@@ -810,21 +810,6 @@ ul.tags li:last-child::after {
                     {/block:IndexPage}
                 </header>
 
-                {block:IfTweet1}
-                <section id="campaign-tweet-this">
-                    <h3>Tweet this:</h3>
-                    <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
-                    <ul>
-                        <!-- TODO: Get the URLEncoded versions of these custom variables? -->
-                        <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
-                        {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}">{text:Tweet2}</a></li>{/block:IfTweet2}
-                        {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}">{text:Tweet3}</a></li>{/block:IfTweet3}
-                        {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}">{text:Tweet4}</a></li>{/block:IfTweet4}
-                        {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}">{text:Tweet5}</a></li>{/block:IfTweet5}
-                    </ul>
-                </section>
-                {/block:IfTweet1}
-
                 <section id="tumblr-content" class="{block:IndexPage}IndexPage{/block:IndexPage}">
                     {block:IndexPage}
                     <h3>Your photos</h3>
@@ -947,6 +932,21 @@ ul.tags li:last-child::after {
                         {/block:DayPagination}
                     </nav>
                 </section>
+
+                {block:IfTweet1}
+                <section id="campaign-tweet-this">
+                    <h3>Tweet this:</h3>
+                    <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
+                    <ul>
+                        <!-- TODO: Get the URLEncoded versions of these custom variables? -->
+                        <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
+                        {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}">{text:Tweet2}</a></li>{/block:IfTweet2}
+                        {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}">{text:Tweet3}</a></li>{/block:IfTweet3}
+                        {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}">{text:Tweet4}</a></li>{/block:IfTweet4}
+                        {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}">{text:Tweet5}</a></li>{/block:IfTweet5}
+                    </ul>
+                </section>
+                {/block:IfTweet1}
 
                 {block:IfCollaborator1Name}
                 <section id="campaign-collaborators">
