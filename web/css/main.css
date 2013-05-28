@@ -354,6 +354,9 @@ section h3 {
     margin-left: 8px;
     background-position: -56px 0;
 }
+#campaign-newsletter {
+    clear: both;
+}
 #campaign-newsletter fieldset {
     border: none;
 }
