@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="Copyright" content="I Am Hero theme - Copyright {CopyrightYears} by Bradley Manning Support Network">
+
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="apple-touch-icon" href="{PortraitURL-128}">
+
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="//static.tumblr.com/ybjxbev/b2Smn6hxh/normalize-1.1.0.css">
+        <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
+        <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="//static.tumblr.com/ggljfev/ljEmn48ha/moment-2.0.0.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            	// date change thingy
+                var today = moment();
+                var todate = today.diff(moment('May 19, 2010'),'days');
+                $('.dayscount').text(todate) 
+                
+                // masonry for item layouts
+                var picSelector = $('.IndexPage .brickbox');
+                if (Modernizr.mq('only all and (max-width: 480px)')){
+		            picSelector.imagesLoaded(function(){
+		               picSelector.masonry({
+							itemSelector: '.box',
+							columnWidth: 300,
+							gutterWidth: 10
+						}); 
+	                })
+                } else {
+	                picSelector.imagesLoaded(function(){
+		               picSelector.masonry({
+							itemSelector: '.box',
+							columnWidth: 260,
+							gutterWidth: 20
+						}); 
+	                })
+                }
+            })
+        </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="main-container">
+            <nav id="MainNav">
+                <a href="#MainContent" class="skiplink">Skip to main content.</a>
+                <ul role="navigation" aria-label="Site navigation">
+                    <li><a href="TK-LINK">Page 1</a></li>
+                    <li><a href="TK-LINK">Page 2</a></li>
+                    <li><a href="TK-LINK">Page 3</a></li>
+                    <li><a href="TK-LINK">Page 4</a></li>
+                    <li><a href="TK-LINK">Page 5</a></li>
+                </ul>
+            </nav>
+
+            <div id="MainContent" class="main wrapper clearfix">
+                <header>
+                    <h1>I am Bradley Manning</h1>
+                    <h2>Nobody was harmed by these leaks. Only the public benefited.</h2>
+                    <h3>Drop the "Aiding the Enemy" Charge.</h3>
+                    <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
+                    <div class="videoplaceholder"></div>
+                </header>
+
+                <section id="campaign-tweet-this">
+                    <h3>Tweet this:</h3>
+                    <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text=%40SaveBradley">write your own</a>!</p>
+                    <ul>
+                        <!-- TODO: Get the URLEncoded versions of these custom variables? -->
+                        <li><a href="https://twitter.com/intent/tweet/?text=Content%20for%20Tweet%201%20%23IAmBradleyManning%20%23DropTheCharge">Content for Tweet 1 #IAmBradleyManning #DropTheCharge</a></li>
+                        <li><a href="https://twitter.com/intent/tweet/?text=Content%20for%20Tweet%202%20%23IAmBradleyManning%20%23DropTheCharge">Content for Tweet 2 #IAmBradleyManning #DropTheCharge</a></li>
+                        <li><a href="https://twitter.com/intent/tweet/?text=Content%20for%20Tweet%203%20%23IAmBradleyManning%20%23DropTheCharge">Content for Tweet 3 #IAmBradleyManning #DropTheCharge</a></li>
+                        <li><a href="https://twitter.com/intent/tweet/?text=Content%20for%20Tweet%204%20%23IAmBradleyManning%20%23DropTheCharge">Content for Tweet 4 #IAmBradleyManning #DropTheCharge</a></li>
+                        <li><a href="https://twitter.com/intent/tweet/?text=Content%20for%20Tweet%205%20%23IAmBradleyManning%20%23DropTheCharge">Content for Tweet 5 #IAmBradleyManning #DropTheCharge</a></li>
+                    </ul>
+                </section>
+
+                <section id="tumblr-content" class="">
+                    <h3>Your photos</h3>
+                    <h4 class="tumblr-submit-label"><a href="TK-LINK">Submission label</a></h4>
+                    <h4>(Day or Tag Page Subtitle)</h4>
+                    <h4><a href="http://iam.bradleymanning.org/archive">View them all</a></h4>
+                    <div class="brickbox">
+                        <article id="50696243945" class="box brick post photo t_xs bradley_manning politics wikileaks united_states submission submission isotope-item">
+                            <header>
+                                <iframe width="700" height="525" src="http://www.youtube.com/embed/o-P3OXML00s?wmode=transparent&amp;autohide=1&amp;egm=0&amp;hd=1&amp;iv_load_policy=3&amp;modestbranding=1&amp;rel=0&amp;showinfo=0&amp;showsearch=0" frameborder="0" allowfullscreen=""></iframe>
+                                <p><a href="http://iam.bradleymanning.org/post/50696243945" rel="bookmark" title="Permalink for Text Post Title">Published <time pubdate="pubdate">16 hours ago</time></a></p>
+                            </header>
+                            <p>Bradley Manning is accused of nothing more than telling us the truth.&nbsp; His charges include life in prison and possibly the death penalty. Americans of all walks of life are calling him a hero.&nbsp; <a href="http://iam.bradleymanning.org">Join our photo petition</a>.</p>
+                            <p><em>Video produced by Agit-Pop Communications and the Bradley Manning Support Network. &nbsp;Music by <a href="/post/6299047833">DJ Spooky</a>.&nbsp;</em></p>
+                            <footer>
+                                <ul class="tags">
+                                    <li class=" tt_Bradley+Manning"><a href="http://iam.bradleymanning.org/tagged/Bradley-Manning" title="I am Bradley Manning - Bradley Manning" rel="tag">Bradley Manning</a></li>
+                                    <li class=" tt_politics"><a href="http://iam.bradleymanning.org/tagged/politics" title="I am Bradley Manning - politics" rel="tag">politics</a></li>
+                                    <li class=" tt_wikileaks"><a href="http://iam.bradleymanning.org/tagged/wikileaks" title="I am Bradley Manning - wikileaks" rel="tag">wikileaks</a></li>
+                                    <li class=" tt_United+States"><a href="http://iam.bradleymanning.org/tagged/United-States" title="I am Bradley Manning - United States" rel="tag">United States</a></li>
+                                    <li class=" tt_submission"><a href="http://iam.bradleymanning.org/tagged/submission" title="I am Bradley Manning - submission" rel="tag">submission</a></li>
+                                </ul>
+                                <ul class="utils">
+                                    <li class="notes">
+                                        <a href="http://iam.bradleymanning.org/post/50696243945#notes">12 notes</a>
+                                        <ol class="notes">
+                                            <!-- START NOTES -->
+                                            <li class="note reblog tumblelog_meitar without_commentary">
+                                            <a rel="nofollow" class="avatar_frame" target="_blank" href="http://meitar.tumblr.com/" title="DEVELOPMENT: I Am Bradley Manning"><img src="http://assets.tumblr.com/images/default_avatar_64.png" class="avatar " alt="" /></a>
+                                            <span class="action" data-post-url="http://meitar.tumblr.com/post/51109630381">
+                                                <a rel="nofollow" href="http://meitar.tumblr.com/" class="tumblelog" title="DEVELOPMENT: I Am Bradley Manning">meitar</a> reblogged this from <a rel="nofollow" href="http://iam.bradleymanning.org/" class="source_tumblelog" title="I am Bradley Manning">iambradleymanning</a>                                                                                                                                                                                    </span>
+                                            <div class="clear"></div>
+                                            </li>
+                                            <li class="note like tumblelog_shebarotterdam without_commentary">
+                                            <a rel="nofollow" class="avatar_frame" target="_blank" href="http://shebarotterdam.tumblr.com/" title="Untitled " rel="nofollow"><img src="http://24.media.tumblr.com/avatar_51c8525f13f7_64.png" class="avatar " alt="" /></a>
+                                            <span class="action">
+                                                <a rel="nofollow" href="http://shebarotterdam.tumblr.com/" title="Untitled" rel="nofollow">shebarotterdam</a> likes this                                    </span>
+                                            <div class="clear"></div>
+                                            </li>
+                                            <li class="note like tumblelog_rbdreams without_commentary">
+                                            <a rel="nofollow" class="avatar_frame" target="_blank" href="http://rbdreams.tumblr.com/" title="RBdreams " rel="nofollow"><img src="http://25.media.tumblr.com/avatar_1a1f4d100b5f_64.png" class="avatar " alt="" /></a>
+                                            <span class="action">
+                                                <a rel="nofollow" href="http://rbdreams.tumblr.com/" title="RBdreams" rel="nofollow">rbdreams</a> likes this                                    </span>
+                                            <div class="clear"></div>
+                                            </li>
+                                            <li class="note like tumblelog_pleaslucian without_commentary">
+                                            <a rel="nofollow" class="avatar_frame" target="_blank" href="http://pleaslucian.tumblr.com/" title="Adventures in Blunderland " rel="nofollow"><img src="http://25.media.tumblr.com/avatar_0482f3285360_64.png" class="avatar " alt="" /></a>
+                                            <span class="action">
+                                                <a rel="nofollow" href="http://pleaslucian.tumblr.com/" title="Adventures in Blunderland" rel="nofollow">pleaslucian</a> likes this                                    </span>
+                                            <div class="clear"></div>
+                                            </li>
+                                            <li class="note like tumblelog_writerwhocouldntwrite without_commentary">
+                                            <a rel="nofollow" class="avatar_frame" target="_blank" href="http://writerwhocouldntwrite.tumblr.com/" title="everything i can&#039;t say " rel="nofollow"><img src="http://25.media.tumblr.com/avatar_8eb82864262d_64.png" class="avatar " alt="" /></a>
+                                            <span class="action">
+                                                <a rel="nofollow" href="http://writerwhocouldntwrite.tumblr.com/" title="everything i can&#039;t say" rel="nofollow">writerwhocouldntwrite</a> likes this                                    </span>
+                                            <div class="clear"></div>
+                                            </li>
+                                            <li class="note reblog tumblelog_iambradleymanning without_commentary">
+                                            <img src="http://24.media.tumblr.com/avatar_56377ed12d4e_64.png" class="avatar " alt="" />
+                                            Josh Wiesner submitted this to <a rel="nofollow" href="http://iam.bradleymanning.org/" class="source_tumblelog" title="I am Bradley Manning">iambradleymanning</a>
+                                            <div class="clear"></div>
+                                            </li>
+                                            <!-- END NOTES -->
+                                        </ol>
+                                    </li>
+                                    <li class="shortlink">Shortlink: <a href="http://tmblr.co/ZX2SYxlDkqhf" title="Shortlink for Text Post Title" rel="share_this">http://tmblr.co/ZX2SYxlDkqhf</a></li>
+                                </ul>
+                            </footer>
+                        </article>
+                    </div><!-- .brickbox -->
+
+                    <nav class="Pagination clearfix">
+                        <h4 id="theme-pagination-label" class="PaginationLabel">Pagination</h4>
+                        <ol role="navigation" aria-labelledby="theme-pagination-label">
+                            <li id="PaginationPrevious" rel="prev"><a href="TK-LINK#tumblr-content">Previous</a></li>
+                            <li id="PaginationNext" rel="next"><a href="TK-LINK#tumblr-content">Next</a></li>
+                        </ol>
+                    </nav>
+                </section>
+
+                <section id="campaign-collaborators">
+                    <h3>Collaborators:</h3>
+                    <p class="section-description">Allies in the fight to free Bradley.</p>
+                    <ul>
+                        <li><a href="TK-LINK">Collaborator 1 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 2 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 3 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 4 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 5 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 6 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 7 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 8 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 9 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 10 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 11 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 12 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 13 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 14 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 15 name or website address</a></li>
+                        <li><a href="TK-LINK">Collaborator 16 name or website address</a></li>
+                    </ul>
+                </section>
+
+                <section id="campaign-updates-opt-in">
+                    <h3>Sign up for campaign updates</h3>
+                    <ul>
+                        <li id="campaign-twitter" class="SocialMedia"><a href="https://twitter.com/SaveBradley" title="Follow @SaveBradley on Twitter">@SaveBradley</a></li>
+                        <li id="campaign-facebook" class="SocialMedia"><a href="https://www.facebook.com/SaveBradley" title="Like SaveBradley on Facebook">Facebook page for SaveBradley</a></li>
+                        <li id="campaign-newsletter">
+                            <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
+                                <fieldset><legend>Subscribe by email</legend>
+                                    <label for="campaign-subscriber-email">Your email address:</label>
+                                    <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
+                                    <input type="submit" value="Subscribe" id="index-submit">
+                                </fieldset>
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>A <a href="http://bradleymanning.org/">Bradley Manning Support Network</a> project.</h3>
+            </footer>
+        </div>
+
+    </body>
+</html>
