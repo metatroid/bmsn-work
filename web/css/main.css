@@ -460,7 +460,7 @@ footer h3 {
 
 .box{
 	display: block;
-	padding: 20px;
+	padding: 10px;
 	background: rgba(240, 240, 240,1);
 	margin: 0 0 20px 0;
 	-moz-border-radius: 8px;
@@ -472,7 +472,7 @@ footer h3 {
 	position: relative;
 }
 .IndexPage .box {
-	width: 260px;
+	width: 250px;
 }
 .box header {
 	display: block;
