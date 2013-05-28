@@ -891,6 +891,32 @@ ul.tags li:last-child::after {
                             </footer>
                         {/block:Text}
 
+                        {block:Video}
+                        <article id="{PostID}" class="box brick post video{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                {block:IndexPage}{Video-250}{/block:IndexPage}
+                                {block:PermalinkPage}{Video-700}{/block:PermalinkPage}
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            {block:Caption}{Caption}{/block:Caption}
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}
+                                    <li class="notes">
+                                        <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
+                                        {block:PostNotes}{PostNotes-64}{/block:PostNotes}
+                                    </li>
+                                    {/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                </ul>
+                            </footer>
+                        {/block:Video}
+
                             <!-- TODO: Insert PermalinkPage blocks? -->
                         </article><!-- .box.brick.post -->
                         {/block:Posts}
