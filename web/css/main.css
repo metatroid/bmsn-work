@@ -169,9 +169,6 @@ nav ol, nav ul, nav p {
     padding: 30px 0;
 }
 
-.main article h1 {
-
-}
 
 .footer-container footer {
     padding: 20px 0;
@@ -198,6 +195,10 @@ h1 {
     font-family: DINmed;
     text-align: center;
     text-transform: uppercase;
+}
+
+article h1 {
+    font-size: 75px;
 }
 
 h2 {
@@ -493,13 +494,15 @@ footer h3 {
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
 	border-radius: 8px;
-	font-size: 12px;
-	line-height:14px;
+	font-size: 15px;
+	line-height:1.3em;
 	box-sizing: border-box;
 	position: relative;
 }
 .IndexPage .box {
 	width: 250px;
+	font-size: 12px;
+	line-height: 14px;
 }
 .box header {
 	display: block;
