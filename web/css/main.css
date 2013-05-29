@@ -198,6 +198,7 @@ h1 {
 }
 
 article h1 {
+    text-align: left;
     font-size: 75px;
 }
 
