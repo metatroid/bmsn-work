@@ -1289,14 +1289,14 @@ ul.tags li:last-child::after {
                 {block:IfTweet1}
                 <section id="campaign-tweet-this">
                     <h3>Tweet this:</h3>
-                    <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}">write your own</a>!</p>
+                    <p class="section-description"><span>Choose a tweet from the options below,</span> or <a href="https://twitter.com/intent/tweet/?text={block:Twitter}%40{TwitterUsername}{/block:Twitter}" {Target}>write your own</a>!</p>
                     <ul>
                         <!-- TODO: Get the URLEncoded versions of these custom variables? -->
-                        <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}">{text:Tweet1}</a></li>
-                        {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}">{text:Tweet2}</a></li>{/block:IfTweet2}
-                        {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}">{text:Tweet3}</a></li>{/block:IfTweet3}
-                        {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}">{text:Tweet4}</a></li>{/block:IfTweet4}
-                        {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}">{text:Tweet5}</a></li>{/block:IfTweet5}
+                        <li><a href="https://twitter.com/intent/tweet/?text={text:Tweet1}" {Target}>{text:Tweet1}</a></li>
+                        {block:IfTweet2}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet2}" {Target}>{text:Tweet2}</a></li>{/block:IfTweet2}
+                        {block:IfTweet3}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet3}" {Target}>{text:Tweet3}</a></li>{/block:IfTweet3}
+                        {block:IfTweet4}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet4}" {Target}>{text:Tweet4}</a></li>{/block:IfTweet4}
+                        {block:IfTweet5}<li><a href="https://twitter.com/intent/tweet/?text={text:Tweet5}" {Target}>{text:Tweet5}</a></li>{/block:IfTweet5}
                     </ul>
                 </section>
                 {/block:IfTweet1}
@@ -1306,22 +1306,22 @@ ul.tags li:last-child::after {
                     <h3>Collaborators:</h3>
                     <p class="section-description">Allies in the fight to free {text:Hero name}.</p>
                     <ul>
-                        <li>{block:IfCollaborator1Website}<a href="{text:Collaborator 1 website}">{/block:IfCollaborator1Website}{text:Collaborator 1 name}{block:IfCollaborator1Website}</a>{/block:IfCollaborator1Website}</li>
-                        {block:IfCollaborator2Name}<li>{block:IfCollaborator2Website}<a href="{text:Collaborator 2 website}">{/block:IfCollaborator2Website}{text:Collaborator 2 name}{block:IfCollaborator2Website}</a>{/block:IfCollaborator2Website}</li>{/block:IfCollaborator2Name}
-                        {block:IfCollaborator3Name}<li>{block:IfCollaborator3Website}<a href="{text:Collaborator 3 website}">{/block:IfCollaborator3Website}{text:Collaborator 3 name}{block:IfCollaborator3Website}</a>{/block:IfCollaborator3Website}</li>{/block:IfCollaborator3Name}
-                        {block:IfCollaborator4Name}<li>{block:IfCollaborator4Website}<a href="{text:Collaborator 4 website}">{/block:IfCollaborator4Website}{text:Collaborator 4 name}{block:IfCollaborator4Website}</a>{/block:IfCollaborator4Website}</li>{/block:IfCollaborator4Name}
-                        {block:IfCollaborator5Name}<li>{block:IfCollaborator5Website}<a href="{text:Collaborator 5 website}">{/block:IfCollaborator5Website}{text:Collaborator 5 name}{block:IfCollaborator5Website}</a>{/block:IfCollaborator5Website}</li>{/block:IfCollaborator5Name}
-                        {block:IfCollaborator6Name}<li>{block:IfCollaborator6Website}<a href="{text:Collaborator 6 website}">{/block:IfCollaborator6Website}{text:Collaborator 6 name}{block:IfCollaborator6Website}</a>{/block:IfCollaborator6Website}</li>{/block:IfCollaborator6Name}
-                        {block:IfCollaborator7Name}<li>{block:IfCollaborator7Website}<a href="{text:Collaborator 7 website}">{/block:IfCollaborator7Website}{text:Collaborator 7 name}{block:IfCollaborator7Website}</a>{/block:IfCollaborator7Website}</li>{/block:IfCollaborator7Name}
-                        {block:IfCollaborator8Name}<li>{block:IfCollaborator8Website}<a href="{text:Collaborator 8 website}">{/block:IfCollaborator8Website}{text:Collaborator 8 name}{block:IfCollaborator8Website}</a>{/block:IfCollaborator8Website}</li>{/block:IfCollaborator8Name}
-                        {block:IfCollaborator9Name}<li>{block:IfCollaborator9Website}<a href="{text:Collaborator 9 website}">{/block:IfCollaborator9Website}{text:Collaborator 9 name}{block:IfCollaborator9Website}</a>{/block:IfCollaborator9Website}</li>{/block:IfCollaborator9Name}
-                        {block:IfCollaborator10Name}<li>{block:IfCollaborator10Website}<a href="{text:Collaborator 10 website}">{/block:IfCollaborator10Website}{text:Collaborator 10 name}{block:IfCollaborator10Website}</a>{/block:IfCollaborator10Website}</li>{/block:IfCollaborator10Name}
-                        {block:IfCollaborator11Name}<li>{block:IfCollaborator11Website}<a href="{text:Collaborator 11 website}">{/block:IfCollaborator11Website}{text:Collaborator 11 name}{block:IfCollaborator11Website}</a>{/block:IfCollaborator11Website}</li>{/block:IfCollaborator11Name}
-                        {block:IfCollaborator12Name}<li>{block:IfCollaborator12Website}<a href="{text:Collaborator 12 website}">{/block:IfCollaborator12Website}{text:Collaborator 12 name}{block:IfCollaborator12Website}</a>{/block:IfCollaborator12Website}</li>{/block:IfCollaborator12Name}
-                        {block:IfCollaborator13Name}<li>{block:IfCollaborator13Website}<a href="{text:Collaborator 13 website}">{/block:IfCollaborator13Website}{text:Collaborator 13 name}{block:IfCollaborator13Website}</a>{/block:IfCollaborator13Website}</li>{/block:IfCollaborator13Name}
-                        {block:IfCollaborator14Name}<li>{block:IfCollaborator14Website}<a href="{text:Collaborator 14 website}">{/block:IfCollaborator14Website}{text:Collaborator 14 name}{block:IfCollaborator14Website}</a>{/block:IfCollaborator14Website}</li>{/block:IfCollaborator14Name}
-                        {block:IfCollaborator15Name}<li>{block:IfCollaborator15Website}<a href="{text:Collaborator 15 website}">{/block:IfCollaborator15Website}{text:Collaborator 15 name}{block:IfCollaborator15Website}</a>{/block:IfCollaborator15Website}</li>{/block:IfCollaborator15Name}
-                        {block:IfCollaborator16Name}<li>{block:IfCollaborator16Website}<a href="{text:Collaborator 16 website}">{/block:IfCollaborator16Website}{text:Collaborator 16 name}{block:IfCollaborator16Website}</a>{/block:IfCollaborator16Website}</li>{/block:IfCollaborator16Name}
+                        <li>{block:IfCollaborator1Website}<a href="{text:Collaborator 1 website}" {Target}>{/block:IfCollaborator1Website}{text:Collaborator 1 name}{block:IfCollaborator1Website}</a>{/block:IfCollaborator1Website}</li>
+                        {block:IfCollaborator2Name}<li>{block:IfCollaborator2Website}<a href="{text:Collaborator 2 website}" {Target}>{/block:IfCollaborator2Website}{text:Collaborator 2 name}{block:IfCollaborator2Website}</a>{/block:IfCollaborator2Website}</li>{/block:IfCollaborator2Name}
+                        {block:IfCollaborator3Name}<li>{block:IfCollaborator3Website}<a href="{text:Collaborator 3 website}" {Target}>{/block:IfCollaborator3Website}{text:Collaborator 3 name}{block:IfCollaborator3Website}</a>{/block:IfCollaborator3Website}</li>{/block:IfCollaborator3Name}
+                        {block:IfCollaborator4Name}<li>{block:IfCollaborator4Website}<a href="{text:Collaborator 4 website}" {Target}>{/block:IfCollaborator4Website}{text:Collaborator 4 name}{block:IfCollaborator4Website}</a>{/block:IfCollaborator4Website}</li>{/block:IfCollaborator4Name}
+                        {block:IfCollaborator5Name}<li>{block:IfCollaborator5Website}<a href="{text:Collaborator 5 website}" {Target}>{/block:IfCollaborator5Website}{text:Collaborator 5 name}{block:IfCollaborator5Website}</a>{/block:IfCollaborator5Website}</li>{/block:IfCollaborator5Name}
+                        {block:IfCollaborator6Name}<li>{block:IfCollaborator6Website}<a href="{text:Collaborator 6 website}" {Target}>{/block:IfCollaborator6Website}{text:Collaborator 6 name}{block:IfCollaborator6Website}</a>{/block:IfCollaborator6Website}</li>{/block:IfCollaborator6Name}
+                        {block:IfCollaborator7Name}<li>{block:IfCollaborator7Website}<a href="{text:Collaborator 7 website}" {Target}>{/block:IfCollaborator7Website}{text:Collaborator 7 name}{block:IfCollaborator7Website}</a>{/block:IfCollaborator7Website}</li>{/block:IfCollaborator7Name}
+                        {block:IfCollaborator8Name}<li>{block:IfCollaborator8Website}<a href="{text:Collaborator 8 website}" {Target}>{/block:IfCollaborator8Website}{text:Collaborator 8 name}{block:IfCollaborator8Website}</a>{/block:IfCollaborator8Website}</li>{/block:IfCollaborator8Name}
+                        {block:IfCollaborator9Name}<li>{block:IfCollaborator9Website}<a href="{text:Collaborator 9 website}" {Target}>{/block:IfCollaborator9Website}{text:Collaborator 9 name}{block:IfCollaborator9Website}</a>{/block:IfCollaborator9Website}</li>{/block:IfCollaborator9Name}
+                        {block:IfCollaborator10Name}<li>{block:IfCollaborator10Website}<a href="{text:Collaborator 10 website}" {Target}>{/block:IfCollaborator10Website}{text:Collaborator 10 name}{block:IfCollaborator10Website}</a>{/block:IfCollaborator10Website}</li>{/block:IfCollaborator10Name}
+                        {block:IfCollaborator11Name}<li>{block:IfCollaborator11Website}<a href="{text:Collaborator 11 website}" {Target}>{/block:IfCollaborator11Website}{text:Collaborator 11 name}{block:IfCollaborator11Website}</a>{/block:IfCollaborator11Website}</li>{/block:IfCollaborator11Name}
+                        {block:IfCollaborator12Name}<li>{block:IfCollaborator12Website}<a href="{text:Collaborator 12 website}" {Target}>{/block:IfCollaborator12Website}{text:Collaborator 12 name}{block:IfCollaborator12Website}</a>{/block:IfCollaborator12Website}</li>{/block:IfCollaborator12Name}
+                        {block:IfCollaborator13Name}<li>{block:IfCollaborator13Website}<a href="{text:Collaborator 13 website}" {Target}>{/block:IfCollaborator13Website}{text:Collaborator 13 name}{block:IfCollaborator13Website}</a>{/block:IfCollaborator13Website}</li>{/block:IfCollaborator13Name}
+                        {block:IfCollaborator14Name}<li>{block:IfCollaborator14Website}<a href="{text:Collaborator 14 website}" {Target}>{/block:IfCollaborator14Website}{text:Collaborator 14 name}{block:IfCollaborator14Website}</a>{/block:IfCollaborator14Website}</li>{/block:IfCollaborator14Name}
+                        {block:IfCollaborator15Name}<li>{block:IfCollaborator15Website}<a href="{text:Collaborator 15 website}" {Target}>{/block:IfCollaborator15Website}{text:Collaborator 15 name}{block:IfCollaborator15Website}</a>{/block:IfCollaborator15Website}</li>{/block:IfCollaborator15Name}
+                        {block:IfCollaborator16Name}<li>{block:IfCollaborator16Website}<a href="{text:Collaborator 16 website}" {Target}>{/block:IfCollaborator16Website}{text:Collaborator 16 name}{block:IfCollaborator16Website}</a>{/block:IfCollaborator16Website}</li>{/block:IfCollaborator16Name}
                     </ul>
                 </section>
                 {/block:IfCollaborator1Name}
@@ -1350,7 +1350,7 @@ ul.tags li:last-child::after {
         <div class="footer-container">
             {block:IfCampaignerName}
             <footer class="wrapper">
-                <h3>A {block:IfCampaignerURL}<a href="{text:Campaigner URL}">{/block:IfCampaignerURL}{text:Campaigner name}{block:IfCampaignerURL}</a>{/block:IfCampaignerURL} project.</h3>
+                <h3>A {block:IfCampaignerURL}<a href="{text:Campaigner URL}" {Target}>{/block:IfCampaignerURL}{text:Campaigner name}{block:IfCampaignerURL}</a>{/block:IfCampaignerURL} project.</h3>
             </footer>
             {/block:IfCampaignerName}
         </div>
