@@ -584,11 +584,32 @@ footer h3 {
 }
 .videoplaceholder{
     display: block;
-    width: 100%;
-    margin: 40px auto 30px;
+    width: 840px !important;
+    margin: 40px 0px 10px 0px;
     text-align: center;
 }
+.social_buttons a {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #ccc;
+    color: #fff;
+    width: 840px;
+    text-align: center;
+    background-color: #00ADB3;
+    padding: 20px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
 
+}
+.social_buttons a:hover {
+    background-color: #11D1D1;
+}
+.social_buttons a:nth-child(2) {
+    margin-right: 0px;
+    background-color: #C1272D;
+    display: none;
+}
 .post-type-photos h3 {
     margin-bottom: 30px;
 }
@@ -807,6 +828,7 @@ ul.tags li:last-child::after {
                     {block:IndexPage}
                     {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
                     {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
+                    <div class="social_buttons"><a href="https://www.thunderclap.it/projects/2242-i-am-bradley-manning" target="_blank">thunderclap link</a><a href="#" target="_blank">twibbon link</a></div>
                     {/block:IndexPage}
                 </header>
 
