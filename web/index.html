@@ -30,16 +30,16 @@
         <meta name="text:Tweet3" content="">
         <meta name="text:Tweet4" content="">
         <meta name="text:Tweet5" content="">
-        <meta name="image:Slider Image 1" content="">
-        <meta name="image:Slider Image 2" content="">
-        <meta name="image:Slider Image 3" content="">
-        <meta name="image:Slider Image 4" content="">
-        <meta name="image:Slider Image 5" content="">
-        <meta name="image:Slider Image 6" content="">
-        <meta name="image:Slider Image 7" content="">
-        <meta name="image:Slider Image 8" content="">
-        <meta name="image:Slider Image 9" content="">
-        <meta name="text:Slider Image 10" content="">
+        <meta name="image:Slider 1" content="">
+        <meta name="image:Slider 2" content="">
+        <meta name="image:Slider 3" content="">
+        <meta name="image:Slider 4" content="">
+        <meta name="image:Slider 5" content="">
+        <meta name="image:Slider 6" content="">
+        <meta name="image:Slider 7" content="">
+        <meta name="image:Slider 8" content="">
+        <meta name="image:Slider 9" content="">
+        <meta name="text:Slider 10" content="">
         <meta name="text:Collaborator 1 name" content="">
         <meta name="text:Collaborator 1 website" content="">
         <meta name="text:Collaborator 2 name" content="">
@@ -990,30 +990,30 @@ ul.tags li:last-child::after {
                     <h1>I am {text:Hero name}</h1>
                     <div id="description">{Description}</div>
                     {block:IndexPage}
-                    {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
+                    {block:IfImprisonedOnDate}<h4><span id="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
                     {block:IfFeaturedMedia}<div id="featured-media-wrapper">{text:Featured media}</div>{/block:IfFeaturedMedia}
-                    {block:IfSliderImage1Image}
+                    {block:IfSlider1Image}
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
                             <div id="slider" class="nivoSlider">
-                                <img src="{image:SliderImage1}" data-thumb="{image:SliderImage1}" alt="" />
-                                {block:IfSliderImage2Image}<img src="{image:SliderImage2}" data-thumb="{image:SliderImage2}" alt="" />{/block:IfSliderImage2Image}
-                                {block:IfSliderImage3Image}<img src="{image:SliderImage3}" data-thumb="{image:SliderImage3}" alt="" />{/block:IfSliderImage3Image}
-                                {block:IfSliderImage4Image}<img src="{image:SliderImage4}" data-thumb="{image:SliderImage4}" alt="" />{/block:IfSliderImage4Image}
-                                {block:IfSliderImage5Image}<img src="{image:SliderImage5}" data-thumb="{image:SliderImage5}" alt="" />{/block:IfSliderImage5Image}
-                                {block:IfSliderImage6Image}<img src="{image:SliderImage6}" data-thumb="{image:SliderImage6}" alt="" />{/block:IfSliderImage6Image}
-                                {block:IfSliderImage7Image}<img src="{image:SliderImage7}" data-thumb="{image:SliderImage7}" alt="" />{/block:IfSliderImage7Image}
-                                {block:IfSliderImage8Image}<img src="{image:SliderImage8}" data-thumb="{image:SliderImage8}" alt="" />{/block:IfSliderImage8Image}
-                                {block:IfSliderImage9Image}<img src="{image:SliderImage9}" data-thumb="{image:SliderImage9}" alt="" />{/block:IfSliderImage9Image}
-                                {block:IfSliderImage10Image}<img src="{image:SliderImage10}" data-thumb="{image:SliderImage10}" alt="" />{/block:IfSliderImage10Image}
+                                <img src="{image:Slider1}" data-thumb="{image:Slider1}" alt="" />
+                                {block:IfSlider2Image}<img src="{image:Slider2}" data-thumb="{image:Slider2}" alt="" />{/block:IfSlider2Image}
+                                {block:IfSlider3Image}<img src="{image:Slider3}" data-thumb="{image:Slider3}" alt="" />{/block:IfSlider3Image}
+                                {block:IfSlider4Image}<img src="{image:Slider4}" data-thumb="{image:Slider4}" alt="" />{/block:IfSlider4Image}
+                                {block:IfSlider5Image}<img src="{image:Slider5}" data-thumb="{image:Slider5}" alt="" />{/block:IfSlider5Image}
+                                {block:IfSlider6Image}<img src="{image:Slider6}" data-thumb="{image:Slider6}" alt="" />{/block:IfSlider6Image}
+                                {block:IfSlider7Image}<img src="{image:Slider7}" data-thumb="{image:Slider7}" alt="" />{/block:IfSlider7Image}
+                                {block:IfSlider8Image}<img src="{image:Slider8}" data-thumb="{image:Slider8}" alt="" />{/block:IfSlider8Image}
+                                {block:IfSlider9Image}<img src="{image:Slider9}" data-thumb="{image:Slider9}" alt="" />{/block:IfSlider9Image}
+                                {block:IfSlider10Image}<img src="{image:Slider10}" data-thumb="{image:Slider10}" alt="" />{/block:IfSlider10Image}
                             </div>
                         </div>
                     </div>
-                    {/block:IfSliderImage1Image}
+                    {/block:IfSlider1Image}
 
                     <div class="social_buttons">
-                        {block:IfThunderclapURL}<a href="{text:Thunderclap URL}" target="_blank">thunderclap link</a>{/block:IfThunderclapURL}
-                        {block:IfTwibbonURL}<a href="{text:Twibbon URL}" target="_blank">twibbon link</a>{/block:IfTwibbonURL}
+                        {block:IfThunderclapURL}<a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a>{/block:IfThunderclapURL}
+                        {block:IfTwibbonURL}<a href="{text:Twibbon URL}" {Target}>{text:Twibbon link text}</a>{/block:IfTwibbonURL}
                     </div>
                     {/block:IndexPage}
                 </header>
