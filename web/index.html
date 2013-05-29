@@ -170,6 +170,7 @@ select,
 textarea {
     color: #222;
 }
+
 a{
     text-decoration: none !important;
 }
@@ -362,6 +363,7 @@ h1 {
 }
 
 article h1 {
+    text-align: left;
     font-size: 75px;
 }
 
@@ -386,6 +388,10 @@ h3 {
     text-align: center;
     text-transform: uppercase;
     color: rgba(109,109,109,1);
+}
+
+article h3 {
+    font-size: 50px;
 }
 
 section {
@@ -602,7 +608,7 @@ footer h3 {
     margin-top: 0;
 }
 
-.dayscount{
+#dayscount{
     display: inline-block;
     vertical-align: top;
     background-color: rgba(65,65,65,1);
@@ -610,7 +616,7 @@ footer h3 {
     padding:10px;
     margin-top: -10px;
 }
-.videoplaceholder{
+#featured-media-wrapper {
     display: block;
     width: 840px !important;
     margin: 40px 0px 10px 0px;
@@ -628,7 +634,6 @@ footer h3 {
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
-
 }
 .social_buttons a:hover {
     background-color: #11D1D1;
@@ -723,7 +728,7 @@ ul.tags li:last-child::after {
 }
 .nivo-main-image {
     display: block !important;
-    position: relative !important; 
+    position: relative !important;
     width: 100% !important;
 }
 
@@ -739,8 +744,8 @@ ul.tags li:last-child::after {
     margin:0;
     z-index:6;
     display:none;
-    background:white; 
-    filter:alpha(opacity=0); 
+    background:white;
+    filter:alpha(opacity=0);
     opacity:0;
 }
 /* The slices and boxes in the Slider */
@@ -849,7 +854,7 @@ ul.tags li:last-child::after {
 		line-height: 40px;
 		margin-bottom: 20px;
 	}
-	.dayscount{
+	#dayscount{
 		padding: 2px 18px;
 		margin-top: -2px;
 		margin-left: -8px;
