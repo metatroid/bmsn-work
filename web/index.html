@@ -87,7 +87,7 @@
             	// date change thingy
                 var today = moment();
                 var todate = today.diff(moment('{text:Imprisoned on date}'),'days');
-                $('.dayscount').text(todate);
+                $('#dayscount').text(todate);
 
                 // slider control
                 $('#slider').nivoSlider({
@@ -986,7 +986,7 @@ ul.tags li:last-child::after {
                     <div id="description">{Description}</div>
                     {block:IndexPage}
                     {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
-                    {block:IfFeaturedMedia}<!-- <div class="videoplaceholder">{text:Featured media}</div> -->{/block:IfFeaturedMedia}
+                    {block:IfFeaturedMedia}<div id="featured-media-wrapper">{text:Featured media}</div>{/block:IfFeaturedMedia}
                     {block:IfSliderImage1Image}
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
