@@ -20,6 +20,8 @@
         <meta name="text:Hero name" content="Bradley Manning">
         <meta name="text:Featured media" content="">
         <meta name="text:Imprisoned on date" content="May 19, 2010">
+        <meta name="text:Thunderclap URL" content="https://www.thunderclap.it/projects/2242-i-am-bradley-manning">
+        <meta name="text:Twibbon URL" content="">
         <meta name="text:Facebook Username" content="">
         <meta name="text:Tweet1" content="Content for Tweet 1 #IAmBradleyManning #DropTheCharge">
         <meta name="text:Tweet2" content="Content for Tweet 2 #IAmBradleyManning #DropTheCharge">
@@ -969,7 +971,7 @@ ul.tags li:last-child::after {
                     <div id="description">{Description}</div>
                     {block:IndexPage}
                     {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
-                    <!-- <div class="videoplaceholder">{text:Featured media}</div> -->
+                    {block:IfFeaturedMedia}<!-- <div class="videoplaceholder">{text:Featured media}</div> -->{/block:IfFeaturedMedia}
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
                             <div id="slider" class="nivoSlider">
@@ -980,26 +982,35 @@ ul.tags li:last-child::after {
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="social_buttons"><a href="https://www.thunderclap.it/projects/2242-i-am-bradley-manning" target="_blank">thunderclap link</a><a href="#" target="_blank">twibbon link</a></div>
+
+                    <div class="social_buttons">
+                        {block:IfThunderclapURL}<a href="{text:Thunderclap URL}" target="_blank">thunderclap link</a>{/block:IfThunderclapURL}
+                        {block:IfTwibbonURL}<a href="{text:Twibbon URL}" target="_blank">twibbon link</a>{/block:IfTwibbonURL}
+                    </div>
                     {/block:IndexPage}
                 </header>
 
                 <section id="tumblr-content" class="{block:IndexPage}IndexPage{/block:IndexPage}">
                     {block:IndexPage}
-                    <div class="photo-buttons">
-                        <a href="/submit#tumblr-content">add your photo signature</a>
-                        <a href="/archive">view them all</a>
-                    </div>
-                    {block:SubmissionsEnabled}<!-- <h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4> -->{/block:SubmissionsEnabled}
+                    <h3>Your photos</h3>
                     {/block:IndexPage}
                     {block:Posts}{block:PermalinkPage}{block:Photo}
                     <h3>Your photos</h3>
-                    {block:SubmissionsEnabled}<!-- <h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4> -->{/block:SubmissionsEnabled}
                     {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
-                    {block:IndexPage}<!-- <h4><a href="/archive">View them all</a></h4> -->{/block:IndexPage}
+                    {block:IndexPage}
+                    <div class="photo-buttons">
+                        {block:SubmissionsEnabled}<a href="/submit#tumblr-content">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+                        <a href="/archive">view them all</a>
+                    </div>
+                    {/block:IndexPage}
+                    {block:Posts}{block:PermalinkPage}{block:Photo}
+                    <div class="photo-buttons">
+                        {block:SubmissionsEnabled}<a href="/submit#tumblr-content">{SubmitLabel}</a>{/block:SubmissionsEnabled}
+                        <a href="/archive">view them all</a>
+                    </div>
+                    {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     <div class="brickbox">
                         {block:Posts}
                         {block:Photo}
