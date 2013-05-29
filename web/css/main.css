@@ -443,7 +443,7 @@ footer h3 {
     margin-top: 0;
 }
 
-.dayscount{
+#dayscount{
     display: inline-block;
     vertical-align: top;
     background-color: rgba(65,65,65,1);
@@ -451,7 +451,7 @@ footer h3 {
     padding:10px;
     margin-top: -10px;
 }
-.videoplaceholder{
+#featured-media-wrapper {
     display: block;
     width: 840px !important;
     margin: 40px 0px 10px 0px;
@@ -689,7 +689,7 @@ ul.tags li:last-child::after {
 		line-height: 40px;
 		margin-bottom: 20px;
 	}
-	.dayscount{
+	#dayscount{
 		padding: 2px 18px;
 		margin-top: -2px;
 		margin-left: -8px;

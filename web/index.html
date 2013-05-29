@@ -26,7 +26,7 @@
             	// date change thingy
                 var today = moment();
                 var todate = today.diff(moment('May 19, 2010'),'days');
-                $('.dayscount').text(todate);
+                $('#dayscount').text(todate);
 
                 // slider control
                 $('#slider').nivoSlider({
@@ -123,8 +123,8 @@
                     <h1>I am Bradley Manning</h1>
                     <h2>Nobody was harmed by these leaks. Only the public benefited.</h2>
                     <h3>Drop the "Aiding the Enemy" Charge.</h3>
-                    <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
-                    <!-- <div class="videoplaceholder"></div> -->
+                    <h4><span id="dayscount">1</span> days of unfair confinement is enough.</h4>
+                    <div id="featured-media-wrapper"></div>
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
                             <div id="slider" class="nivoSlider">
