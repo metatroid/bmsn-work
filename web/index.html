@@ -848,6 +848,7 @@ ul.tags li:last-child::after {
                                     <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
                                 </ul>
                             </footer>
+                        </article><!-- .box.brick.post -->
                         {/block:Photo}
 
                         {block:Text}
@@ -874,6 +875,7 @@ ul.tags li:last-child::after {
                                     <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
                                 </ul>
                             </footer>
+                        </article><!-- .box.brick.post -->
                         {/block:Text}
 
                         {block:Video}
@@ -901,10 +903,144 @@ ul.tags li:last-child::after {
                                     <li class="play-count">{PlayCountWithLabel}</li>
                                 </ul>
                             </footer>
+                        </article><!-- .box.brick.post -->
                         {/block:Video}
 
-                            <!-- TODO: Insert PermalinkPage blocks? -->
+                        {block:Photoset}
+                        <article id="{PostID}" class="box brick post photoset{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                {block:IndexPage}{Photoset-250}{/block:IndexPage}
+                                {block:PermalinkPage}{Photoset-700}{/block:PermalinkPage}
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            {block:Caption}{Caption}{/block:Caption}
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}
+                                    <li class="notes">
+                                        <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
+                                        {block:PostNotes}{PostNotes-64}{/block:PostNotes}
+                                    </li>
+                                    {/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                </ul>
+                            </footer>
                         </article><!-- .box.brick.post -->
+                        {/block:Photoset}
+
+                        {block:Quote}
+                        <article id="{PostID}" class="box brick post quote{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                <p class="{Length}">{Quote}</p>
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            {block:Source}{Source}{/block:Source}
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}
+                                    <li class="notes">
+                                        <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
+                                        {block:PostNotes}{PostNotes-64}{/block:PostNotes}
+                                    </li>
+                                    {/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                </ul>
+                            </footer>
+                        </article><!-- .box.brick.post -->
+                        {/block:Quote}
+
+                        {block:Link}
+                        <article id="{PostID}" class="box brick post link{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                <p><a href="{URL}" {Target}>{Name}</a></p>
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            {block:Description}{Description}{/block:Description}
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}
+                                    <li class="notes">
+                                        <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
+                                        {block:PostNotes}{PostNotes-64}{/block:PostNotes}
+                                    </li>
+                                    {/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                </ul>
+                            </footer>
+                        </article><!-- .box.brick.post -->
+                        {/block:Link}
+
+                        {block:Chat}
+                        <article id="{PostID}" class="box brick post chat{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header>
+                                {block:Title}<h1>{Title}</h1>{/block:Title}
+                                {block:Lines}<p>{block:Label}<strong>{Label} </strong>{/block:Label}{Line}</p>{/block:Lines}
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}
+                                    <li class="notes">
+                                        <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
+                                        {block:PostNotes}{PostNotes-64}{/block:PostNotes}
+                                    </li>
+                                    {/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                </ul>
+                            </footer>
+                        </article><!-- .box.brick.post -->
+                        {/block:Chat}
+
+                        {block:Audio}
+                        <article id="{PostID}" class="box brick post audio{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
+                            <header class="hdaudio">
+                                {block:ExternalAudio}<a href="{ExternalAudioURL}" rel="enclosure">{/block:ExternalAudio}
+                                    {block:AlbumArt}<img class="photo" src="{AlbumArtURL}" alt="{block:TrackName}{TrackName}{/block:TrackName}{block:Artist} - {Artist}{/block:Artist}">{/block:AlbumArt}
+                                {block:ExternalAudio}</a>{/block:ExternalAudio}
+                                {AudioPlayer}
+                                <p>{block:TrackName}<span class="fn">{TrackName}</span> by {/block:TrackName}{block:Artist}<span class="contributor"><span class="vcard"><span class="fn org">{Artist}</span></span></span> {/block:Artist}{block:Album}from <span class="album">{Album}</span>{/block:Album}.</p>
+                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                            </header>
+                            {block:Caption}{Caption}{/block:Caption}
+                            <footer>
+                                {block:HasTags}
+                                <ul class="tags">
+                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                </ul>
+                                {/block:HasTags}
+                                <ul class="utils">
+                                    {block:NoteCount}
+                                    <li class="notes">
+                                        <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
+                                        {block:PostNotes}{PostNotes-64}{/block:PostNotes}
+                                    </li>
+                                    {/block:NoteCount}
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                    {block:PlayCount}<li class="play-count">{PlayCountWithLabel}</li>{/block:PlayCount}
+                                </ul>
+                            </footer>
+                        </article><!-- .box.brick.post -->
+                        {/block:Audio}
                         {/block:Posts}
                     </div><!-- .brickbox -->
 
