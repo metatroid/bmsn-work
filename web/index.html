@@ -65,6 +65,7 @@
         <link rel="stylesheet" href="//static.tumblr.com/ybjxbev/b2Smn6hxh/normalize-1.1.0.css">
         <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
+        <script src="http://blobby.co/jquery.nivo.js"></script>
         <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="//static.tumblr.com/ggljfev/ljEmn48ha/moment-2.0.0.min.js"></script>
         <script type="text/javascript">
@@ -73,6 +74,12 @@
                 var today = moment();
                 var todate = today.diff(moment('{text:Imprisoned on date}'),'days');
                 $('.dayscount').text(todate);
+
+                // slider control
+                $('#slider').nivoSlider({
+                    controlNav: false,
+                    directionNav: false
+                });
 
                 // Helper function for calling masonry.
                 function doMasonry () {
@@ -149,7 +156,9 @@ select,
 textarea {
     color: #222;
 }
-
+a{
+    text-decoration: none !important;
+}
 @font-face {
   font-family: 'DINmed';
   src: url('http://bradleymanning.org/fonts/DINCond-Medium.eot');
@@ -402,6 +411,7 @@ section h3 {
     position: absolute;
     top: 0;
     right: 0;
+    display: none;
 }
 
 #campaign-collaborators h3, #campaign-tweet-this h3 {
@@ -431,11 +441,14 @@ section h3 {
     color: rgba(71, 71, 71, 1);
     font-size: 14px;
     line-height: 19px;
-    margin: 8px 50px;
+    margin: 8px 0px;
     height: 65px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 #campaign-tweet-this li a:before {
     content: ">";
@@ -584,11 +597,32 @@ footer h3 {
 }
 .videoplaceholder{
     display: block;
-    width: 100%;
-    margin: 40px auto 30px;
+    width: 840px !important;
+    margin: 40px 0px 10px 0px;
     text-align: center;
 }
+.social_buttons a {
+    text-transform: uppercase;
+    display: inline-block;
+    background-color: #ccc;
+    color: #fff;
+    width: 840px;
+    text-align: center;
+    background-color: #00ADB3;
+    padding: 20px 0px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
 
+}
+.social_buttons a:hover {
+    background-color: #11D1D1;
+}
+.social_buttons a:nth-child(2) {
+    margin-right: 0px;
+    background-color: #C1272D;
+    display: none;
+}
 .post-type-photos h3 {
     margin-bottom: 30px;
 }
@@ -655,6 +689,115 @@ ul.tags li::after {
 }
 ul.tags li:last-child::after {
     content: '';
+}
+
+/* slider */
+.nivoSlider {
+    position:relative;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+}
+.nivoSlider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    max-width: none;
+}
+.nivo-main-image {
+    display: block !important;
+    position: relative !important; 
+    width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    border:0;
+    padding:0;
+    margin:0;
+    z-index:6;
+    display:none;
+    background:white; 
+    filter:alpha(opacity=0); 
+    opacity:0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+    display:block;
+    position:absolute;
+    z-index:5;
+    height:100%;
+    top:0;
+}
+.nivo-box {
+    display:block;
+    position:absolute;
+    z-index:5;
+    overflow:hidden;
+}
+.nivo-box img { display:block; }
+
+/* Caption styles */
+.nivo-caption {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    background:#000;
+    color:#fff;
+    width:100%;
+    z-index:8;
+    padding: 5px 10px;
+    opacity: 0.8;
+    overflow: hidden;
+    display: none;
+    -moz-opacity: 0.8;
+    filter:alpha(opacity=8);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.nivo-caption p {
+    padding:5px;
+    margin:0;
+}
+.nivo-caption a {
+    display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+    position:absolute;
+    top:45%;
+    z-index:9;
+    cursor:pointer;
+}
+.nivo-prevNav {
+    left:0px;
+}
+.nivo-nextNav {
+    right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+    text-align:center;
+    padding: 15px 0;
+}
+.nivo-controlNav a {
+    cursor:pointer;
+}
+.nivo-controlNav a.active {
+    font-weight:bold;
+}
+#slider-wrapper{
+    width: 840px;
+    margin: 20px auto;
 }
 
 /* ==========================================================================
@@ -778,6 +921,26 @@ ul.tags li:last-child::after {
 .clearfix {
     *zoom: 1;
 }
+
+.photo-buttons a {
+    color: #fff;
+    font-size: 40px;
+    background-color: rgb(190, 190, 190);
+    padding: 15px;
+    margin: 0;
+    display: inline-block;
+    width: 370px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: DINreg;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.photo-buttons a:nth-child(2) {
+    margin-left: 25px;
+}
 /* ==========================================================================
    User-supplied CSS. (This is from Tumblr's "customize" edit box.)
    ========================================================================== */
@@ -806,22 +969,37 @@ ul.tags li:last-child::after {
                     <div id="description">{Description}</div>
                     {block:IndexPage}
                     {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
-                    {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
+                    <!-- <div class="videoplaceholder">{text:Featured media}</div> -->
+                    <div id="slider-wrapper">
+                        <div class="slider-wrapper">
+                            <div id="slider" class="nivoSlider">
+                                <img src="http://i.imgur.com/v4QwpB3.jpg" data-thumb="http://i.imgur.com/v4QwpB3.jpg" alt="" />
+                                <img src="http://i.imgur.com/1MWss4E.jpg" data-thumb="http://i.imgur.com/1MWss4E.jpg" alt="" />
+                                <img src="http://i.imgur.com/d7OZeCu.jpg" data-thumb="http://i.imgur.com/d7OZeCu.jpg" alt="" />
+                                <img src="http://i.imgur.com/HUfuPVN.jpg" data-thumb="http://i.imgur.com/HUfuPVN.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social_buttons"><a href="https://www.thunderclap.it/projects/2242-i-am-bradley-manning" target="_blank">thunderclap link</a><a href="#" target="_blank">twibbon link</a></div>
                     {/block:IndexPage}
                 </header>
 
                 <section id="tumblr-content" class="{block:IndexPage}IndexPage{/block:IndexPage}">
                     {block:IndexPage}
-                    <h3>Your photos</h3>
-                    {block:SubmissionsEnabled}<h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4>{/block:SubmissionsEnabled}
+                    <div class="photo-buttons">
+                        <a href="/submit#tumblr-content">add your photo signature</a>
+                        <a href="/archive">view them all</a>
+                    </div>
+                    {block:SubmissionsEnabled}<!-- <h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4> -->{/block:SubmissionsEnabled}
                     {/block:IndexPage}
                     {block:Posts}{block:PermalinkPage}{block:Photo}
                     <h3>Your photos</h3>
-                    {block:SubmissionsEnabled}<h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4>{/block:SubmissionsEnabled}
+                    {block:SubmissionsEnabled}<!-- <h4 class="tumblr-submit-label"><a href="/submit#tumblr-content">{SubmitLabel}</a></h4> -->{/block:SubmissionsEnabled}
                     {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
-                    {block:IndexPage}<h4><a href="/archive">View them all</a></h4>{/block:IndexPage}
+                    {block:IndexPage}<!-- <h4><a href="/archive">View them all</a></h4> -->{/block:IndexPage}
                     <div class="brickbox">
                         {block:Posts}
                         {block:Photo}
