@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="//static.tumblr.com/ybjxbev/b2Smn6hxh/normalize-1.1.0.css">
         <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
+        <script src="http://blobby.co/jquery.nivo.js"></script>
         <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="//static.tumblr.com/ggljfev/ljEmn48ha/moment-2.0.0.min.js"></script>
         <script type="text/javascript">
@@ -26,6 +27,12 @@
                 var today = moment();
                 var todate = today.diff(moment('May 19, 2010'),'days');
                 $('.dayscount').text(todate);
+
+                // slider control
+                $('#slider').nivoSlider({
+                    controlNav: false,
+                    directionNav: false
+                });
 
                 // Helper function for calling masonry.
                 function doMasonry () {
@@ -117,7 +124,17 @@
                     <h2>Nobody was harmed by these leaks. Only the public benefited.</h2>
                     <h3>Drop the "Aiding the Enemy" Charge.</h3>
                     <h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>
-                    <div class="videoplaceholder"></div>
+                    <!-- <div class="videoplaceholder"></div> -->
+                    <div id="slider-wrapper">
+                        <div class="slider-wrapper">
+                            <div id="slider" class="nivoSlider">
+                                <img src="http://i.imgur.com/v4QwpB3.jpg" data-thumb="http://i.imgur.com/v4QwpB3.jpg" alt="" />
+                                <img src="http://i.imgur.com/1MWss4E.jpg" data-thumb="http://i.imgur.com/1MWss4E.jpg" alt="" />
+                                <img src="http://i.imgur.com/d7OZeCu.jpg" data-thumb="http://i.imgur.com/d7OZeCu.jpg" alt="" />
+                                <img src="http://i.imgur.com/HUfuPVN.jpg" data-thumb="http://i.imgur.com/HUfuPVN.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
                     <div class="social_buttons"><a href="https://www.thunderclap.it/projects/2242-i-am-bradley-manning" target="_blank">thunderclap link</a><a href="#" target="_blank">twibbon link</a></div>
                 </header>
 
