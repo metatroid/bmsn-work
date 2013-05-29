@@ -225,6 +225,10 @@ h3 {
     color: rgba(109,109,109,1);
 }
 
+article h3 {
+    font-size: 50px;
+}
+
 section {
     border-top: 10px solid #222;
     margin: 20px 0 20px 0;
