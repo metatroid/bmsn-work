@@ -487,55 +487,55 @@ footer h3 {
 }
 
 .box{
-	display: block;
-	padding: 10px;
-	background: rgba(240, 240, 240,1);
-	margin: 0 0 20px 0;
-	-moz-border-radius: 8px;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-	font-size: 15px;
-	line-height:1.3em;
-	box-sizing: border-box;
-	position: relative;
+    display: block;
+    padding: 10px;
+    background: rgba(240, 240, 240,1);
+    margin: 0 0 20px 0;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height:1.3em;
+    box-sizing: border-box;
+    position: relative;
 }
 .IndexPage .box {
-	width: 250px;
-	font-size: 12px;
-	line-height: 14px;
+    width: 250px;
+    font-size: 12px;
+    line-height: 14px;
 }
 .box header {
-	display: block;
-	position: relative;
-	width: 100%;
-	height: 100%;
-	background: #eee;
-	margin: 0 0 10px 0;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    margin: 0 0 10px 0;
 }
 .box header img {
-	max-width: 100%;
+    max-width: 100%;
 }
 .box header p {
-	margin: 5px 0 0 0;
+    margin: 5px 0 0 0;
 }
 .box .meta {
-	display: block;
-	clear: both;
+    display: block;
+    clear: both;
 }
 .box ul.tags {
-	margin: 6px 0 0 0;
-	padding: 0 0 0 14px;
-	list-style-type: none;
-	background: url(http://static.tumblr.com/fftf9xi/adwl5z3sd/icon_tags.png) 0 0 no-repeat;
+    margin: 6px 0 0 0;
+    padding: 0 0 0 14px;
+    list-style-type: none;
+    background: url(http://static.tumblr.com/fftf9xi/adwl5z3sd/icon_tags.png) 0 0 no-repeat;
 }
 .box ul.tags li {
-	display: inline;
-	font-style: italic;
-	font-size: 10px;
-	line-height: 14px;
+    display: inline;
+    font-style: italic;
+    font-size: 10px;
+    line-height: 14px;
 }
 .box ul.tags li a{
-	color: #26B262;
+    color: #26B262;
 }
 ul.tags li::after {
     content: ', ';
