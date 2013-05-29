@@ -21,13 +21,25 @@
         <meta name="text:Featured media" content="">
         <meta name="text:Imprisoned on date" content="May 19, 2010">
         <meta name="text:Thunderclap URL" content="https://www.thunderclap.it/projects/2242-i-am-bradley-manning">
+        <meta name="text:Thunderclap link text" content="On June 3rd Bradley goes to trial. Join the Thunderclap now.">
         <meta name="text:Twibbon URL" content="">
+        <meta name="text:Twibbon link text" content="">
         <meta name="text:Facebook Username" content="">
-        <meta name="text:Tweet1" content="Content for Tweet 1 #IAmBradleyManning #DropTheCharge">
-        <meta name="text:Tweet2" content="Content for Tweet 2 #IAmBradleyManning #DropTheCharge">
-        <meta name="text:Tweet3" content="Content for Tweet 3 #IAmBradleyManning #DropTheCharge">
-        <meta name="text:Tweet4" content="Content for Tweet 4 #IAmBradleyManning #DropTheCharge">
-        <meta name="text:Tweet5" content="Content for Tweet 5 #IAmBradleyManning #DropTheCharge">
+        <meta name="text:Tweet1" content="">
+        <meta name="text:Tweet2" content="">
+        <meta name="text:Tweet3" content="">
+        <meta name="text:Tweet4" content="">
+        <meta name="text:Tweet5" content="">
+        <meta name="image:Slider Image 1" content="">
+        <meta name="image:Slider Image 2" content="">
+        <meta name="image:Slider Image 3" content="">
+        <meta name="image:Slider Image 4" content="">
+        <meta name="image:Slider Image 5" content="">
+        <meta name="image:Slider Image 6" content="">
+        <meta name="image:Slider Image 7" content="">
+        <meta name="image:Slider Image 8" content="">
+        <meta name="image:Slider Image 9" content="">
+        <meta name="text:Slider Image 10" content="">
         <meta name="text:Collaborator 1 name" content="">
         <meta name="text:Collaborator 1 website" content="">
         <meta name="text:Collaborator 2 name" content="">
@@ -67,7 +79,7 @@
         <link rel="stylesheet" href="//static.tumblr.com/ybjxbev/b2Smn6hxh/normalize-1.1.0.css">
         <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
-        <script src="http://blobby.co/jquery.nivo.js"></script>
+        <script src="//static.tumblr.com/ybjxbev/wJTmnkk52/jquery.nivo-v3.2.js"></script>
         <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="//static.tumblr.com/ggljfev/ljEmn48ha/moment-2.0.0.min.js"></script>
         <script type="text/javascript">
@@ -975,16 +987,24 @@ ul.tags li:last-child::after {
                     {block:IndexPage}
                     {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
                     {block:IfFeaturedMedia}<!-- <div class="videoplaceholder">{text:Featured media}</div> -->{/block:IfFeaturedMedia}
+                    {block:IfSliderImage1Image}
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
                             <div id="slider" class="nivoSlider">
-                                <img src="http://i.imgur.com/v4QwpB3.jpg" data-thumb="http://i.imgur.com/v4QwpB3.jpg" alt="" />
-                                <img src="http://i.imgur.com/1MWss4E.jpg" data-thumb="http://i.imgur.com/1MWss4E.jpg" alt="" />
-                                <img src="http://i.imgur.com/d7OZeCu.jpg" data-thumb="http://i.imgur.com/d7OZeCu.jpg" alt="" />
-                                <img src="http://i.imgur.com/HUfuPVN.jpg" data-thumb="http://i.imgur.com/HUfuPVN.jpg" alt="" />
+                                <img src="{image:SliderImage1}" data-thumb="{image:SliderImage1}" alt="" />
+                                {block:IfSliderImage2Image}<img src="{image:SliderImage2}" data-thumb="{image:SliderImage2}" alt="" />{/block:IfSliderImage2Image}
+                                {block:IfSliderImage3Image}<img src="{image:SliderImage3}" data-thumb="{image:SliderImage3}" alt="" />{/block:IfSliderImage3Image}
+                                {block:IfSliderImage4Image}<img src="{image:SliderImage4}" data-thumb="{image:SliderImage4}" alt="" />{/block:IfSliderImage4Image}
+                                {block:IfSliderImage5Image}<img src="{image:SliderImage5}" data-thumb="{image:SliderImage5}" alt="" />{/block:IfSliderImage5Image}
+                                {block:IfSliderImage6Image}<img src="{image:SliderImage6}" data-thumb="{image:SliderImage6}" alt="" />{/block:IfSliderImage6Image}
+                                {block:IfSliderImage7Image}<img src="{image:SliderImage7}" data-thumb="{image:SliderImage7}" alt="" />{/block:IfSliderImage7Image}
+                                {block:IfSliderImage8Image}<img src="{image:SliderImage8}" data-thumb="{image:SliderImage8}" alt="" />{/block:IfSliderImage8Image}
+                                {block:IfSliderImage9Image}<img src="{image:SliderImage9}" data-thumb="{image:SliderImage9}" alt="" />{/block:IfSliderImage9Image}
+                                {block:IfSliderImage10Image}<img src="{image:SliderImage10}" data-thumb="{image:SliderImage10}" alt="" />{/block:IfSliderImage10Image}
                             </div>
                         </div>
                     </div>
+                    {/block:IfSliderImage1Image}
 
                     <div class="social_buttons">
                         {block:IfThunderclapURL}<a href="{text:Thunderclap URL}" target="_blank">thunderclap link</a>{/block:IfThunderclapURL}
