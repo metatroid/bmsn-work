@@ -65,6 +65,7 @@
         <link rel="stylesheet" href="//static.tumblr.com/ybjxbev/b2Smn6hxh/normalize-1.1.0.css">
         <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/masonry/2.1.08/jquery.masonry.min.js"></script>
+        <script src="http://blobby.co/jquery.nivo.js"></script>
         <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="//static.tumblr.com/ggljfev/ljEmn48ha/moment-2.0.0.min.js"></script>
         <script type="text/javascript">
@@ -73,6 +74,12 @@
                 var today = moment();
                 var todate = today.diff(moment('{text:Imprisoned on date}'),'days');
                 $('.dayscount').text(todate);
+
+                // slider control
+                $('#slider').nivoSlider({
+                    controlNav: false,
+                    directionNav: false
+                });
 
                 // Helper function for calling masonry.
                 function doMasonry () {
@@ -678,6 +685,115 @@ ul.tags li:last-child::after {
     content: '';
 }
 
+/* slider */
+.nivoSlider {
+    position:relative;
+    width:100%;
+    height:auto;
+    overflow: hidden;
+}
+.nivoSlider img {
+    position:absolute;
+    top:0px;
+    left:0px;
+    max-width: none;
+}
+.nivo-main-image {
+    display: block !important;
+    position: relative !important; 
+    width: 100% !important;
+}
+
+/* If an image is wrapped in a link */
+.nivoSlider a.nivo-imageLink {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    border:0;
+    padding:0;
+    margin:0;
+    z-index:6;
+    display:none;
+    background:white; 
+    filter:alpha(opacity=0); 
+    opacity:0;
+}
+/* The slices and boxes in the Slider */
+.nivo-slice {
+    display:block;
+    position:absolute;
+    z-index:5;
+    height:100%;
+    top:0;
+}
+.nivo-box {
+    display:block;
+    position:absolute;
+    z-index:5;
+    overflow:hidden;
+}
+.nivo-box img { display:block; }
+
+/* Caption styles */
+.nivo-caption {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    background:#000;
+    color:#fff;
+    width:100%;
+    z-index:8;
+    padding: 5px 10px;
+    opacity: 0.8;
+    overflow: hidden;
+    display: none;
+    -moz-opacity: 0.8;
+    filter:alpha(opacity=8);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+.nivo-caption p {
+    padding:5px;
+    margin:0;
+}
+.nivo-caption a {
+    display:inline !important;
+}
+.nivo-html-caption {
+    display:none;
+}
+/* Direction nav styles (e.g. Next & Prev) */
+.nivo-directionNav a {
+    position:absolute;
+    top:45%;
+    z-index:9;
+    cursor:pointer;
+}
+.nivo-prevNav {
+    left:0px;
+}
+.nivo-nextNav {
+    right:0px;
+}
+/* Control nav styles (e.g. 1,2,3...) */
+.nivo-controlNav {
+    text-align:center;
+    padding: 15px 0;
+}
+.nivo-controlNav a {
+    cursor:pointer;
+}
+.nivo-controlNav a.active {
+    font-weight:bold;
+}
+#slider-wrapper{
+    width: 840px;
+    margin: 20px auto;
+}
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -827,7 +943,18 @@ ul.tags li:last-child::after {
                     <div id="description">{Description}</div>
                     {block:IndexPage}
                     {block:IfImprisonedOnDate}<h4><span class="dayscount">1</span> days of unfair confinement is enough.</h4>{/block:IfImprisonedOnDate}
-                    {block:IfFeaturedMedia}<div class="videoplaceholder">{text:Featured media}</div>{/block:IfFeaturedMedia}
+                    {block:IfFeaturedMedia}<!-- <div class="videoplaceholder">{text:Featured media}</div> -->
+                    <div id="slider-wrapper">
+                        <div class="slider-wrapper">
+                            <div id="slider" class="nivoSlider">
+                                <img src="http://i.imgur.com/v4QwpB3.jpg" data-thumb="http://i.imgur.com/v4QwpB3.jpg" alt="" />
+                                <img src="http://i.imgur.com/1MWss4E.jpg" data-thumb="http://i.imgur.com/1MWss4E.jpg" alt="" />
+                                <img src="http://i.imgur.com/d7OZeCu.jpg" data-thumb="http://i.imgur.com/d7OZeCu.jpg" alt="" />
+                                <img src="http://i.imgur.com/HUfuPVN.jpg" data-thumb="http://i.imgur.com/HUfuPVN.jpg" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    {/block:IfFeaturedMedia}
                     <div class="social_buttons"><a href="https://www.thunderclap.it/projects/2242-i-am-bradley-manning" target="_blank">thunderclap link</a><a href="#" target="_blank">twibbon link</a></div>
                     {/block:IndexPage}
                 </header>
