@@ -459,6 +459,9 @@ footer h3 {
     margin: 40px 0px 10px 0px;
     text-align: center;
 }
+#featured-media-description {
+    text-align: justify;
+}
 /* Social buttons should usually just be arrayed in sets of two. */
 .social_buttons li {
     float: left;
