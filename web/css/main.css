@@ -275,6 +275,9 @@ section h3 {
 #tumblr-content {
     position: relative;
 }
+#tumblr-content.IndexPage {
+    border-top: 0;
+}
 #btn-toggle-tumblr {
     position: absolute;
     top: 0;
