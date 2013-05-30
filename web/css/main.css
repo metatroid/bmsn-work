@@ -79,12 +79,7 @@ body {
     margin: 0 auto;
 }
 
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.main-container,
-.footer-container {
+.main-container {
     border-top: 10px solid #222;
     background: #fff;
 }
@@ -162,17 +157,33 @@ nav ol, nav ul, nav p {
     font-weight: bold;
 }
 
-/* ==============
-    MOBILE: Main
-   ============== */
-
 .main {
     padding: 30px 0;
 }
 
-
+.footer-container {
+    background: rgba(240, 240, 240,1);
+    padding: 20px 0 30px;
+}
 .footer-container footer {
-    padding: 20px 0;
+    width: 690px;
+    margin: 0 auto;
+}
+footer h3 {
+    font-size: 45px;
+    color: #222;
+}
+footer h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+footer h3 a:hover {
+    text-decoration: underline;
+}
+footer section {
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* ===============
@@ -349,9 +360,8 @@ section h3 {
 #campaign-collaborators li a:hover {
     text-decoration: underline;
 }
-
 #campaign-updates-opt-in h3 {
-    float: right;
+    display: none;
 }
 #campaign-updates-opt-in ul {
     clear: none;
@@ -371,9 +381,6 @@ section h3 {
     margin-left: 8px;
     background-position: -56px 0;
 }
-#campaign-newsletter {
-    clear: both;
-}
 #campaign-newsletter fieldset {
     border: none;
 }
@@ -381,15 +388,21 @@ section h3 {
 #campaign-newsletter label {
     display: none;
 }
+#campaign-newsletter input {
+    margin-left: 5px;
+}
 #campaign-newsletter input[type="text"] {
     color: rgb(66, 66, 66);
     padding: 0px 10px;
     border: 1px solid #ccc;
-    width: 300px;
-    margin: 0px 10px 0px 210px;
+    width: 410px;
     height: 40px;
     display: inline-block;
     vertical-align: top;
+    font-style: oblique;
+}
+#campaign-newsletter input[type="text"]:focus {
+    font-style: normal;
 }
 #campaign-newsletter input[type="submit"] {
     border: 0;
@@ -436,9 +449,6 @@ h7 {
 
 header h3 {
     margin-bottom: 18px;
-}
-footer h3 {
-    font-size: 50px;
 }
 
 .post_caption p {
