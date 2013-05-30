@@ -6,9 +6,6 @@ textarea {
     color: #222;
 }
 
-a{
-    text-decoration: none !important;
-}
 @font-face {
   font-family: 'DINmed';
   src: url('DINCond-Medium.eot');
