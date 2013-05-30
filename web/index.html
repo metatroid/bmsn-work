@@ -1044,10 +1044,10 @@ ul.tags li:last-child::after {
                     </div>
                     {/block:IndexPage}
                     {block:Posts}{block:PermalinkPage}{block:Photo}
-                    <div class="photo-buttons">
-                        {block:SubmissionsEnabled}<a href="/submit#tumblr-content">{SubmitLabel}</a>{/block:SubmissionsEnabled}
-                        <a href="/archive">view them all</a>
-                    </div>
+                    <ul id="photo-buttons" class="clearfix">
+                        {block:SubmissionsEnabled}<li><a href="/submit#tumblr-content">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+                        <li><a href="/archive">view them all</a></li>
+                    </ul>
                     {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     <div class="brickbox">
                         {block:Posts}
