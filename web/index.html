@@ -1024,10 +1024,10 @@ ul.tags li:last-child::after {
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
                     {block:IndexPage}
-                    <div class="photo-buttons">
-                        {block:SubmissionsEnabled}<a href="/submit#tumblr-content">{SubmitLabel}</a>{/block:SubmissionsEnabled}
-                        <a href="/archive">view them all</a>
-                    </div>
+                    <ul id="photo-buttons" class="clearfix">
+                        {block:SubmissionsEnabled}<li><a href="/submit#tumblr-content">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+                        <li><a href="/archive">view them all</a></li>
+                    </ul>
                     {/block:IndexPage}
                     {block:Posts}{block:PermalinkPage}{block:Photo}
                     <ul id="photo-buttons" class="clearfix">
