@@ -471,6 +471,8 @@ header h3 {
 }
 #featured-media-description {
     text-align: justify;
+    font-size: 24px;
+    padding-bottom: 20px;
 }
 /* Social buttons should usually just be arrayed in sets of two. */
 .social_buttons li {
