@@ -18,11 +18,16 @@
         <meta name="text:Campaigner URL" content="http://bradleymanning.org/">
         <meta name="text:Hero name" content="Bradley Manning">
         <meta name="text:Featured media" content="">
+        <meta name="text:Featured media description" content="">
         <meta name="text:Imprisoned on date" content="May 19, 2010">
         <meta name="text:Thunderclap URL" content="https://www.thunderclap.it/projects/2242-i-am-bradley-manning">
         <meta name="text:Thunderclap link text" content="On June 3rd Bradley goes to trial. Join the Thunderclap now.">
+        <meta name="text:Facebook URL" content="">
+        <meta name="text:Facebook link text" content="">
         <meta name="text:Twibbon URL" content="">
         <meta name="text:Twibbon link text" content="">
+        <meta name="text:Petition URL" content="">
+        <meta name="text:Petition link text" content="Sign the Nobel peace prize petition">
         <meta name="text:Facebook Username" content="">
         <meta name="text:Tweet1" content="">
         <meta name="text:Tweet2" content="">
@@ -979,11 +984,13 @@ ul.tags li:last-child::after {
                         </div>
                     </div>
                     {/block:IfSlider1Image}
-
-                    <div class="social_buttons">
-                        {block:IfThunderclapURL}<a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a>{/block:IfThunderclapURL}
-                        {block:IfTwibbonURL}<a href="{text:Twibbon URL}" {Target}>{text:Twibbon link text}</a>{/block:IfTwibbonURL}
-                    </div>
+                    {block:IfFeaturedMediaDescription}<div id="featured-media-description">{text:Featured media description}</div>{/block:IfFeaturedMediaDescription}
+                    <ul class="social_buttons">
+                        {block:IfThunderclapURL}<li id="thunderclap-link"><a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a></li>{/block:IfThunderclapURL}
+                        {block:IfFacebookURL}<li id="facebook-link"><a href="{text:Facebook URL}" {Target}>{text:Facebook link text}</a></li>{/block:IfFacebookURL}
+                        {block:IfTwibbonURL}<li id="twibbon-link"><a href="{text:Twibbon URL}" {Target}>{text:Twibbon link text}</a></li>{/block:IfTwibbonURL}
+                        {block:IfPetitionURL}<li id="petition-link"><a href="{text:PetitionURL}" {Target}>{text:Petition link text}</a></li>{/block:IfPetitionURL}
+                    </ul>
                     {/block:IndexPage}
                 </header>
 
@@ -1294,7 +1301,12 @@ ul.tags li:last-child::after {
                     </ul>
                 </section>
                 {/block:IfCollaborator1Name}
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
 
+        <div class="footer-container">
+            <footer>
+                {block:IfCampaignerName}<h3>A {block:IfCampaignerURL}<a href="{text:Campaigner URL}" {Target}>{/block:IfCampaignerURL}{text:Campaigner name}{block:IfCampaignerURL}</a>{/block:IfCampaignerURL} project.</h3>{/block:IfCampaignerName}
                 {block:IfSignUpForUpdates}
                 <section id="campaign-updates-opt-in">
                     <h3>Sign up for campaign updates</h3>
@@ -1305,7 +1317,7 @@ ul.tags li:last-child::after {
                             <form method="post" action="http://ymlp.com/subscribe.php?id=gmubmsjgmgb" target="signup_popup" onsubmit="window.open( 'http://ymlp.com/subscribe.php?id=gmubmsjgmgb','signup_popup','scrollbars=yes,width=600,height=450'); return true;">
                                 <fieldset><legend>Subscribe by email</legend>
                                     <label for="campaign-subscriber-email">Your email address:</label>
-                                    <input type="text" id="campaign-subscriber-email" placeholder="your email" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
+                                    <input type="text" id="campaign-subscriber-email" placeholder="Add email to join mailing list" value="" name="YMP0" oldautocomplete="remove" autocomplete="off">
                                     <input type="submit" value="Subscribe" id="index-submit">
                                 </fieldset>
                             </form>
@@ -1313,15 +1325,7 @@ ul.tags li:last-child::after {
                     </ul>
                 </section>
                 {/block:IfSignUpForUpdates}
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-
-        <div class="footer-container">
-            {block:IfCampaignerName}
-            <footer class="wrapper">
-                <h3>A {block:IfCampaignerURL}<a href="{text:Campaigner URL}" {Target}>{/block:IfCampaignerURL}{text:Campaigner name}{block:IfCampaignerURL}</a>{/block:IfCampaignerURL} project.</h3>
             </footer>
-            {/block:IfCampaignerName}
         </div>
 
     </body>
