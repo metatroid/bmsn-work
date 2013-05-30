@@ -190,9 +190,6 @@ textarea {
     color: #222;
 }
 
-a{
-    text-decoration: none !important;
-}
 @font-face {
   font-family: 'DINmed';
   src: url('http://bradleymanning.org/fonts/DINCond-Medium.eot');
@@ -266,12 +263,7 @@ body {
     margin: 0 auto;
 }
 
-/* ===================
-    ALL: Orange Theme
-   =================== */
-
-.main-container,
-.footer-container {
+.main-container {
     border-top: 10px solid #222;
     background: #fff;
 }
@@ -306,7 +298,11 @@ nav ol, nav ul, nav p {
     -webkit-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
 }
-#MainNav a:hover {
+#MainNav li:last-child a {
+    color: yellow;
+}
+#MainNav a:hover,
+#MainNav li:last-child a:hover {
     text-decoration: underline;
     background-color: rgb(235, 235, 235);
     color: #222;
@@ -345,17 +341,33 @@ nav ol, nav ul, nav p {
     font-weight: bold;
 }
 
-/* ==============
-    MOBILE: Main
-   ============== */
-
 .main {
     padding: 30px 0;
 }
 
-
+.footer-container {
+    background: rgba(240, 240, 240,1);
+    padding: 20px 0 30px;
+}
 .footer-container footer {
-    padding: 20px 0;
+    width: 690px;
+    margin: 0 auto;
+}
+footer h3 {
+    font-size: 45px;
+    color: #222;
+}
+footer h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+footer h3 a:hover {
+    text-decoration: underline;
+}
+footer section {
+    border: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* ===============
@@ -464,6 +476,7 @@ section h3 {
 #campaign-tweet-this .section-description span {
     display: block;
 }
+.social_buttons,
 #campaign-tweet-this ul,
 #campaign-collaborators ul,
 #campaign-updates-opt-in ul {
@@ -531,9 +544,8 @@ section h3 {
 #campaign-collaborators li a:hover {
     text-decoration: underline;
 }
-
 #campaign-updates-opt-in h3 {
-    float: right;
+    display: none;
 }
 #campaign-updates-opt-in ul {
     clear: none;
@@ -553,9 +565,6 @@ section h3 {
     margin-left: 8px;
     background-position: -56px 0;
 }
-#campaign-newsletter {
-    clear: both;
-}
 #campaign-newsletter fieldset {
     border: none;
 }
@@ -563,15 +572,21 @@ section h3 {
 #campaign-newsletter label {
     display: none;
 }
+#campaign-newsletter input {
+    margin-left: 5px;
+}
 #campaign-newsletter input[type="text"] {
     color: rgb(66, 66, 66);
     padding: 0px 10px;
     border: 1px solid #ccc;
-    width: 300px;
-    margin: 0px 10px 0px 210px;
+    width: 410px;
     height: 40px;
     display: inline-block;
     vertical-align: top;
+    font-style: oblique;
+}
+#campaign-newsletter input[type="text"]:focus {
+    font-style: normal;
 }
 #campaign-newsletter input[type="submit"] {
     border: 0;
@@ -619,9 +634,6 @@ h7 {
 header h3 {
     margin-bottom: 18px;
 }
-footer h3 {
-    font-size: 50px;
-}
 
 .post_caption p {
     margin-top: 0;
@@ -641,27 +653,45 @@ footer h3 {
     margin: 40px 0px 10px 0px;
     text-align: center;
 }
-.social_buttons a {
-    text-transform: uppercase;
-    display: inline-block;
-    background-color: #ccc;
-    color: #fff;
-    width: 840px;
-    text-align: center;
-    background-color: #00ADB3;
-    padding: 20px 0px;
-    text-decoration: none;
+#featured-media-description {
+    text-align: justify;
+}
+/* Social buttons should usually just be arrayed in sets of two. */
+.social_buttons li {
+    float: left;
+    width: 410px;
+    margin: 0 20px 25px 0;
     font-size: 20px;
     font-weight: bold;
+    text-align: center;
+}
+.social_buttons li:nth-child(even) {
+    margin-right: 0;
+}
+/* Specific for this design, though, we want first and last full-width. */
+#thunderclap-link,
+#petition-link {
+    width: 840px;
+}
+#facebook-link { margin-right: 20px; }
+#thunderclap-link,
+#twibbon-link,
+#petition-link {
+    margin-right: 0;
+}
+.social_buttons a {
+    text-transform: uppercase;
+    background-color: #ccc;
+    display: block;
+    padding: 20px 0;
+    color: #fff;
+    background-color: #00ADB3;
+    text-decoration: none;
 }
 .social_buttons a:hover {
     background-color: #11D1D1;
 }
-.social_buttons a:nth-child(2) {
-    margin-right: 0px;
-    background-color: #C1272D;
-    display: none;
-}
+
 .post-type-photos h3 {
     margin-bottom: 30px;
 }
