@@ -114,11 +114,7 @@ nav ol, nav ul, nav p {
     -webkit-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
 }
-#MainNav li:last-child a {
-    color: yellow;
-}
-#MainNav a:hover,
-#MainNav li:last-child a:hover {
+#MainNav a:hover {
     text-decoration: underline;
     background-color: rgb(235, 235, 235);
     color: #222;
