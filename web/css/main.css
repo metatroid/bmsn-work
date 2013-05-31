@@ -506,10 +506,10 @@ header h3 {
 .social_buttons a {
     background-color: #ccc;
     color: #fff;
-    background-color: #00ADB3;
+    background-color: #B30015;
 }
 .social_buttons a:hover {
-    background-color: #11D1D1;
+    background-color: #900;
 }
 #photo-buttons a {
     color: #fff;
