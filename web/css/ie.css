@@ -1,0 +1,43 @@
+#MainNav{
+  position: relative;
+  z-index: 9999999;
+}
+#MainNav a{
+  border-radius: 0 0 8px 8px;
+	behavior: url(/PIE.htc);
+}
+.IndexPage .box{
+  background: #f0f0f0;
+}
+#photo-buttons{
+  width: 840px;
+}
+#photo-buttons li{
+  width: 410px;
+  margin-right: 0;
+}
+#photo-buttons li:first-child{
+  margin-right: 20px
+}
+#dayscount{
+  background: #414141;
+}
+#PaginationPrevious a:before{
+	content: '\2190  ';
+}
+#PaginationNext a:after {
+    content: ' \2192';
+}
+#campaign-tweet-this li a{
+	border: 1px solid #d6d6d6;
+	background: #F7F7F7;
+	color: #474747;
+	border-radius: 5px;
+	behavior: url(/PIE.htc);
+}
+#campaign-tweet-this li a:hover{
+  background: #B6B4B4;
+}
+#campaign-collaborators li{
+	border-bottom: 2px solid #e3e3e3;
+}

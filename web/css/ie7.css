@@ -1,0 +1,41 @@
+#dayscount{
+	display: inline;
+	padding: 0 10px 20px;
+}
+#campaign-tweet-this li a{
+	position: static;
+	background: #F7F7F7;
+	behavior: none;
+  margin: 4px 0 8px;
+}
+#campaign-tweet-this li a:before{
+	position: static;
+	padding-right: 15px;
+	padding-top: 5px;
+}
+#campaign-tweet-this h3, #campaign-collaborators h3{
+	display: block;
+	float: left;
+}
+#campaign-tweet-this .section-description, #campaign-collaborators .section-description{
+	display: block;
+	float: left;
+}
+#PaginationPrevious a:before{
+	content: '<  ';
+}
+#PaginationNext a:after {
+    content: ' >';
+}
+#tumblr-content h3, #tumblr-content h4{
+	display: inline;
+}
+.box p{
+	height: 0;
+}
+.box footer{
+	height: 0;
+}
+.box header p{
+	height: auto;
+}
