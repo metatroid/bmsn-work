@@ -38,8 +38,26 @@
         <!--[if lt IE 8]>
           <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
         <![endif]-->
+         <script>
+           $(function() {
+             if (window.PIE) {
+               $('#MainNav a, #campaign-tweet-this li a').each(function() {
+                 PIE.attach(this);
+               });
+             }
+           });
+         </script>
+
         <script type="text/javascript">
             $(document).ready(function(){
+                 //iframe control IE fix
+                 if(!$.support.leadingWhitespace){
+                     console.log("IE<=8");
+                     $('#tumblr_controls').remove();
+                     $controls_iframe = $('<iframe width="330" height="25" id="tumblr_controls" src="http://assets.tumblr.com/assets/html/iframe.html?src=http%3A%2F%2Fiam.bradleymanning.org%2F&lang=en_US&name=iambradleymanning&avatar=http%3A%2F%2F24.media.tumblr.com%2Favatar_56377ed12d4e_64.png&title=I+am+Bradley+Manning&url=http%3A%2F%2Fiam.bradleymanning.org%2F&_v=dcf1c0a578dbfd6678efa6e9b3e760bc" style="top: 0px; right: 0px; overflow: hidden; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; position: absolute; z-index: 2147483647; background-color: transparent;" allowTransparency="" marginheight="0" marginWidth="0" frameBorder="0">');
+                     $controls_iframe.appendTo('body');
+                 }
+
             	// date change thingy
                 var today = moment();
                 var todate = today.diff(moment('May 19, 2010'),'days');
