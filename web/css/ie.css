@@ -4,7 +4,6 @@
 }
 #MainNav a{
   border-radius: 0 0 8px 8px;
-	behavior: url(/PIE.htc);
 }
 .IndexPage .box{
   background: #f0f0f0;
@@ -16,8 +15,11 @@
   width: 410px;
   margin-right: 0;
 }
-#photo-buttons li:first-child{
+#photo-buttons > li{
   margin-right: 20px
+}
+#photo-buttons > li + li{
+  margin-right: 0px
 }
 #dayscount{
   background: #414141;
@@ -33,11 +35,13 @@
 	background: #F7F7F7;
 	color: #474747;
 	border-radius: 5px;
-	behavior: url(/PIE.htc);
 }
 #campaign-tweet-this li a:hover{
   background: #B6B4B4;
 }
 #campaign-collaborators li{
 	border-bottom: 2px solid #e3e3e3;
+}
+iframe{
+	border: none !important;
 }
