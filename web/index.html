@@ -148,7 +148,7 @@
         <!--[if lt IE 8]>
           <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
         <![endif]-->
-        <script src="http://static.tumblr.com/edmq1ti/hJVmnt1ma/main.js"></script>
+        <script src="http://static.tumblr.com/edmq1ti/j3ymntk39/main.js"></script>
          <script>
            $(function() {
              if (window.PIE) {
@@ -169,7 +169,7 @@
                      $controls_iframe.appendTo('body');
                  }
 
-            	// date change thingy
+                // date change thingy
                 var today = moment();
                 var todate = today.diff(moment('{text:Imprisoned on date}'),'days');
                 $('#dayscount').text(todate);
@@ -1005,7 +1005,7 @@ ul.tags li:last-child::after {
     *zoom: 1;
 }
 #photo-feed .box{
-    width: 250px;
+    width: 245px;
     padding: 10px;
     margin-right: 15px;
     background: #f0f0f0;
@@ -1058,13 +1058,112 @@ ul.tags li:last-child::after {
 #photo-feed .nav-links li a.selected, #photo-feed .nav-links li a:hover{
 	color: #645153;
 }
+.abouttextblock .shortlink a{color: #c1272d; text-decoration: none; margin-left: 5px;}
+.abouttextblock .shortlink{
+    clear: both;
+float: right;
+margin-top: 20px;
+margin-right: 120px;
+}
+.aboutsharetxt{display: block; float: left; font-size: 22px; margin-top: 6px; margin-right: 4px; font-family: DINreg;}
+.abouttextblock{list-style: none; margin: 0; padding: 0;}
+.abouttextblock .ShareLinks{float: right; width: 400px}
+.abouttextblock .ShareLinks ul{list-style: none; margin: 0; padding: 0;}
+.abouttextblock .share-on-twitter, .abouttextblock .share-on-twitter a{display: block; float: left; width: 28px; height: 27px; background: url(http://static.tumblr.com/edmq1ti/Fjsmntiz5/share_buttons.png); margin-right: 10px; text-indent: -9999px; background-position: 0 0;}
+.abouttextblock .share-on-facebook, .abouttextblock .share-on-facebook a{display: block; float: left; width: 28px; height: 27px; background: url(http://static.tumblr.com/edmq1ti/Fjsmntiz5/share_buttons.png); margin-right: 10px; text-indent: -9999px; background-position: -36px 0;}
+.abouttextblock .share-on-reddit, .abouttextblock .share-on-reddit a{display: block; float: left; width: 28px; height: 27px; background: url(http://static.tumblr.com/edmq1ti/Fjsmntiz5/share_buttons.png); margin-right: 10px; text-indent: -9999px; background-position: -72px 0;}
+.abouttextblock .share-on-digg, .abouttextblock .share-on-digg a{display: block; float: left; width: 28px; height: 27px; background: url(http://static.tumblr.com/edmq1ti/Fjsmntiz5/share_buttons.png); margin-right: 10px; text-indent: -9999px; background-position: -108px 0;}
+.shorturl{clear: both; margin-left: 40px; margin-top: 20px; float: right; margin-right: 80px;}
 
+.shorturl a{color: #c1272d; text-decoration: none; margin-left: 5px;}
+.photoMetaData{
+    border-top: 10px solid black;
+    border-bottom: 10px solid black;
+    padding: 10px 0 20px;
+    overflow: hidden;
+}
+.photoMetaData .rmeta{float: left; width: 50%;}
+
+.photoMetaData .lmeta{
+    color: #c1272d;
+    float: left;
+    width: 50%;
+}
+.photoMetaData .lmeta > p{
+    margin-bottom: 0;
+}
+.photoMetaData .lmeta > p > a{
+    font-size: 32px;
+    font-family: DINreg;
+    margin-bottom: 10px;
+    color: #c1272d;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 20px
+}
+
+.sharers a{display: block; float: left; width: 28px; height: 27px; background: url(http://static.tumblr.com/edmq1ti/Fjsmntiz5/share_buttons.png); margin-right: 10px}
+.sharers span{display: block; float: left; font-size: 22px; margin-top: 6px; margin-right: 4px; font-family: DINreg;}
+.sharers .twitter{background-position: 0 0}
+.sharers .facebook{background-position: -36px 0}
+.sharers .reddit{background-position: -72px 0}
+.sharers .digg{background-position: -108px 0}
+.box ul.tags li, .box ul.tags li a{
+    color: #c1272d;
+    font-size: 15px;
+    font-style: normal;
+    text-decoration: none;
+}
+ol.notes, li.notes, .utils{margin: 0; padding: 0; list-style: none}
+ol.notes li{
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+}
+ol.notes li a{
+    text-decoration: none;
+    color: #c1272d;
+}
+ol.notes .avatar{width: 30px; padding-right: 10px;}
+#notes{
+    font-size: 32px;
+    font-family: DINreg;
+    margin: 40px 0;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#description h2{font-size: 27px;}
+#confine{font-size: 50px; font-weight: 400;}
+#drop{font-family: DINreg; font-size: 65px; font-weight: 400; text-transform: uppercase; line-height: 1;}
+#photo-feed .photo-links a{
+    display: block;
+    float: left;
+    background: #b30015;
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px 3px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 20px;
+    width: 150px;
+}
+#photo-feed .photo-links{
+    float: left;
+    width: 450px;
+    margin-top: 14px;
+}
 /* ==========================================================================
    User-supplied CSS. (This is from Tumblr's "customize" edit box.)
    ========================================================================== */
             {CustomCSS}
             /* ]]> */
         </style>
+        <script>$(function(){
+    if($("#removeHeader").length != 0){$("article>header").hide();}
+});</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -1084,16 +1183,16 @@ ul.tags li:last-child::after {
             <div id="MainContent" class="main wrapper clearfix">
                 <header>
                     <h1>I am {text:Hero name}</h1>
-                    <div id="description">{Description}</div>
+                    <div id="description"><h2>Because I believe the public deserves the truth and whistleblowers deserve a fair trial.</h2></div>
                     {block:IndexPage}
-                    {block:IfImprisonedOnDate}<h4><span id="dayscount">1</span> days of unjust confinement is enough.</h4>{/block:IfImprisonedOnDate}
+                    {block:IfImprisonedOnDate}<h4 id='confine'><span id="dayscount">1</span> days of unjust confinement is enough!</h4>{/block:IfImprisonedOnDate}<h5 id="drop">Drop the "aiding the enemy" charge</h5>
                     {block:IfFeaturedMedia}<div id="featured-media-wrapper">{text:Featured media}</div>{/block:IfFeaturedMedia}
                     {block:IfSlider1Image}
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
                             <div id="slider" class="nivoSlider">
                                 {block:IfSlider1URL}<a href="{text:Slider 1 URL}" rel="bookmark">{/block:IfSlider1URL}<img src="{image:Slider 1}" data-thumb="{image:Slider 1}" alt="" />{block:IfSlider1URL}</a>{/block:IfSlider1URL}
-                                {block:IfSlider2Image}{block:IfSlider2URL}<a href="{text:Slider 2 URL}" rel="bookmark">{/block:IfSlider2URL}<img src="{image:Slider 2}" data-thumb="{image:Slider 2}" alt="" />{block:IfSlider2URL}</a>{/block:IfSlider2URL}{/block:IfSlider2Image}
+                                <!--{block:IfSlider2Image}{block:IfSlider2URL}<a href="{text:Slider 2 URL}" rel="bookmark">{/block:IfSlider2URL}<img src="{image:Slider 2}" data-thumb="{image:Slider 2}" alt="" />{block:IfSlider2URL}</a>{/block:IfSlider2URL}{/block:IfSlider2Image}-->
                                 {block:IfSlider3Image}{block:IfSlider3URL}<a href="{text:Slider 3 URL}" rel="bookmark">{/block:IfSlider3URL}<img src="{image:Slider 3}" data-thumb="{image:Slider 3}" alt="" />{block:IfSlider3URL}</a>{/block:IfSlider3URL}{/block:IfSlider3Image}
                                 {block:IfSlider4Image}{block:IfSlider4URL}<a href="{text:Slider 4 URL}" rel="bookmark">{/block:IfSlider4URL}<img src="{image:Slider 4}" data-thumb="{image:Slider 4}" alt="" />{block:IfSlider4URL}</a>{/block:IfSlider4URL}{/block:IfSlider4Image}
                                 {block:IfSlider5Image}{block:IfSlider5URL}<a href="{text:Slider 5 URL}" rel="bookmark">{/block:IfSlider5URL}<img src="{image:Slider 5}" data-thumb="{image:Slider 5}" alt="" />{block:IfSlider5URL}</a>{/block:IfSlider5URL}{/block:IfSlider5Image}
@@ -1111,7 +1210,7 @@ ul.tags li:last-child::after {
                                 {block:IfSlider17Image}{block:IfSlider17URL}<a href="{text:Slider 17 URL}" rel="bookmark">{/block:IfSlider17URL}<img src="{image:Slider 17}" data-thumb="{image:Slider 17}" alt="" />{block:IfSlider17URL}</a>{/block:IfSlider17URL}{/block:IfSlider17Image}
                                 {block:IfSlider18Image}{block:IfSlider18URL}<a href="{text:Slider 18 URL}" rel="bookmark">{/block:IfSlider18URL}<img src="{image:Slider 18}" data-thumb="{image:Slider 18}" alt="" />{block:IfSlider18URL}</a>{/block:IfSlider18URL}{/block:IfSlider18Image}
                                 {block:IfSlider19Image}{block:IfSlider19URL}<a href="{text:Slider 19 URL}" rel="bookmark">{/block:IfSlider19URL}<img src="{image:Slider 19}" data-thumb="{image:Slider 19}" alt="" />{block:IfSlider19URL}</a>{/block:IfSlider19URL}{/block:IfSlider19Image}
-                                {block:IfSlider20Image}{block:IfSlider20URL}<a href="{text:Slider 20 URL}" rel="bookmark">{/block:IfSlider20URL}<img src="{image:Slider 20}" data-thumb="{image:Slider 20}" alt="" />{block:IfSlider20URL}</a>{/block:IfSlider20URL}{/block:IfSlider20Image}
+                                <!--{block:IfSlider20Image}{block:IfSlider20URL}<a href="{text:Slider 20 URL}" rel="bookmark">{/block:IfSlider20URL}<img src="{image:Slider 20}" data-thumb="{image:Slider 20}" alt="" />{block:IfSlider20URL}</a>{/block:IfSlider20URL}{/block:IfSlider20Image}-->
                                 {block:IfSlider21Image}{block:IfSlider21URL}<a href="{text:Slider 21 URL}" rel="bookmark">{/block:IfSlider21URL}<img src="{image:Slider 21}" data-thumb="{image:Slider 21}" alt="" />{block:IfSlider21URL}</a>{/block:IfSlider21URL}{/block:IfSlider21Image}
                                 {block:IfSlider22Image}{block:IfSlider22URL}<a href="{text:Slider 22 URL}" rel="bookmark">{/block:IfSlider22URL}<img src="{image:Slider 22}" data-thumb="{image:Slider 22}" alt="" />{block:IfSlider22URL}</a>{/block:IfSlider22URL}{/block:IfSlider22Image}
                                 {block:IfSlider23Image}{block:IfSlider23URL}<a href="{text:Slider 23 URL}" rel="bookmark">{/block:IfSlider23URL}<img src="{image:Slider 23}" data-thumb="{image:Slider 23}" alt="" />{block:IfSlider23URL}</a>{/block:IfSlider23URL}{/block:IfSlider23Image}
@@ -1123,7 +1222,7 @@ ul.tags li:last-child::after {
                     {/block:IfSlider1Image}
                     {block:IfFeaturedMediaDescription}<div id="featured-media-description">{text:Featured media description}</div>{/block:IfFeaturedMediaDescription}
                     <ul class="social_buttons">
-                        {block:IfThunderclapURL}<li id="thunderclap-link"><a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a></li>{/block:IfThunderclapURL}
+                        <!--{block:IfThunderclapURL}<li id="thunderclap-link"><a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a></li>{/block:IfThunderclapURL}-->
                         {block:IfFacebookURL}<li id="facebook-link"><a href="{text:Facebook URL}" {Target}>{text:Facebook link text}</a></li>{/block:IfFacebookURL}
                         {block:IfTwibbonURL}<li id="twibbon-link"><a href="{text:Twibbon URL}" {Target}>{text:Twibbon link text}</a></li>{/block:IfTwibbonURL}
                         {block:IfPetitionURL}<li id="petition-link"><a href="{text:Petition URL}" {Target}>{text:Petition link text}</a></li>{/block:IfPetitionURL}
@@ -1141,10 +1240,10 @@ ul.tags li:last-child::after {
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
                     {block:IndexPage}
-                    <ul id="photo-buttons" class="clearfix">
+                    <!--<ul id="photo-buttons" class="clearfix">
                         {block:SubmissionsEnabled}<li><a href="/submit#tumblr-content">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
                         <li><a href="/your-photos">view them all</a></li>
-                    </ul>
+                    </ul>-->
                     {/block:IndexPage}
                     {block:Posts}{block:PermalinkPage}{block:Photo}
                     <ul id="photo-buttons" class="clearfix">
@@ -1157,17 +1256,35 @@ ul.tags li:last-child::after {
                         {block:Photo}
                         <article id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
                             <header>
-                                {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />{LinkCloseTag}
-                                <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                                {LinkOpenTag}<img {block:HighRes}style="display:none"{/block:HighRes} src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />{block:HighRes}
+    <img src="{PhotoURL-HighRes}" class="highres">
+{/block:HighRes}{LinkCloseTag}
+                                {block:Caption}{Caption}{/block:Caption}
                             </header>
-                            <!-- TODO: Insert RebloggedFrom code? -->
-                            {block:Caption}{Caption}{/block:Caption}
+                            <div class='photoMetaData'>
+                                <div class="lmeta">
+                                    <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
+                                    
+                                    {block:HasTags}
+                                    <ul class="tags">
+                                        {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}#tumblr-content" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
+                                    </ul>
+                                    {/block:HasTags}
+                                </div>
+                                <div class="rmeta">
+                                    <div class="sharers">
+                                        <span>SHARE:</span>
+                                        <a class="twiiter" href="https://twitter.com/intent/tweet/?text={block:PostTitle}{URLEncodedPostTitle}%20{/block:PostTitle}{URLEncodedPermalink}{block:Twitter}%20%2Fvia%20%40{TwitterUsername}{/block:Twitter}" {Target}></a>
+                                        <a href="https://www.facebook.com/share.php?u={URLEncodedPermalink}" {Target} class="facebook"></a>
+                                        <a href="http://www.reddit.com/submit?url={URLEncodedPermalink}" {Target} class="reddit"></a>
+                                        <a href="http://digg.com/submit?url={URLEncodedPermalink}" {Target} class="digg"></a>
+                                    </div>
+                                    <div class="shorturl">
+                                    <span>{lang:Short URL}:</span><a href="{ShortURL}">{ShortURL}</a></div>
+                                </div>
+                            </div>
+                            
                             <footer>
-                                {block:HasTags}
-                                <ul class="tags">
-                                    {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}#tumblr-content" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
-                                </ul>
-                                {/block:HasTags}
                                 <ul class="utils">
                                     {block:NoteCount}
                                     <li class="notes">
@@ -1175,7 +1292,7 @@ ul.tags li:last-child::after {
                                         {block:PostNotes}{PostNotes-64}{/block:PostNotes}
                                     </li>
                                     {/block:NoteCount}
-                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                    <!--<li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
                                     <li class="ShareLinks">
                                         <ul>
                                             <li class="share-on-twitter"><a href="https://twitter.com/intent/tweet/?text={block:PostTitle}{URLEncodedPostTitle}%20{/block:PostTitle}{URLEncodedPermalink}{block:Twitter}%20%2Fvia%20%40{TwitterUsername}{/block:Twitter}" {Target}>{lang:Share this} on Twitter</a></li>
@@ -1183,7 +1300,7 @@ ul.tags li:last-child::after {
                                             <li class="share-on-reddit"><a href="http://www.reddit.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Reddit</a></li>
                                             <li class="share-on-digg"><a href="http://digg.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Digg</a></li>
                                         </ul>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </footer>
                         </article><!-- .box.brick.post -->
@@ -1197,28 +1314,29 @@ ul.tags li:last-child::after {
                             </header>
                             {Body}
                             {block:More}<p class="morelink"><a href="{Permalink}">{lang:Read more}</a></p>{/block:More}
-                            <footer>
+                            <footer style="border-top: 10px solid black; padding-top: 10px;">
                                 {block:HasTags}
                                 <ul class="tags">
                                     {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}#tumblr-content" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
                                 </ul>
                                 {/block:HasTags}
-                                <ul class="utils">
+                                <ul class="utils abouttextblock">
                                     {block:NoteCount}
                                     <li class="notes">
                                         <a href="{Permalink}#notes"{block:PermalinkPage} id="notes"{/block:PermalinkPage}>{NoteCountWithLabel}</a>
                                         {block:PostNotes}{PostNotes-64}{/block:PostNotes}
                                     </li>
                                     {/block:NoteCount}
-                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
+                                    
                                     <li class="ShareLinks">
-                                        <ul>
+                                        <ul><li class='aboutsharetxt'>SHARE:</li>
                                             <li class="share-on-twitter"><a href="https://twitter.com/intent/tweet/?text={block:PostTitle}{URLEncodedPostTitle}%20{/block:PostTitle}{URLEncodedPermalink}{block:Twitter}%20%2Fvia%20%40{TwitterUsername}{/block:Twitter}" {Target}>{lang:Share this} on Twitter</a></li>
                                             <li class="share-on-facebook"><a href="https://www.facebook.com/share.php?u={URLEncodedPermalink}" {Target}>{lang:Share this} on Facebook</a></li>
                                             <li class="share-on-reddit"><a href="http://www.reddit.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Reddit</a></li>
                                             <li class="share-on-digg"><a href="https://digg.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Digg</a></li>
                                         </ul>
                                     </li>
+                                    <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
                                 </ul>
                             </footer>
                         </article><!-- .box.brick.post -->
@@ -1281,6 +1399,7 @@ ul.tags li:last-child::after {
                                         {block:PostNotes}{PostNotes-64}{/block:PostNotes}
                                     </li>
                                     {/block:NoteCount}
+                                    <!--
                                     <li class="shortlink">{lang:Short URL}: <a href="{ShortURL}" title="{lang:Short URL for this post}" rel="share_this">{ShortURL}</a></li>
                                     <li class="ShareLinks">
                                         <ul>
@@ -1289,7 +1408,7 @@ ul.tags li:last-child::after {
                                             <li class="share-on-reddit"><a href="http://www.reddit.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Reddit</a></li>
                                             <li class="share-on-digg"><a href="https://digg.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Digg</a></li>
                                         </ul>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </footer>
                         </article><!-- .box.brick.post -->
@@ -1481,12 +1600,12 @@ ul.tags li:last-child::after {
 
                 <section id="photo-feed">
                 	<h3>Your Photos</h3>
-                	<a href="/submit#tumblr-content">Add Your Image</a>
+                	<div class="photo-links"><a href="/submit#tumblr-content">Add Your Photo</a><a href="/your-photos">See Them All</a></div>
                 	<ul class="nav-links">
                 		<li><a href="#" class="featured selected" data-option="featured">Featured</a></li>
                 		<li>|</li>
-                		<li><a href="#" class="veterans" data-option="veterans">Veterans</a></li>
-                		<li>|</li>
+                		<!--<li><a href="#" class="veterans" data-option="veterans">Veterans</a></li>
+                		<li>|</li>-->
                 		<li><a href="#" class="recent" data-option="recent">Most Recent</a></li>
             		</ul>
             		<div class="feed">
@@ -1551,4 +1670,5 @@ ul.tags li:last-child::after {
 
     </body>
 </html>
+
 
