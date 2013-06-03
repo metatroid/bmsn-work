@@ -239,8 +239,8 @@ article h3 {
 
 section {
     border-top: 10px solid #222;
-    margin: 20px 0 20px 0;
-    padding: 25px 0 10px 0px;
+    margin: 20px 0;
+    padding: 10px 0;
     text-align: left;
     clear: both;
 }
@@ -295,7 +295,7 @@ section h3 {
 #campaign-updates-opt-in ul {
     clear: both;
     list-style-type: none;
-    margin: 0; padding: 0;
+    margin: 0; padding: 0 0 30px 0;
 }
 #campaign-tweet-this li a {
     position: relative;
@@ -469,7 +469,7 @@ header h3 {
 #featured-media-description {
     text-align: justify;
     font-size: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 3px;
 }
 /* Social and photo buttons should usually just be arrayed in sets of two. */
 .social_buttons li,
@@ -754,3 +754,41 @@ ul.tags li:last-child::after {
 .clearfix {
     *zoom: 1;
 }
+
+#photo-feed h3{
+	float: left;
+	display: block;
+	margin-bottom: 40px;
+}
+#photo-feed > a{
+	float: left;
+	display: block;
+	font-size: 22px;
+	color: #3a5f8b;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-top: 22px;
+	margin-left: 18px;
+}
+#photo-feed .nav-links{
+	clear: both;
+}
+#photo-feed .nav-links{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	margin: 0 0 20px;
+}
+#photo-feed .nav-links li{
+	float: left;
+	margin-right: 10px;
+}
+#photo-feed .nav-links li a{
+	color: #424242;
+	text-decoration: none;
+}
+#photo-feed .nav-links li a.selected, #photo-feed .nav-links li a:hover{
+	color: #645153;
+}
+
