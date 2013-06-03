@@ -754,3 +754,41 @@ ul.tags li:last-child::after {
 .clearfix {
     *zoom: 1;
 }
+
+#photo-feed h3{
+	float: left;
+	display: block;
+	margin-bottom: 40px;
+}
+#photo-feed > a{
+	float: left;
+	display: block;
+	font-size: 22px;
+	color: #3a5f8b;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-top: 22px;
+	margin-left: 18px;
+}
+#photo-feed .nav-links{
+	clear: both;
+}
+#photo-feed .nav-links{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	margin: 0 0 20px;
+}
+#photo-feed .nav-links li{
+	float: left;
+	margin-right: 10px;
+}
+#photo-feed .nav-links li a{
+	color: #424242;
+	text-decoration: none;
+}
+#photo-feed .nav-links li a.selected, #photo-feed .nav-links li a:hover{
+	color: #645153;
+}
+
