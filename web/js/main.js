@@ -6,7 +6,8 @@ function getPhotos(target, paramString){
 			results.response.posts.forEach(function(post){
 		    if(post.type == "photo"){
 		      post["photos"].forEach(function(photo){
-  		    	$("#photo-feed .feed ."+target).append("<div class='box'><img src='"+photo.alt_sizes[0].url+"'></div>");
+  		    	$("#photo-feed .feed ."+target).html("");
+			$("#photo-feed .feed ."+target).append("<div class='box'><img src='"+photo.alt_sizes[0].url+"'></div>");
   		    });	
 		    }
 			});

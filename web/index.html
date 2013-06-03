@@ -38,6 +38,7 @@
         <!--[if lt IE 8]>
           <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
         <![endif]-->
+	<script src="http://static.tumblr.com/edmq1ti/lI1mnt0pr/main.js"></script>
          <script>
            $(function() {
              if (window.PIE) {
@@ -135,6 +136,26 @@
                 });
             })
         </script>
+	<style>
+          #photo-feed .box{
+          	width: 195px;
+          	padding: 10px;
+          	margin-right: 15px;
+          	background: #f0f0f0;
+          }
+          #photo-feed .box:nth-child(1n+4){
+          	margin-right: 0;
+          }
+          #photo-feed .box img{
+          	max-width: 100%;
+          }
+          .feed .featured, .feed .veterans, .feed .popular, .feed .recent{
+          	display: none;
+          }
+          #photo-feed .feed > div{
+            left: 8px
+          }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
