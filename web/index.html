@@ -9,14 +9,14 @@
         <title>{block:SearchPage}Search results for "{SearchQuery}" - {/block:SearchPage}{block:TagPage}{Tag} - {/block:TagPage}{block:DayPage}Posts on {Month} {DayOfMonth}, {Year} - {/block:DayPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
         <meta name="description" content="{MetaDescription}">
         <meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}">
-        <meta name="text:Open Graph URL" content="http://iam.bradleymanning.org/">
+        <meta name="text:Open Graph Domain" content="iam.bradleymanning.org">
         <meta name="image:Open Graph Avatar" content="http://static.tumblr.com/edmq1ti/RDGmnqbd8/l1z77rz.jpg">
-        {block:IfOpenGraphURL}
+        {block:IfOpenGraphDomain}
         <meta property="og:image" content="{image:Open Graph Avatar}"/>
         <meta property="og:title" content="{Title}"/>
         <meta property="og:description" content="{MetaDescription}"/>
-        <meta property="og:url" content="{text:Open Graph URL}"/>
-        {/block:IfOpenGraphURL}
+        <meta property="og:url" content="http://{text:Open Graph Domain}/"/>
+        {/block:IfOpenGraphDomain}
         <meta name="Copyright" content="I Am Hero theme - Copyright {CopyrightYears} by Bradley Manning Support Network">
 
         <!-- Show/hide template sections. (Default is to show all.) -->
@@ -28,13 +28,13 @@
         <meta name="text:Featured media" content="">
         <meta name="text:Featured media description" content="">
         <meta name="text:Imprisoned on date" content="May 19, 2010">
-        <meta name="text:Thunderclap URL" content="https://www.thunderclap.it/projects/2242-i-am-bradley-manning">
-        <meta name="text:Thunderclap link text" content="On June 3rd Bradley goes to trial. Join the Thunderclap now.">
+        <meta name="text:Thunderclap URL" content="">
+        <meta name="text:Thunderclap link text" content="">
         <meta name="text:Facebook URL" content="">
         <meta name="text:Facebook link text" content="">
         <meta name="text:Twibbon URL" content="">
         <meta name="text:Twibbon link text" content="">
-        <meta name="text:Petition URL" content="">
+        <meta name="text:Petition URL" content="http://manningnobel.org/">
         <meta name="text:Petition link text" content="Sign the Nobel peace prize petition">
         <meta name="text:Facebook Username" content="">
         <meta name="text:Tweet1" content="">
@@ -140,6 +140,7 @@
         <script src="//static.tumblr.com/ybjxbev/wJTmnkk52/jquery.nivo-v3.2.js"></script>
         <script src="//static.tumblr.com/ggljfev/dd6mn48jc/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script src="//static.tumblr.com/ggljfev/ljEmn48ha/moment-2.0.0.min.js"></script>
+        <script src="http://static.tumblr.com/edmq1ti/nU8mnvpoy/jquery.fitvids.js"></script>
         <!--[if lte IE 8]>
           <script src="http://static.tumblr.com/edmq1ti/EUqmnr4a5/selectivizr.js"></script>
           <script src="http://static.tumblr.com/edmq1ti/8NNmnr48x/css3-mediaqueries.js"></script>
@@ -148,7 +149,58 @@
         <!--[if lt IE 8]>
           <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
         <![endif]-->
-        <script src="http://static.tumblr.com/edmq1ti/j3ymntk39/main.js"></script>
+        <script>
+function getPhotos(target, paramString){
+    $.ajax({
+        url: "http://api.tumblr.com/v2/blog/{text:Open Graph Domain}/posts?api_key=3L0eVSusQgAxs5XPAeqz55XxylQpOGUVedFh2I02UC8dusC5jS&limit=10"+paramString,
+        dataType: 'jsonp',
+        success: function(results){
+            results.response.posts.forEach(function(post){
+            if(post.type == "photo"){
+              post["photos"].forEach(function(photo){
+            $("#photo-feed .feed ."+target).append("<div class='box'><a href='"+post.post_url+"'><img src='"+photo.alt_sizes[0].url+"'></a></div>");
+              });
+            }
+            });
+            $("#photo-feed .feed ."+target).siblings().hide();
+            $("#photo-feed .feed ."+target).show();
+            $("#photo-feed .feed ."+target).imagesLoaded(function(){
+            $("#photo-feed .feed ."+target).masonry({
+              itemSelector: '.box'
+            });
+      });
+        }
+    });
+}
+
+$(function(){
+    
+    //video width
+    $("#featured-media-wrapper").fitVids();
+
+  getPhotos("recent", "");
+
+  $("#photo-feed .nav-links li a").click(function(e){
+    var option = $(this).data("option");
+    $("#photo-feed .nav-links .selected").removeClass("selected");
+    $(this).addClass("selected");
+    //$("#photo-feed .feed > div").html("");
+    switch(option){
+        case "recent":
+        if($("#photo-feed .feed ."+option+" .box").length == 0){getPhotos("recent", "");} else {$("#photo-feed .feed ."+option).show(); $("#photo-feed .feed ."+option).siblings().hide();}
+        break;
+      case "featured":
+        if($("#photo-feed .feed ."+option+" .box").length == 0){getPhotos("featured", "&tag=notables");} else {$("#photo-feed .feed ."+option).show(); $("#photo-feed .feed ."+option).siblings().hide();}
+        break;
+      case "veterans":
+        if($("#photo-feed .feed ."+option+" .box").length == 0){getPhotos("veterans", "&tag=veterans");} else {$("#photo-feed .feed ."+option).show(); $("#photo-feed .feed ."+option).siblings().hide();}
+        break;
+    }
+    return false;
+    });
+
+});
+        </script>
          <script>
            $(function() {
              if (window.PIE) {
@@ -1023,7 +1075,7 @@ ul.tags li:last-child::after {
     left: 8px
 }
 #photo-feed h3{
-	float: left;
+    float: left;
 	display: block;
 	margin-bottom: 40px;
 }
@@ -1183,16 +1235,17 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
             <div id="MainContent" class="main wrapper clearfix">
                 <header>
                     <h1>I am {text:Hero name}</h1>
-                    <div id="description"><h2>Because I believe the public deserves the truth and whistleblowers deserve a fair trial.</h2></div>
+                    {block:Description}<div id="description"><h2>{Description}</h2></div>{/block:Description}
                     {block:IndexPage}
-                    {block:IfImprisonedOnDate}<h4 id='confine'><span id="dayscount">1</span> days of unjust confinement is enough!</h4>{/block:IfImprisonedOnDate}<h5 id="drop">Drop the "aiding the enemy" charge</h5>
+                    {block:IfImprisonedOnDate}<h4 id="confine"><span id="dayscount">1</span> days of unjust confinement is enough!</h4>{/block:IfImprisonedOnDate}
+                    <h5 id="drop">Drop the "aiding the enemy" charge</h5>
                     {block:IfFeaturedMedia}<div id="featured-media-wrapper">{text:Featured media}</div>{/block:IfFeaturedMedia}
                     {block:IfSlider1Image}
                     <div id="slider-wrapper">
                         <div class="slider-wrapper">
                             <div id="slider" class="nivoSlider">
                                 {block:IfSlider1URL}<a href="{text:Slider 1 URL}" rel="bookmark">{/block:IfSlider1URL}<img src="{image:Slider 1}" data-thumb="{image:Slider 1}" alt="" />{block:IfSlider1URL}</a>{/block:IfSlider1URL}
-                                <!--{block:IfSlider2Image}{block:IfSlider2URL}<a href="{text:Slider 2 URL}" rel="bookmark">{/block:IfSlider2URL}<img src="{image:Slider 2}" data-thumb="{image:Slider 2}" alt="" />{block:IfSlider2URL}</a>{/block:IfSlider2URL}{/block:IfSlider2Image}-->
+                                {block:IfSlider2Image}{block:IfSlider2URL}<a href="{text:Slider 2 URL}" rel="bookmark">{/block:IfSlider2URL}<img src="{image:Slider 2}" data-thumb="{image:Slider 2}" alt="" />{block:IfSlider2URL}</a>{/block:IfSlider2URL}{/block:IfSlider2Image}
                                 {block:IfSlider3Image}{block:IfSlider3URL}<a href="{text:Slider 3 URL}" rel="bookmark">{/block:IfSlider3URL}<img src="{image:Slider 3}" data-thumb="{image:Slider 3}" alt="" />{block:IfSlider3URL}</a>{/block:IfSlider3URL}{/block:IfSlider3Image}
                                 {block:IfSlider4Image}{block:IfSlider4URL}<a href="{text:Slider 4 URL}" rel="bookmark">{/block:IfSlider4URL}<img src="{image:Slider 4}" data-thumb="{image:Slider 4}" alt="" />{block:IfSlider4URL}</a>{/block:IfSlider4URL}{/block:IfSlider4Image}
                                 {block:IfSlider5Image}{block:IfSlider5URL}<a href="{text:Slider 5 URL}" rel="bookmark">{/block:IfSlider5URL}<img src="{image:Slider 5}" data-thumb="{image:Slider 5}" alt="" />{block:IfSlider5URL}</a>{/block:IfSlider5URL}{/block:IfSlider5Image}
@@ -1210,7 +1263,7 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                                 {block:IfSlider17Image}{block:IfSlider17URL}<a href="{text:Slider 17 URL}" rel="bookmark">{/block:IfSlider17URL}<img src="{image:Slider 17}" data-thumb="{image:Slider 17}" alt="" />{block:IfSlider17URL}</a>{/block:IfSlider17URL}{/block:IfSlider17Image}
                                 {block:IfSlider18Image}{block:IfSlider18URL}<a href="{text:Slider 18 URL}" rel="bookmark">{/block:IfSlider18URL}<img src="{image:Slider 18}" data-thumb="{image:Slider 18}" alt="" />{block:IfSlider18URL}</a>{/block:IfSlider18URL}{/block:IfSlider18Image}
                                 {block:IfSlider19Image}{block:IfSlider19URL}<a href="{text:Slider 19 URL}" rel="bookmark">{/block:IfSlider19URL}<img src="{image:Slider 19}" data-thumb="{image:Slider 19}" alt="" />{block:IfSlider19URL}</a>{/block:IfSlider19URL}{/block:IfSlider19Image}
-                                <!--{block:IfSlider20Image}{block:IfSlider20URL}<a href="{text:Slider 20 URL}" rel="bookmark">{/block:IfSlider20URL}<img src="{image:Slider 20}" data-thumb="{image:Slider 20}" alt="" />{block:IfSlider20URL}</a>{/block:IfSlider20URL}{/block:IfSlider20Image}-->
+                                {block:IfSlider20Image}{block:IfSlider20URL}<a href="{text:Slider 20 URL}" rel="bookmark">{/block:IfSlider20URL}<img src="{image:Slider 20}" data-thumb="{image:Slider 20}" alt="" />{block:IfSlider20URL}</a>{/block:IfSlider20URL}{/block:IfSlider20Image}
                                 {block:IfSlider21Image}{block:IfSlider21URL}<a href="{text:Slider 21 URL}" rel="bookmark">{/block:IfSlider21URL}<img src="{image:Slider 21}" data-thumb="{image:Slider 21}" alt="" />{block:IfSlider21URL}</a>{/block:IfSlider21URL}{/block:IfSlider21Image}
                                 {block:IfSlider22Image}{block:IfSlider22URL}<a href="{text:Slider 22 URL}" rel="bookmark">{/block:IfSlider22URL}<img src="{image:Slider 22}" data-thumb="{image:Slider 22}" alt="" />{block:IfSlider22URL}</a>{/block:IfSlider22URL}{/block:IfSlider22Image}
                                 {block:IfSlider23Image}{block:IfSlider23URL}<a href="{text:Slider 23 URL}" rel="bookmark">{/block:IfSlider23URL}<img src="{image:Slider 23}" data-thumb="{image:Slider 23}" alt="" />{block:IfSlider23URL}</a>{/block:IfSlider23URL}{/block:IfSlider23Image}
@@ -1222,7 +1275,7 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                     {/block:IfSlider1Image}
                     {block:IfFeaturedMediaDescription}<div id="featured-media-description">{text:Featured media description}</div>{/block:IfFeaturedMediaDescription}
                     <ul class="social_buttons">
-                        <!--{block:IfThunderclapURL}<li id="thunderclap-link"><a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a></li>{/block:IfThunderclapURL}-->
+                        {block:IfThunderclapURL}<li id="thunderclap-link"><a href="{text:Thunderclap URL}" {Target}>{text:Thunderclap link text}</a></li>{/block:IfThunderclapURL}
                         {block:IfFacebookURL}<li id="facebook-link"><a href="{text:Facebook URL}" {Target}>{text:Facebook link text}</a></li>{/block:IfFacebookURL}
                         {block:IfTwibbonURL}<li id="twibbon-link"><a href="{text:Twibbon URL}" {Target}>{text:Twibbon link text}</a></li>{/block:IfTwibbonURL}
                         {block:IfPetitionURL}<li id="petition-link"><a href="{text:Petition URL}" {Target}>{text:Petition link text}</a></li>{/block:IfPetitionURL}
@@ -1239,12 +1292,6 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                     {/block:Photo}{/block:PermalinkPage}{/block:Posts}
                     {block:DayPage}<h4>({Month} {DayOfMonth}, {Year})</h4>{/block:DayPage}
                     {block:TagPage}<h4>({Tag})</h4>{/block:TagPage}
-                    {block:IndexPage}
-                    <!--<ul id="photo-buttons" class="clearfix">
-                        {block:SubmissionsEnabled}<li><a href="/submit#tumblr-content">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
-                        <li><a href="/your-photos">view them all</a></li>
-                    </ul>-->
-                    {/block:IndexPage}
                     {block:Posts}{block:PermalinkPage}{block:Photo}
                     <ul id="photo-buttons" class="clearfix">
                         {block:SubmissionsEnabled}<li><a href="/submit#tumblr-content">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
@@ -1256,15 +1303,13 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                         {block:Photo}
                         <article id="{PostID}" class="box brick post photo{block:IfAllPostsXsSize} t_xs{/block:IfAllPostsXsSize}{block:IfAllPostsXlSize} t_xl{/block:IfAllPostsXlSize}{block:IfNotAllPostsXsSize}{block:IfNotAllPostsDefaultSize}{block:IfNotAllPostsXlSize}{block:HasTags} {block:Tags}t_{URLSafeTag} {/block:Tags}{/block:HasTags}{/block:IfNotAllPostsXlSize}{/block:IfNotAllPostsDefaultSize}{/block:IfNotAllPostsXsSize} {TagsAsClasses}">
                             <header>
-                                {LinkOpenTag}<img {block:HighRes}style="display:none"{/block:HighRes} src="{PhotoURL-500}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />{block:HighRes}
-    <img src="{PhotoURL-HighRes}" class="highres">
-{/block:HighRes}{LinkCloseTag}
+                                {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" data-highres="{PhotoURL-HighRes}" />{LinkCloseTag}
                                 {block:Caption}{Caption}{/block:Caption}
                             </header>
-                            <div class='photoMetaData'>
+                            <div class="photoMetaData">
                                 <div class="lmeta">
                                     <p><a href="{Permalink}" rel="bookmark" title="{lang:Permalink}{block:PostSummary} - {PostSummary}{/block:PostSummary}">{block:Date}<time pubdate="pubdate" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}">{lang:Posted TimeAgo}</time>{/block:Date}</a></p>
-                                    
+
                                     {block:HasTags}
                                     <ul class="tags">
                                         {block:Tags}<li class="{block:HasTags} tt_{URLSafeTag}{/block:HasTags}"><a href="{TagURL}#tumblr-content" title="{Title} - {Tag}" rel="tag">{Tag}</a></li>{/block:Tags}
@@ -1273,17 +1318,17 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                                 </div>
                                 <div class="rmeta">
                                     <div class="sharers">
-                                        <span>SHARE:</span>
-                                        <a class="twiiter" href="https://twitter.com/intent/tweet/?text={block:PostTitle}{URLEncodedPostTitle}%20{/block:PostTitle}{URLEncodedPermalink}{block:Twitter}%20%2Fvia%20%40{TwitterUsername}{/block:Twitter}" {Target}></a>
+                                        <span>{lang:Share this}:</span>
+                                        <a class="twitter" href="https://twitter.com/intent/tweet/?text={block:PostSummary}{URLEncodedPostSummary}%20{/block:PostSummary}{URLEncodedPermalink}{block:Twitter}%20%2Fvia%20%40{TwitterUsername}{/block:Twitter}%20%23IamBradleyManning" {Target}></a>
                                         <a href="https://www.facebook.com/share.php?u={URLEncodedPermalink}" {Target} class="facebook"></a>
-                                        <a href="http://www.reddit.com/submit?url={URLEncodedPermalink}" {Target} class="reddit"></a>
+                                        <a href="http://www.reddit.com/submit?url={URLEncodedPermalink}{block:PostSummary}&amp;title={URLEncodedPostSummary}{/block:PostSummary}" {Target} class="reddit"></a>
                                         <a href="http://digg.com/submit?url={URLEncodedPermalink}" {Target} class="digg"></a>
                                     </div>
                                     <div class="shorturl">
                                     <span>{lang:Short URL}:</span><a href="{ShortURL}">{ShortURL}</a></div>
                                 </div>
                             </div>
-                            
+
                             <footer>
                                 <ul class="utils">
                                     {block:NoteCount}
@@ -1327,9 +1372,9 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                                         {block:PostNotes}{PostNotes-64}{/block:PostNotes}
                                     </li>
                                     {/block:NoteCount}
-                                    
+
                                     <li class="ShareLinks">
-                                        <ul><li class='aboutsharetxt'>SHARE:</li>
+                                        <ul><li class="aboutsharetxt">SHARE:</li>
                                             <li class="share-on-twitter"><a href="https://twitter.com/intent/tweet/?text={block:PostTitle}{URLEncodedPostTitle}%20{/block:PostTitle}{URLEncodedPermalink}{block:Twitter}%20%2Fvia%20%40{TwitterUsername}{/block:Twitter}" {Target}>{lang:Share this} on Twitter</a></li>
                                             <li class="share-on-facebook"><a href="https://www.facebook.com/share.php?u={URLEncodedPermalink}" {Target}>{lang:Share this} on Facebook</a></li>
                                             <li class="share-on-reddit"><a href="http://www.reddit.com/submit?url={URLEncodedPermalink}" {Target}>{lang:Share this} on Reddit</a></li>
@@ -1599,21 +1644,21 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
                 {/block:IfTweet1}
 
                 <section id="photo-feed">
-                	<h3>Your Photos</h3>
-                	<div class="photo-links"><a href="/submit#tumblr-content">Add Your Photo</a><a href="/your-photos">See Them All</a></div>
-                	<ul class="nav-links">
-                		<li><a href="#" class="featured selected" data-option="featured">Featured</a></li>
-                		<li>|</li>
-                		<!--<li><a href="#" class="veterans" data-option="veterans">Veterans</a></li>
-                		<li>|</li>-->
-                		<li><a href="#" class="recent" data-option="recent">Most Recent</a></li>
-            		</ul>
-            		<div class="feed">
-            		  <div class="featured"></div>
-            		  <div class="veterans"></div>
-            		  <div class="popular"></div>
-            		  <div class="recent"></div>
-            		</div>
+                    <h3>Your Photos</h3>
+                    <div class="photo-links">{block:SubmissionsEnabled}<a href="/submit#tumblr-content">{SubmitLabel}</a>{/block:SubmissionsEnabled}<a href="/your-photos">See Them All</a></div>
+                    <ul class="nav-links">
+                        <li><a href="#" class="recent selected" data-option="recent">Most Recent</a></li>
+                        <li>|</li>
+                        <!--<li><a href="#" class="veterans" data-option="veterans">Veterans</a></li>
+                        <li>|</li>-->
+                        <li><a href="#" class="featured" data-option="featured">Featured</a></li>
+                    </ul>
+                    <div class="feed">
+                        <div class="featured"></div>
+                        <div class="veterans"></div>
+                        <div class="popular"></div>
+                        <div class="recent"></div>
+                    </div>
                 </section>
 
                 {block:IfCollaborator1Name}
@@ -1670,5 +1715,3 @@ ol.notes .avatar{width: 30px; padding-right: 10px;}
 
     </body>
 </html>
-
-
